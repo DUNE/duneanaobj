@@ -35,7 +35,7 @@ bindir  fq_dir       bin
 # product             version
 root                v6_22_08b
 
-cetbuildtools  v7_17_01 - only_for_build
+cetbuildtools  v8_20_00 - only_for_build
 
 # We now define allowed qualifiers and the corresponding qualifiers for the dependencies.
 # Make the table by adding columns before "notes".
