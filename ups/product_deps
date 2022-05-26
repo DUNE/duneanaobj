@@ -3,7 +3,9 @@
 # The *parent* line must the first non-commented line and defines this product and version
 # The version should be of the form vxx_yy_zz (e.g. v01_02_03)
 parent duneanaobj
-defaultqual e20:gv3
+defaultqual e20
+
+project 
 
 # These optional lines define the installed directories where headers,
 # libraries, and executables will be found.
@@ -30,35 +32,17 @@ bindir  fq_dir       bin
 # With "product  version" table below, we now define dependencies
 # Add the dependent product and version
 
-# product             version       optional
-root                v6_22_08b     gv3
-root                v6_16_00      gv2
-root                v6_12_06a     gv1
+# product             version
+root                v6_22_08b
 
 cetbuildtools  v7_17_01 - only_for_build
 
 # We now define allowed qualifiers and the corresponding qualifiers for the dependencies.
 # Make the table by adding columns before "notes".
 
-# PLEASE NOTE: the `gv1` qualifier versions exist only as a compatability hack
-# so that `duneanaobj` can be built against a software stack that works with
-# current versions of ND_CAFMaker.
-# Once ND_CAFMaker has been upgraded to work with GENIE v3 and e20,
-# the `e15:gv1` lines below should be removed.
-
 qualifier      root              notes
-e20:gv3:debug  e20:p383b:debug  
-e20:gv3:prof   e20:p383b:prof   
-e19:gv3:debug  e19:p383b:debug  
-e19:gv3:prof   e19:p383b:prof   
-c7:gv3:debug   c7:p383b:debug   
-c7:gv3:prof    c7:p383b:prof    
-e17:gv2:debug  e17:debug  
-e17:gv2:prof   e17:prof   
-c2:gv2:debug   c2:debug  
-c2:gv2:prof    c2:prof
-e15:gv1:prof   e15:prof
-e15:gv1:debug  e15:debug
+e20:debug  e20:p383b:debug  
+e20:prof   e20:p383b:prof   
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:
