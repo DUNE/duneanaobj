@@ -15,7 +15,7 @@
 
 cmake_minimum_required (VERSION 3.12...3.18 FATAL_ERROR)
 
-project(duneanaobj LANGUAGES CXX)
+project(duneanaobj VERSION 01.01.01 LANGUAGES CXX)
 
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
