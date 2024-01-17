@@ -199,7 +199,7 @@ Classes</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:ac307c92506e04d6e6977b014081d7da6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6">Detector</a> : std::size_t { <br />
 &#160;&#160;<b>kUnknownDet</b> = 0
-, <b>kND_LAr</b> = 1
+, <a class="el" href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6a71247f5a48e7ae91e74cb824d318dc91">kND_LAr</a> = 1
 , <a class="el" href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6a040f09b18f3f43e0a1ba3262dce30f79">kND_TMS</a> = 2
 , <a class="el" href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6a299ebcfbec2d3946d88c74b589a08d16">kND_SAND</a> = 3
 , <br />
@@ -213,6 +213,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6adfbe653012687260634351362bda523b">_kLastDetector</a> = 24
 <br />
  }</td></tr>
+<tr class="memdesc:ac307c92506e04d6e6977b014081d7da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Known detectors in CAFs.  <a href="namespacecaf.html#ac307c92506e04d6e6977b014081d7da6">More...</a><br /></td></tr>
 <tr class="separator:ac307c92506e04d6e6977b014081d7da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7584ddffdf687fafbe54b93b554c538d"><td class="memItemLeft" align="right" valign="top"><a id="a7584ddffdf687fafbe54b93b554c538d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#a7584ddffdf687fafbe54b93b554c538d">Generator</a> { <b>kUnknownGenerator</b> = 0
 , <b>kGENIE</b> = 1
@@ -221,11 +222,12 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a7584ddffdf687fafbe54b93b554c538d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Known generators of neutrino interactions (extend as other generators are used) <br /></td></tr>
 <tr class="separator:a7584ddffdf687fafbe54b93b554c538d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746ce1a7c39f06de80ad075f62bf5c13"><td class="memItemLeft" align="right" valign="top"><a id="a746ce1a7c39f06de80ad075f62bf5c13"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>PartEMethod</b> { <b>kUnknownMethod</b>
-, <b>kRange</b>
-, <b>kMCS</b>
-, <b>kCalorimetry</b>
+<tr class="memitem:a746ce1a7c39f06de80ad075f62bf5c13"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13">PartEMethod</a> { <b>kUnknownMethod</b>
+, <a class="el" href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13ac1448a332bbc00435b6e26cfc8d91c61">kRange</a>
+, <a class="el" href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13a49bf3b13065ae6374fd0c8eb9f4a9118">kMCS</a>
+, <a class="el" href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13a92ded91435f9b3be0d95740f51bd5192">kCalorimetry</a>
  }</td></tr>
+<tr class="memdesc:a746ce1a7c39f06de80ad075f62bf5c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methods for reconstructing particle energies.  <a href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13">More...</a><br /></td></tr>
 <tr class="separator:a746ce1a7c39f06de80ad075f62bf5c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4fe01eff72d722ca8a3efd0bb3d0987"><td class="memItemLeft" align="right" valign="top"><a id="ac4fe01eff72d722ca8a3efd0bb3d0987"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#ac4fe01eff72d722ca8a3efd0bb3d0987">ScatteringMode</a> { <br />
 &#160;&#160;<b>kUnknownMode</b> = -100
@@ -256,14 +258,16 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ac4fe01eff72d722ca8a3efd0bb3d0987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Neutrino interaction categories. Periodically synchronized to GENIE (last update: GENIE 3.04.00) to avoid confusion (but we don't want a GENIE dependency for the StandardRecord so we maintain our own copy here). <br /></td></tr>
 <tr class="separator:ac4fe01eff72d722ca8a3efd0bb3d0987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd5370a9d29b27c18d0245c6c96dfcb"><td class="memItemLeft" align="right" valign="top"><a id="a8bd5370a9d29b27c18d0245c6c96dfcb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>FD_RECO_STACK</b> { <b>kUnknownFDReco</b>
+<tr class="memitem:a8bd5370a9d29b27c18d0245c6c96dfcb"><td class="memItemLeft" align="right" valign="top"><a id="a8bd5370a9d29b27c18d0245c6c96dfcb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#a8bd5370a9d29b27c18d0245c6c96dfcb">FD_RECO_STACK</a> { <b>kUnknownFDReco</b>
 , <b>kPandoraFD</b>
  }</td></tr>
+<tr class="memdesc:a8bd5370a9d29b27c18d0245c6c96dfcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which reconstruction toolkit was used to reconstruct this FD event? <br /></td></tr>
 <tr class="separator:a8bd5370a9d29b27c18d0245c6c96dfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedfe746411e95af2029a260ff7439740"><td class="memItemLeft" align="right" valign="top"><a id="aedfe746411e95af2029a260ff7439740"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>NDLAR_RECO_STACK</b> { <b>kUnknownNDLArReco</b>
+<tr class="memitem:aedfe746411e95af2029a260ff7439740"><td class="memItemLeft" align="right" valign="top"><a id="aedfe746411e95af2029a260ff7439740"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaf.html#aedfe746411e95af2029a260ff7439740">NDLAR_RECO_STACK</a> { <b>kUnknownNDLArReco</b>
 , <b>kDeepLearnPhys</b>
 , <b>kPandoraNDLAr</b>
  }</td></tr>
+<tr class="memdesc:aedfe746411e95af2029a260ff7439740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which reconstruction toolkit was used to reconstruct this ND event? <br /></td></tr>
 <tr class="separator:aedfe746411e95af2029a260ff7439740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -284,24 +288,52 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Known detectors in CAFs. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a040f09b18f3f43e0a1ba3262dce30f79"></a>kND_TMS&#160;</td><td class="fielddoc"><p>35-module liquid argon TPC (forms part of movable PRISM detector concept) </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a71247f5a48e7ae91e74cb824d318dc91"></a>kND_LAr&#160;</td><td class="fielddoc"><p>35-module liquid argon TPC (forms part of movable PRISM detector concept) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a299ebcfbec2d3946d88c74b589a08d16"></a>kND_SAND&#160;</td><td class="fielddoc"><p>magnetized spectrometer/calorimeter (forms part of movable PRISM detector concept in Phase I) </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a040f09b18f3f43e0a1ba3262dce30f79"></a>kND_TMS&#160;</td><td class="fielddoc"><p>magnetized spectrometer/calorimeter (forms part of movable PRISM detector concept in Phase I) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a6e4e454bea3c38f938919b2038b519da"></a>kND_GAr&#160;</td><td class="fielddoc"><p>scintillator tracker and calorimeter, fixed on-axis in beam </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a299ebcfbec2d3946d88c74b589a08d16"></a>kND_SAND&#160;</td><td class="fielddoc"><p>scintillator tracker and calorimeter, fixed on-axis in beam </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6ad97b94d22d58454576da82560598bb1e"></a>k2x2&#160;</td><td class="fielddoc"><p>high-pressure gaseous argon TPC (forms part of movable PRISM detector concept in Phase II) </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a6e4e454bea3c38f938919b2038b519da"></a>kND_GAr&#160;</td><td class="fielddoc"><p>high-pressure gaseous argon TPC (forms part of movable PRISM detector concept in Phase II) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6afc5bbfc128fcf8c3132256e3abe25946"></a>kMINERvA&#160;</td><td class="fielddoc"><p>ND-LAr prototype. </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6ad97b94d22d58454576da82560598bb1e"></a>k2x2&#160;</td><td class="fielddoc"><p>ND-LAr prototype. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a0369cdaee6b3c4e655cfd791cf8e52e4"></a>kFD_HD&#160;</td><td class="fielddoc"><p>tracker &amp; muon veto for 2x2; repurposed former MINERvA detector components </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6afc5bbfc128fcf8c3132256e3abe25946"></a>kMINERvA&#160;</td><td class="fielddoc"><p>tracker &amp; muon veto for 2x2; repurposed former MINERvA detector components </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6aab518598e9626384e1247674580c2da9"></a>kFD_VD&#160;</td><td class="fielddoc"><p>Horizontal drift (a.k.a. module 1) </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6a0369cdaee6b3c4e655cfd791cf8e52e4"></a>kFD_HD&#160;</td><td class="fielddoc"><p>Horizontal drift (a.k.a. module 1) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6ac6db43591cf15d4bf0440d642a431682"></a>kProtoDUNE&#160;</td><td class="fielddoc"><p>Vertical drift (a.k.a. module 2) </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6aab518598e9626384e1247674580c2da9"></a>kFD_VD&#160;</td><td class="fielddoc"><p>Vertical drift (a.k.a. module 2) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6adfbe653012687260634351362bda523b"></a>_kLastDetector&#160;</td><td class="fielddoc"><p>Horizontal drift prototype. </p>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6ac6db43591cf15d4bf0440d642a431682"></a>kProtoDUNE&#160;</td><td class="fielddoc"><p>Horizontal drift prototype. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac307c92506e04d6e6977b014081d7da6adfbe653012687260634351362bda523b"></a>_kLastDetector&#160;</td><td class="fielddoc"><p>to use in bitset sizing. make it big enough that we'll never have to expand it &mdash;&gt; future-proof CAFs </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a746ce1a7c39f06de80ad075f62bf5c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746ce1a7c39f06de80ad075f62bf5c13">&#9670;&nbsp;</a></span>PartEMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13">caf::PartEMethod</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Methods for reconstructing particle energies. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a746ce1a7c39f06de80ad075f62bf5c13ac1448a332bbc00435b6e26cfc8d91c61"></a>kRange&#160;</td><td class="fielddoc"><p>Amount of material traversed by particle. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a746ce1a7c39f06de80ad075f62bf5c13a49bf3b13065ae6374fd0c8eb9f4a9118"></a>kMCS&#160;</td><td class="fielddoc"><p>Multiple scattering. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a746ce1a7c39f06de80ad075f62bf5c13a92ded91435f9b3be0d95740f51bd5192"></a>kCalorimetry&#160;</td><td class="fielddoc"><p>Observed energy deposited in active volume. </p>
 </td></tr>
 </table>
 
