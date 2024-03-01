@@ -13,15 +13,16 @@
 # ======================================================================
 
 
-cmake_minimum_required (VERSION 3.12...3.18 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.20 FATAL_ERROR) ### MIGRATE-CHANGED (migrate-3.22.02) - VERSION 3.12...3.18 -> 3.20
+# cmake_policy(VERSION 3.18) ### MIGRATE-ACTION-COMPATIBILITY (migrate-3.22.02) - Uncomment to preserve compatibility with older CMake versions
 
-project(duneanaobj LANGUAGES CXX)
+find_package(cetmodules REQUIRED) ### MIGRATE-ADDED (migrate-3.22.02) - find_package(cetmodules) must precede project()
+project(duneanaobj LANGUAGES CXX) ### MIGRATE-CHANGED (migrate-3.22.02) - VERSION -> set(CMAKE_PROJECT_VERSION_STRING ...)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 02.04.00a)
 
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
 # cetbuildtools contains our cmake modules
-find_package(cetbuildtools REQUIRED)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -40,16 +41,14 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
   EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -I $ENV{CLANG_FQ_DIR}/include/c++/v1
 )
 
-cet_report_compiler_flags()
+cet_report_compiler_flags() ### MIGRATE-ACTION-RECOMMENDED (migrate-3.22.02) - add args: REPORT_THRESHOLD VERBOSE
 
 # these are minimum required versions, not the actual product versions
-find_ups_root(v6_00_00)
-find_ups_product( cetbuildtools )
+find_package(ROOT 6.00.00 REQUIRED) ### MIGRATE-CHANGED (migrate-3.22.02) - find_ups_product(v6_00_00 ...) -> find_package(ROOT 6.00.00 REQUIRED ...)
 
 include(BuildDictionary)
 
 add_subdirectory(duneanaobj)
-add_subdirectory(ups)
 
 # packaging utility
-include(UseCPack)
+cet_cmake_config() ### MIGRATE-ADDED (migrate-3.22.02) - required cmd
