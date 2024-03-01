@@ -13,8 +13,10 @@
 # ======================================================================
 
 
-cmake_minimum_required (VERSION 3.12...3.18 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
+# cmake_policy(VERSION 3.18)
 
+find_package(cetmodules REQUIRED)
 project(duneanaobj LANGUAGES CXX)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.03.00)
 
@@ -22,7 +24,6 @@ message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ===========
 
 if(DEFINED ENV{UPS_DIR})
     # cetbuildtools contains our cmake modules
-    find_package(cetbuildtools REQUIRED)
 
     include(CetCMakeEnv)
     cet_cmake_env()
@@ -44,13 +45,11 @@ if(DEFINED ENV{UPS_DIR})
     cet_report_compiler_flags()
 
     # these are minimum required versions, not the actual product versions
-    find_ups_root(v6_00_00)
-    find_ups_product( cetbuildtools )
+    find_package(ROOT 6.00.00 REQUIRED)
 
     include(BuildDictionary)
 
     # packaging utility
-    include(UseCPack)
 
 
 else()
@@ -59,5 +58,5 @@ else()
 endif()
 
 add_subdirectory(duneanaobj)
-add_subdirectory(ups)
 
+cet_cmake_config()
