@@ -18,6 +18,7 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR) ### MIGRATE-CHANGED (migrate-3
 
 find_package(cetmodules REQUIRED) ### MIGRATE-ADDED (migrate-3.22.02) - find_package(cetmodules) must precede project()
 project(duneanaobj LANGUAGES CXX) ### MIGRATE-CHANGED (migrate-3.22.02) - VERSION -> set(CMAKE_PROJECT_VERSION_STRING ...)
+set(${PROJECT_NAME}_EXTENDED_VERSION_SEMANTICS True)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 02.04.00a)
 
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")

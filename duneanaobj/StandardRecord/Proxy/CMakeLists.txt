@@ -13,6 +13,6 @@ include_directories($ENV{SRPROXY_INC}) ### MIGRATE-ACTION-RECOMMENDED (migrate-3
 
 cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
                  SOURCE       SRProxy.cxx Instantiations.cxx
-                 LIBRARIES    ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
+                 LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer)
 
 install_headers(EXTRAS ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)

@@ -12,7 +12,7 @@ FILE( GLOB src_files *.cxx )
 
 cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
                   SOURCE       ${src_files}
-                  LIBRARIES    ${ROOT_BASIC_LIB_LIST}
+                  LIBRARIES    ROOT::Core ROOT::Physics
                 )
 
 build_dictionary( duneanaobj_StandardRecord
