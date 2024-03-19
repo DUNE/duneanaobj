@@ -32,22 +32,20 @@ bindir  fq_dir       bin
 
 product             version       optional
 cetbuildtools  v8_20_00 - only_for_build
-root                v6_26_06b
-srproxy             v00.43
+root                v6_28_10b
+srproxy             v00.44
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the dependencies.
 # Make the table by adding columns before "notes".
 
 qualifier      root       srproxy       notes
-e20:debug  debug:e20:p3913 py3913
-e20:prof   e20:p3913:prof  py3913
-c7:debug   c7:p3913:debug  py3913
-c7:prof    c7:p3913:prof   py3913
-e26:debug  debug:e26:p3913 py3913
-e26:prof   e26:p3913:prof  py3913
-c14:debug  c14:p3913:debug  py3913
-c14:prof   c14:p3913:prof   py3913
+e20:debug  debug:e20:p3915 py3915
+e20:prof   e20:p3915:prof  py3915
+e26:debug  debug:e26:p3915 py3915
+e26:prof   e26:p3915:prof  py3915
+c14:debug  c14:p3915:debug  py3915
+c14:prof   c14:p3915:prof   py3915
 end_qualifier_list
 
 # Preserve tabs and formatting in emacs and vi / vim:
