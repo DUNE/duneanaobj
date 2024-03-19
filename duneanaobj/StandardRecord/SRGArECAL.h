@@ -25,7 +25,7 @@ namespace caf
 
       int garsoft_trk_assn = -999; ///< GArSoft trackId associated to ECAL cluster
 
-      SRTrueParticle truth; ///< Best-match GEANT truth particle for this ECAL cluster
+      SRTrueParticle truth;  ///< Best-match GEANT truth particle for this ECAL cluster
       float truth_fraction;  ///< Contribution of truth particle to reco object
   };
 
