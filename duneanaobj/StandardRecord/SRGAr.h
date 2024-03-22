@@ -7,6 +7,7 @@
 #ifndef DUNEANAOBJ_SRGAR_H
 #define DUNEANAOBJ_SRGAR_H
 
+#include "duneanaobj/StandardRecord/SRGArParticle.h"
 #include "duneanaobj/StandardRecord/SRGArTrack.h"
 #include "duneanaobj/StandardRecord/SRGArECAL.h"
 
@@ -16,11 +17,17 @@ namespace caf
   class SRGArInt
   {
     public:
+      std::vector<SRGArParticle> particles;
+      std::size_t                nparticles  = 0;
+
       std::vector<SRGArTrack> tracks;
       std::size_t             ntracks  = 0;
 
-      std::vector<SRGArECAL> clusters;
-      std::size_t            nclusters = 0;
+      std::vector<SRGArECAL> ecalclusters;
+      std::size_t            necalclusters = 0;
+
+      std::vector<SRGArECAL> muidclusters;
+      std::size_t            nmuidclusters = 0;
 
       // legacy parametric reco fields
 
