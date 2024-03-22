@@ -57,7 +57,8 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="10">
+  <class name="caf::SRInteractionBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="931864856"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
@@ -82,7 +83,8 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="11">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="841515619"/>
    <version ClassVersion="11" checksum="3413162475"/>
    <version ClassVersion="10" checksum="684361603"/>
   </class>
@@ -205,11 +207,21 @@
    <version ClassVersion="10" checksum="2529880392"/>
   </class>
 
-  <class name="caf::SRGArInt" ClassVersion="10">
+  <class name="caf::SRGArInt" ClassVersion="11">
+   <version ClassVersion="11" checksum="1975661202"/>
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="14">
+  <class name="caf::SRGArParticle" ClassVersion="11">
+   <version ClassVersion="11" checksum="1620776976"/>
+   <version ClassVersion="10" checksum="4044067765"/>
+  </class>
+
+  <class name="std::vector<caf::SRGArParticle>">
+  </class>
+  
+  <class name="caf::SRGArTrack" ClassVersion="15">
+   <version ClassVersion="15" checksum="721977257"/>
    <version ClassVersion="14" checksum="2591374164"/>
    <version ClassVersion="13" checksum="3987769238"/>
    <version ClassVersion="12" checksum="3869515338"/>
