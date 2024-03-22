@@ -16,17 +16,17 @@ namespace caf
   class SRGArECAL
   {
     public:
-      SRVector3D position;  ///< ECAL cluster 3D position
-      float E = -999.;      ///< Energy in MeV corresponding to this cluster
+      SRVector3D position;          ///< ECAL cluster 3D position [cm]
+      float E = -999.;              ///< Energy corresponding to this cluster [GeV]
 
-      int hits_in_cluster = -999; ///< Total number of ECAL hits in cluster
+      int hits_in_cluster = -999;   ///< Total number of ECAL hits in cluster
 
-      int garsoft_ecal_id = -999;  ///< GArSoft ECALId for ECAL cluster
+      int garsoft_ecal_id = -999;   ///< GArSoft ECALId for ECAL cluster
 
-      int garsoft_trk_assn = -999; ///< GArSoft trackId associated to ECAL cluster
+      int garsoft_trk_assn = -999;  ///< GArSoft TrackId associated to ECAL cluster
 
-      SRTrueParticle truth;  ///< Best-match GEANT truth particle for this ECAL cluster
-      float truth_fraction;  ///< Contribution of truth particle to reco object
+      SRTrueParticle truth;         ///< Best-match GEANT truth particle for this ECAL cluster
+      float truth_fraction;         ///< Contribution of truth particle to reco object
   };
 
 }
