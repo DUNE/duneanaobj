@@ -7,9 +7,11 @@
 #ifndef DUNEANAOBJ_SRGARPARTICLE_H
 #define DUNEANAOBJ_SRGARPARTICLE_H
 
+#include "duneanaobj/StandardRecord/SRVector3D.h"
+
 namespace caf
 {
-  class SRGArParticle:
+  class SRGArParticle
   {
     public:
 
@@ -39,9 +41,5 @@ namespace caf
   };
 
 }
-
-#if !defined(__GCCXML__) && !defined(__castxml__)
-std::ostream & operator<<(std::ostream & stream, const caf::SRGArTrack & tr);
-#endif
 
 #endif //DUNEANAOBJ_SRGARPARTICLE_H
