@@ -32,7 +32,7 @@ bindir  fq_dir       bin
 
 product             version       optional
 cetbuildtools  v8_20_00 - only_for_build
-root                v6_28_10b
+root                v6_28_12
 srproxy             v00.44
 end_product_list
 
