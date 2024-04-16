@@ -15,4 +15,4 @@ cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
                  SOURCE       SRProxy.cxx Instantiations.cxx
                  LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer)
 
-install_headers(EXTRAS ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
+install_headers(EXTRAS ${CMAKE_BINARY_DIR}/duneanaobj/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)

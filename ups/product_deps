@@ -247,74 +247,20 @@ libdir	fq_dir		lib
 # * It is an error for more than one non-(<qual-trigger> == "-default-")
 #   entry to match for a given product.
 #
-####################################
-product		version		qual	flags		<table_format=2>
-root		v6_26_06b	-
-srproxy		v00.43		-
-cetmodules	v3_22_02	-	only_for_build
+product             version       optional
+cetmodules          v3_24_01 - only_for_build
+root                v6_28_12
+srproxy             v00.44
 end_product_list
 ####################################
 
-####################################
-# Qualifier table.
-#
-# For each valid qualifer set of the parent, specify how dependencies
-# should be set up.
-#
-# Format:
-#
-#>  qualifier		<prod-spec>...	[<notes>]
-#>  <parent-qual>	<spec>...   [<text...>]
-#>...
-#>  end_qualifier_list
-#
-# <prod-spec> may be a product name or "compiler."
-#
-# <parent-qual> may be a colon-delimited qualifier set, or "-nq-" as a
-# column placeholder in the case of no parent qualifiers.
-#
-# Unless <prod-spec> is "compiler", <spec> may be a colon-delimited
-# qualifier set, or:
-#
-# * -
-#
-#   The dependency is not required for this <parent-qual> and will not
-#   be set up.
-#
-# * -nq-
-#
-#   The dependency will be set up without qualifiers.
-#
-# * -b- (deprecated)
-#
-#   A build-only dependency for this <parent-qual>. If the dependency is
-#   set up in this way, it will be set up without qualifiers. For more
-#   flexibility, use the product table to specify the only_for_build
-#   nature of the dependency and the qualifier table to specifiy how it
-#   should be set up.
-#
-# If <prod-spec> is "compiler", <spec> must be `-' (no compiler
-# required) or the name of the UPS product for the desired compiler. Any
-# qualifiers required to set up the compiler should be specified in the
-# appropriate column for that product.
-#
-##################
-# Notes.
-#
-# * A column for every product in the product table (see above) is
-#   *required* unless the only_for_build flag is specified, in which
-#   case it is optional.
-#
-####################################
-qualifier	root		srproxy	notes
-c14:debug	c14:p3913:debug	py3913
-c14:prof	c14:p3913:prof	py3913
-c7:debug	c7:p3913:debug	py3913
-c7:prof		c7:p3913:prof	py3913
-e20:debug	e20:p3913:debug	py3913
-e20:prof	e20:p3913:prof	py3913
-e26:debug	e26:p3913:debug	py3913
-e26:prof	e26:p3913:prof	py3913
+qualifier      root       srproxy       notes
+e20:debug  debug:e20:p3915 py3915
+e20:prof   e20:p3915:prof  py3915
+e26:debug  debug:e26:p3915 py3915
+e26:prof   e26:p3915:prof  py3915
+c14:debug  c14:p3915:debug  py3915
+c14:prof   c14:p3915:prof   py3915
 end_qualifier_list
 ####################################
 
