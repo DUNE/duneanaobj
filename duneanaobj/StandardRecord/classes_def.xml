@@ -212,7 +212,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-  <class name="caf::SRGArParticle" ClassVersion="11">
+  <class name="caf::SRGArParticle" ClassVersion="12">
+   <version ClassVersion="12" checksum="4074880387"/>
    <version ClassVersion="11" checksum="1620776976"/>
    <version ClassVersion="10" checksum="4044067765"/>
   </class>
@@ -250,7 +251,8 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-    <class name="caf::SRSAND" ClassVersion="13">
+    <class name="caf::SRSAND" ClassVersion="14">
+     <version ClassVersion="14" checksum="3811644425"/>
    <version ClassVersion="13" checksum="1270542721"/>
    <version ClassVersion="12" checksum="1233697569"/>
    <version ClassVersion="11" checksum="3795335384"/>
