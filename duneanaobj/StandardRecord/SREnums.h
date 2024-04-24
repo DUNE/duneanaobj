@@ -58,6 +58,7 @@ namespace caf
     kRange,         ///< Amount of material traversed by particle
     kMCS,           ///< Multiple scattering
     kCalorimetry,   ///< Observed energy deposited in active volume
+    kCurvature      ///< Estimated from curvature momentum measurement
   };
 
   /// \brief Neutrino interaction categories.
