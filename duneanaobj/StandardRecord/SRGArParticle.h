@@ -35,6 +35,8 @@ namespace caf
       float proton_dEdx_score = -1.0;      ///< Proton score based on TPC dE/dx measurement
       float proton_tof_score  = -1.0;      ///< Proton score based on ECAL ToF measurement
 
+      int garsoft_part_id= -999;           ///< GArSoft ParticleId for reco particle
+
       int garsoft_trk_assn = -999;         ///< GArSoft TrackId associated to reco particle
       std::vector<int> garsoft_ecal_assns; ///< GArSoft ECALIds associated to reco particle
       std::vector<int> garsoft_muid_assns; ///< GArSoft MuIDIds associated to reco particle
