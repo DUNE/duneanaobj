@@ -212,7 +212,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-  <class name="caf::SRGArParticle" ClassVersion="12">
+  <class name="caf::SRGArParticle" ClassVersion="13">
+   <version ClassVersion="13" checksum="1409076570"/>
    <version ClassVersion="12" checksum="4074880387"/>
    <version ClassVersion="11" checksum="1620776976"/>
    <version ClassVersion="10" checksum="4044067765"/>

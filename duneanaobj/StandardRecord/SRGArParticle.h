@@ -7,17 +7,18 @@
 #ifndef DUNEANAOBJ_SRGARPARTICLE_H
 #define DUNEANAOBJ_SRGARPARTICLE_H
 
-#include "duneanaobj/StandardRecord/SRVector3D.h"
+#include "duneanaobj/StandardRecord/SRRecoParticle.h"
 
 namespace caf
 {
-  class SRGArParticle
+  class SRGArParticle: public SRRecoParticle
   {
     public:
 
-      // GAr reco particle characteristics
-      SRVector3D  p;                       ///< Reconstructed momentum of particle [GeV]
+      SRGArParticle() {}
+      SRGArParticle(SRRecoParticle const& p): SRRecoParticle(p) {}
 
+      // GAr reco particle characteristics
       float dEdx_total = -999.;            ///< Total energy deposited in TPC [GeV]
       float dEdx_mean  = -999.;            ///< Truncated mean dE/dx of TPC track [keV/cm]
 
