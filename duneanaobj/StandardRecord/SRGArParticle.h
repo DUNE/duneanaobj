@@ -16,7 +16,9 @@ namespace caf
     public:
 
       SRGArParticle() {}
-      SRGArParticle(SRRecoParticle const& p): SRRecoParticle(p) {}
+      explicit SRGArParticle(SRRecoParticle const& p): SRRecoParticle(p) {}
+
+      virtual ~SRGArParticle() = default;
 
       // GAr reco particle characteristics
       float dEdx_total = -999.;            ///< Total energy deposited in TPC [GeV]
