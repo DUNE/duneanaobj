@@ -58,6 +58,7 @@ namespace caf
     kRange,         ///< Amount of material traversed by particle
     kMCS,           ///< Multiple scattering
     kCalorimetry,   ///< Observed energy deposited in active volume
+    kCurvature      ///< Estimated from curvature momentum measurement
   };
 
   /// \brief Neutrino interaction categories.
@@ -114,6 +115,14 @@ namespace caf
     kUnknownNDLArReco,
     kDeepLearnPhys,
     kPandoraNDLAr
+  };
+
+  /// Types of GAr calo clusters
+  enum GArCaloType
+  {
+    kUnknownCluster = 0,
+    kECalCluster    = 1,
+    kMuIDCluster    = 2
   };
 
 }

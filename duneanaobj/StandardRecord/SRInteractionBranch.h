@@ -21,6 +21,9 @@ namespace caf
       std::vector<SRInteraction> pandora;   ///< Interactions from Pandora reconstruction
       std::size_t npandora;
 
+      std::vector<SRInteraction> gsft;      ///< Interactions from GArSoft reconstruction
+      std::size_t ngsft;
+
 
   };
 }
