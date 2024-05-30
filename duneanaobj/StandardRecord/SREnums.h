@@ -117,6 +117,14 @@ namespace caf
     kPandoraNDLAr
   };
 
+  /// Types of GAr calo clusters
+  enum GArCaloType
+  {
+    kUnknownCluster = 0,
+    kECalCluster    = 1,
+    kMuIDCluster    = 2
+  };
+
 }
 
 

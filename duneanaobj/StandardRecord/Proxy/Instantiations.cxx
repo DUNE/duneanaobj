@@ -16,5 +16,7 @@ namespace caf
   template class Proxy<NDLAR_RECO_STACK>;
   template class Proxy<FD_RECO_STACK>;
 
+  template class Proxy<GArCaloType>;
+
   template class Proxy<TrueParticleID::PartType>;
 }

@@ -13,19 +13,11 @@
 
 namespace caf
 {
-  /// Types of GAr calo clusters
-  enum CaloClusterType
-  {
-    kUnknownCluster = 0,
-    kECalCluster    = 1,
-    kMuIDCluster    = 2
-  };
-
   class SRGArCalo
   {
     public:
 
-      CaloClusterType  cluster_type = CaloClusterType::kUnknownCluster;   ///< Type of GAr calo cluster
+      GArCaloType  cluster_type = GArCaloType::kUnknownCluster;   ///< Type of GAr calo cluster
 
       SRVector3D position;                 ///< Calo cluster 3D position [cm]
       float E = -999.;                     ///< Energy corresponding to this cluster [GeV]
