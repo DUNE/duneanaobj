@@ -28,6 +28,11 @@ namespace caf
       float len_cm_fwd = -999.;         ///< Length of track in forward fit  [cm]
       float len_cm_bak = -999.;         ///< Length of track in backward fit [cm]
 
+      float dEdx_fwd  = -999.;          ///< Truncated mean dE/dx in forward fit [keV/cm]
+      float dEdx_bak  = -999.;          ///< Truncated mean dE/dx in forward fit [keV/cm]
+
+      float dEdx_total = -999.;         ///< Total energy deposited in TPC [GeV]
+
       int clusters_in_track = -999;     ///< Total number of TPC clusters in track
 
       int garsoft_trk_id = -999;        ///< GArSoft TrackId for track
