@@ -42,7 +42,6 @@ namespace caf
       std::vector<int> pid_bak;         ///< Parametrised PID of track in backward fit
       std::vector<float> pid_prob_bak;  ///< Parametrised PID probability vector in backward fit
 
-      float truth_fraction;             ///< Contribution of truth particle to reco object
   };
 
 }
