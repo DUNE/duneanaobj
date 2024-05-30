@@ -9,7 +9,7 @@
 
 namespace caf
 {
-  class SRGArAssociation:
+  class SRGArAssociation
   {
     public:
 
