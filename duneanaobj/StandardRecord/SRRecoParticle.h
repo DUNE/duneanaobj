@@ -3,13 +3,13 @@
 /// \brief   A general reconstructed particle container
 /// \author  J. Wolcott <jwolcott@fnal.gov>
 
-
 #ifndef DUNEANAOBJ_SRRECOPARTICLE_H
 #define DUNEANAOBJ_SRRECOPARTICLE_H
 
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
+#include "duneanaobj/StandardRecord/SRPIDScoreBranch.h"
 
 namespace caf
 {
@@ -28,7 +28,7 @@ namespace caf
       int         pdg      = 0;                       ///< PDG code inferred for this particle.
       int         tgtA     = 0;                       ///< Atomic number of nucleus this particle was reconstructed in (useful for, e.g., SAND)
 
-      float       score    = NaN;                     ///< PID score for this particle, if relevant
+      SRPIDScoreBranch score;                         ///< PID score(s) for this particle, if relevant
 
       float       E        = NaN;                     ///< Reconstructed energy for this particle [GeV]
       PartEMethod E_method = PartEMethod::kUnknownMethod;   ///< Method used to determine energy for the particle
