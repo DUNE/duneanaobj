@@ -27,7 +27,5 @@ find_package(ROOT)
 set(SRPROXY_INC, "$ENV(SRPROXY_DIR)")
 
 include_directories(.)
-add_subdirectory(.)
 
-#add_subdirectory(duneanaobj)
-
+add_subdirectory(duneanaobj)
