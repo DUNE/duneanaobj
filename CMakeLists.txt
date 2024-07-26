@@ -23,7 +23,7 @@ set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.05.00)
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
 find_package(ROOT)
-find_package(py-srproxy)
+find_package(SRPROXY)
 
 include_directories(.)
 
