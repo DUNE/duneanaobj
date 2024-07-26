@@ -29,6 +29,6 @@ set(SRPROXY_INC, "$ENV(SRPROXY_DIR)")
 include_directories(.)
 include_directories(SRPROXY_INC)
 
-add_subdirectory(duneanaobj)
-#add_subdirectory(.)
+#add_subdirectory(duneanaobj)
+add_subdirectory(.)
 
