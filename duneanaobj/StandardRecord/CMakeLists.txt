@@ -12,7 +12,9 @@ FILE( GLOB src_files *.cxx )
 
 add_library(duneanaobj_StandardRecord
             ${src_files})
-          target_include_directories(duneanaobj_StandardRecord ${SRPROXY_DIR})
+
+#target_include_directories(duneanaobj_StandardRecord ${SRPROXY_DIR})
+
 target_link_libraries(duneanaobj_StandardRecord
                  ROOT::Core ROOT::Physics )
 
