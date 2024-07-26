@@ -30,5 +30,4 @@ include_directories(.)
 add_subdirectory(.)
 
 #add_subdirectory(duneanaobj)
-include_directories(SRPROXY_INC)
 
