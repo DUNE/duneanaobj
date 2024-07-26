@@ -25,7 +25,7 @@ message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ===========
 find_package(ROOT)
 find_package(py-srproxy)
 
-#include_directories(.)
+include_directories(.)
 
 add_subdirectory(duneanaobj)
 
