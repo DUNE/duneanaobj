@@ -3,7 +3,7 @@ FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
 add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    DEPENDS ${SR_DEPENDENCIES}
                    OUTPUT SRProxy.cxx SRProxy.h FwdDeclare.h
-                   COMMAND gen_srproxy -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INC} --output-path ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
+                   COMMAND gen_srproxy -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INC} --output-path ${builddir}/duneanaobj/StandardRecord/Proxy --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
   )
 
 include_directories($ENV{SRPROXY_INC})
@@ -14,6 +14,7 @@ message("LIAMS:       ${SRPROXY_INC}")
 # This is a very picky error buried inside template instantiations
 #add_definitions(-Wno-int-in-bool-context)
 
+message("LIAM9:       ${CETMODULES_CURRENT_PROJECT_NAME}")
 if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
