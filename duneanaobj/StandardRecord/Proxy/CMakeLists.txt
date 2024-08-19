@@ -8,6 +8,7 @@ add_custom_command(# Rebuild if anything in StandardRecord/ changes
 
 include_directories($ENV{SRPROXY_INC})
 message("LIAM :       ${CMAKE_CURRENT_SOURCE_DIR}")
+message("LIAM2:       ${CMAKE_CURRENT_BINARY_DIR}")
 
 # This is a very picky error buried inside template instantiations
 #add_definitions(-Wno-int-in-bool-context)
