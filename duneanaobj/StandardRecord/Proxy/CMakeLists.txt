@@ -7,14 +7,10 @@ add_custom_command(# Rebuild if anything in StandardRecord/ changes
   )
 
 include_directories($ENV{SRPROXY_INC})
-message("LIAM :       ${CMAKE_CURRENT_SOURCE_DIR}")
-message("LIAM2:       ${CMAKE_CURRENT_BINARY_DIR}")
-message("LIAMS:       ${SRPROXY_INC}")
 
 # This is a very picky error buried inside template instantiations
 #add_definitions(-Wno-int-in-bool-context)
 
-message("LIAM9:       ${CETMODULES_CURRENT_PROJECT_NAME}")
 if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
@@ -34,6 +30,6 @@ else()
     target_link_libraries(duneanaobj_StandardRecordProxy ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
     install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
 endif()
 
