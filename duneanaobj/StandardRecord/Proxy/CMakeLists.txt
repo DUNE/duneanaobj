@@ -11,25 +11,9 @@ include_directories($ENV{SRPROXY_INC})
 # This is a very picky error buried inside template instantiations
 #add_definitions(-Wno-int-in-bool-context)
 
-if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
-    message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
-    cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
-            SOURCE       SRProxy.cxx Instantiations.cxx
-            LIBRARIES    ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
+add_library(duneanaobj_StandardRecordProxy
+            SRProxy.cxx Instantiations.cxx)
+target_link_libraries(duneanaobj_StandardRecordProxy ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
-    if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
-        message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
-        set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
-    else()
-        set(builddir ${CMAKE_BINARY_DIR})
-    endif()
-    install_headers(EXTRAS ${builddir}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${builddir}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
-else()
-    add_library(duneanaobj_StandardRecordProxy
-                SRProxy.cxx Instantiations.cxx)
-    target_link_libraries(duneanaobj_StandardRecordProxy ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
-
-    install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
-endif()
-
+install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
