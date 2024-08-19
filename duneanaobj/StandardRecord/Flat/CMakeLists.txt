@@ -26,6 +26,7 @@ else()
     target_link_libraries(duneanaobj_StandardRecordFlat ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
     message("LMAO : ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj")
+    message("LMAO2: ${CMAKE_INSTALL_DIR}/include/duneanaobj")
     install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 
