@@ -29,6 +29,7 @@ else()
   add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx Instantiations.cxx)
   target_link_libraries(duneanaobj_StandardRecordProxy ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
+  install(TARGETS duneanaobj_StandardRecordProxy)
   install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
           DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord/Proxy)
 endif()
