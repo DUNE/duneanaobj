@@ -21,6 +21,7 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
         message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
         set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
     else()
+        message(STATUS "BUILDDIR defaulting to ${CMAKE_BINARY_DIR}")
         set(builddir ${CMAKE_BINARY_DIR})
     endif()
     install_headers(EXTRAS ${builddir}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${builddir}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
@@ -30,6 +31,7 @@ else()
     target_link_libraries(duneanaobj_StandardRecordProxy ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
     install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
+#DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 endif()
 
