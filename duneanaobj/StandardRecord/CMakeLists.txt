@@ -25,12 +25,11 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
   install_source()
 else()
   add_library(duneanaobj_StandardRecord SHARED ${src_files})
-
   target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
 
-  build_dictionary(duneanaobj_StandardRecord DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
+  #ROOT_GENERATE_DICTIONARY(duneanaobj_StandardRecord_dict DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
+  # TODO: Need to generate the dictionary
 
   install(TARGETS duneanaobj_StandardRecord)
   install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
-  # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
 endif()
