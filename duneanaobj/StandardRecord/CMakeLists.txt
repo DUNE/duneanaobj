@@ -28,6 +28,8 @@ else()
 
   target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
 
+  build_dictionary(duneanaobj_StandardRecord DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
+
   install(TARGETS duneanaobj_StandardRecord)
   install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
   # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
