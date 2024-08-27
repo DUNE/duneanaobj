@@ -24,10 +24,9 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     install_headers()
     install_source()
 else()
-    add_library(duneanaobj_StandardRecord
-                ${src_files})
-    target_link_libraries(duneanaobj_StandardRecord
-                     ROOT::Core ROOT::Physics )
+    add_library(duneanaobj_StandardRecord ${src_files})
+
+    target_sources(target_link_libraries(duneanaobj_StandardRecord ROOT::Core ROOT::Physics)
 
     install(PUBLIC_HEADER ${inc_files})
     # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
