@@ -26,7 +26,7 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
 else()
     add_library(duneanaobj_StandardRecord ${src_files})
 
-    target_sources(target_link_libraries(duneanaobj_StandardRecord) ROOT::Core ROOT::Physics)
+    target_link_libraries(duneanaobj_StandardRecord ROOT::Core ROOT::Physics)
 
     #install(TARGETS duneanaobj_StandardRecord LIBRARY DESTINATION lib INCLUDES DESTINATION duneanaobj)
     install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
