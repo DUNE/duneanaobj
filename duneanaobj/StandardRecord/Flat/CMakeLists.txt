@@ -26,7 +26,7 @@ else()
 
   install(TARGETS duneanaobj_StandardRecordFlat)
   install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
-          DESTINATION ${CMAKE_INSTALL_PREFIX}/Flat/duneanaobj/StandardRecord/Flat)
+          DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord/Flat)
 #      DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 
 endif()
