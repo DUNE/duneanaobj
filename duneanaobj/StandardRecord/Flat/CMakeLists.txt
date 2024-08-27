@@ -6,7 +6,7 @@ add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    COMMAND gen_srproxy --flat -i duneanaobj/StandardRecord/StandardRecord.h -o FlatRecord --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Flat/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
   )
 
-include_directories($ENV{SRPROXY_INC})
+include_directories($ENV{SRPROXY_INC} ${CMAKE_BINARY_DIR})
 
 if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordFlat
