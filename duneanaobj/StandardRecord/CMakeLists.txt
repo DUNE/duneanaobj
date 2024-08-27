@@ -28,7 +28,7 @@ else()
 
     target_sources(target_link_libraries(duneanaobj_StandardRecord) ROOT::Core ROOT::Physics)
 
-    install(LIBRARY duneanaobj_StandardRecord})
+    install(TARGETS duneanaobj_StandardRecord LIBRARY DESTINATION lib INCLUDES DESTINATION duneanaobj)
     install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
     # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
 endif()
