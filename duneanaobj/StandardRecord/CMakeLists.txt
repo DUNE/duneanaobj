@@ -2,7 +2,7 @@ add_subdirectory(Proxy)
 add_subdirectory(Flat)
 
 # for classes_def.xml!!
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR} "$ENV{ROOT_INCLUDE_DIRECTORIES}")
 
 set( PACKAGE duneanaobj_StandardRecord )
 FILE( GLOB src_files *.cxx )
