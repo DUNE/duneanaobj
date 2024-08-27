@@ -26,7 +26,7 @@ else()
     target_link_libraries(duneanaobj_StandardRecordFlat ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
 
     install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_PREFIX}/duneanaobj)
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/Flat/duneanaobj)
 #            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 
 endif()
