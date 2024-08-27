@@ -71,7 +71,7 @@ else()
   configure_package_config_file(PackageConfig.cmake.in duneanaobjConfig.cmake PATH_VARS CMAKE_INSTALL_PREFIX INSTALL_DESTINATION lib/cmake/duneanaobj)
 
   # Install the config files.
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjVersion.cmake DESTINATION lib/cmake/duneanaobj)
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake DESTINATION lib/cmake/duneanaobj)
 endif()
 
 add_subdirectory(duneanaobj)
