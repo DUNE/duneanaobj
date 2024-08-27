@@ -12,23 +12,23 @@ FILE( GLOB inc_files *.h )
 # add_compile_options(-Weffc++)
 
 if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
-    cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
-                      SOURCE       ${src_files}
-                      LIBRARIES    ROOT::Core ROOT::Physics
-                    )
+  cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
+                    SOURCE       ${src_files}
+                    LIBRARIES    ROOT::Core ROOT::Physics
+                  )
 
-    build_dictionary( duneanaobj_StandardRecord
-                      DICTIONARY_LIBRARIES duneanaobj_StandardRecord
-                    )
+  build_dictionary( duneanaobj_StandardRecord
+                    DICTIONARY_LIBRARIES duneanaobj_StandardRecord
+                  )
 
-    install_headers()
-    install_source()
+  install_headers()
+  install_source()
 else()
-    add_library(duneanaobj_StandardRecord ${src_files})
+  add_library(duneanaobj_StandardRecord SHARED ${src_files})
 
-    target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
+  target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
 
-    install(TARGETS duneanaobj_StandardRecord)
-    install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
-    # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
+  install(TARGETS duneanaobj_StandardRecord)
+  install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
+  # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
 endif()
