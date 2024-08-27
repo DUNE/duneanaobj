@@ -6,6 +6,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR} "$ENV{ROOT_INCLUDE_PATH}")
 
 set( PACKAGE duneanaobj_StandardRecord )
 FILE( GLOB src_files *.cxx )
+FILE( GLOB inc_files *.h )
 
 # For this directory only, pedantic option to catch uninitialized SR fields
 # add_compile_options(-Weffc++)
@@ -28,5 +29,6 @@ else()
     target_link_libraries(duneanaobj_StandardRecord
                      ROOT::Core ROOT::Physics )
 
-    # n.b.: missing the dictionary and installation!
+    install(PUBLIC_HEADER ${inc_files})
+    # n.b.: missing the dictionary and installation! # ye lmao it is haha good one xd
 endif()
