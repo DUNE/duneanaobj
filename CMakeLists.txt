@@ -55,26 +55,23 @@ if(DEFINED ENV{UPS_DIR})
 
 else()
   # This is where the real stuff happens, ain't nobody usin' this cet sit
-  # Include module with function 'write_basic_package_version_file'                                                                                                                                                                                              
-  include(CMakePackageConfigHelpers)                                                                                                                                                                                                                             
-
-  # Write the ConfigVersion.cmake file which can be used to                                                                                                                                                                                             
-  # check if a version meets the requested properties.                                                                                                                                                                                                           
-  write_basic_package_version_file(                                                                                                                                                                                                                              
-  DUNEAnaObjConfigVersion.cmake                                                                                                                                                                                                                                   
-  COMPATIBILITY SameMajorVersion)                                                                                                                                                                                                                              
-
-  # Write the Config.cmake file so that a user package can                                                                                                                                                                                              
-  # access this with find_package.                                                                                                                                                                                                                               
-  configure_package_config_file(                                                                                                                                                                                                                                 
-  PackageConfig.cmake.in                                                                                                                                                                                                                                       
-  DUNEAnaObjConfig.cmake                                                                                                                                                                                                                                          
-  PATH_VARS CMAKE_INSTALL_PREFIX                                                                                                                                                                                                                               
-  INSTALL_DESTINATION lib/cmake/duneanaobj)  
-
   find_package(ROOT)
   include(BuildDictionary)
   include_directories(.)
+
+  # Include module with function 'write_basic_package_version_file'
+  include(CMakePackageConfigHelpers)
+
+  # Write the ConfigVersion.cmake file which can be used to
+  # check if a version meets the requested properties.
+  write_basic_package_version_file(duneanaobjConfigVersion.cmake COMPATIBILITY SameMajorVersion)
+
+  # Write the Config.cmake file so that a user package can
+  # access this with find_package.
+  configure_package_config_file(PackageConfig.cmake.in duneanaobjConfig.cmake PATH_VARS CMAKE_INSTALL_PREFIX INSTALL_DESTINATION lib/cmake/duneanaobj)
+
+  # Install the config files.
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjVersion.cmake DESTINATION lib/cmake/duneanaobj)
 endif()
 
 add_subdirectory(duneanaobj)
