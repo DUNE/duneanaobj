@@ -32,4 +32,5 @@ else()
 
   install(TARGETS duneanaobj_StandardRecord)
   install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
+  install(EXPORT duneanaobjTargets NAMESPACE duneanaobj:: DESTINATION lib/cmake/duneanaobj)
 endif()
