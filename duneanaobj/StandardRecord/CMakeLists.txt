@@ -30,7 +30,10 @@ else()
   #ROOT_GENERATE_DICTIONARY(duneanaobj_StandardRecord_dict DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
   # TODO: Need to generate the dictionary
 
-  install(TARGETS duneanaobj_StandardRecord)
+  install(TARGETS duneanaobj_StandardRecord
+    EXPORT duneanaobjTargets
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include/duneanaobj)
   install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
-  install(EXPORT duneanaobjTargets NAMESPACE duneanaobj:: DESTINATION lib/cmake/duneanaobj)
 endif()
