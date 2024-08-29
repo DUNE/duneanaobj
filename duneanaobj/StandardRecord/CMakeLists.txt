@@ -12,28 +12,28 @@ FILE( GLOB inc_files *.h )
 # add_compile_options(-Weffc++)
 
 if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
-  cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
-                    SOURCE       ${src_files}
-                    LIBRARIES    ROOT::Core ROOT::Physics
-                  )
+    cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
+                      SOURCE       ${src_files}
+                      LIBRARIES    ROOT::Core ROOT::Physics
+                    )
 
-  build_dictionary( duneanaobj_StandardRecord
-                    DICTIONARY_LIBRARIES duneanaobj_StandardRecord
-                  )
+    build_dictionary( duneanaobj_StandardRecord
+                      DICTIONARY_LIBRARIES duneanaobj_StandardRecord
+                    )
 
-  install_headers()
-  install_source()
+    install_headers()
+    install_source()
 else()
-  add_library(duneanaobj_StandardRecord SHARED ${src_files})
-  target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
+    add_library(duneanaobj_StandardRecord SHARED ${src_files})
+    target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Core ROOT::Physics)
 
-  #ROOT_GENERATE_DICTIONARY(duneanaobj_StandardRecord_dict DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
-  # TODO: Need to generate the dictionary
+    #ROOT_GENERATE_DICTIONARY(duneanaobj_StandardRecord_dict DICTIONARY_LIBRARIES duneanaobj_StandardRecord)
+    # TODO: Need to generate the dictionary
 
-  install(TARGETS duneanaobj_StandardRecord
-    EXPORT duneanaobjTargets
-    LIBRARY DESTINATION lib
-    RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include/duneanaobj)
-  install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
+    install(TARGETS duneanaobj_StandardRecord
+            EXPORT duneanaobjTargets
+            LIBRARY DESTINATION lib
+            RUNTIME DESTINATION bin
+            INCLUDES DESTINATION include/duneanaobj)
+    install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
 endif()
