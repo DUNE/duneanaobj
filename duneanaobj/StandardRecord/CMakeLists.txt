@@ -32,8 +32,8 @@ else()
 
     install(TARGETS duneanaobj_StandardRecord
             EXPORT duneanaobjTargets
-            LIBRARY DESTINATION lib
-            RUNTIME DESTINATION bin
-            INCLUDES DESTINATION include/duneanaobj)
+            LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+            RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+            INCLUDES DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj)
     install(FILES ${inc_files} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/duneanaobj/StandardRecord)
 endif()
