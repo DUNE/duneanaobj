@@ -71,7 +71,7 @@ else()
 
     # Install the config files.
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake DESTINATION lib/cmake/duneanaobj)
-    install(EXPORT duneanaobjTargets NAMESPACE duneanaobj:: DESTINATION lib/cmake/duneanaobj)
+    install(EXPORT duneanaobjTargets NAMESPACE duneanaobj:: DESTINATION lib/cmake/duneanaobj INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()
 
 add_subdirectory(duneanaobj)
