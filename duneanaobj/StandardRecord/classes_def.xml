@@ -183,12 +183,12 @@
    <version ClassVersion="10" checksum="764455914"/>
   </class>
 
-  <class name="caf::SRNDShowerAssn" ClassVersion="10">
-   <version ClassVersion="10" checksum="3398719456"/>
+  <class name="caf::SRNDShowerAssn" ClassVersion="14">
+   <version ClassVersion="14" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="13">
-   <version ClassVersion="13" checksum="744508541"/>
+  <class name="caf::SRNDTrackAssn" ClassVersion="14">
+   <version ClassVersion="14" checksum="744508541"/>
    <version ClassVersion="12" checksum="3802670637"/>
    <version ClassVersion="11" checksum="0"/>
     <version ClassVersion="10" checksum="884165698"/>
