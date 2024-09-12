@@ -9,6 +9,7 @@
 #define DUNEANAOBJ_SRENUMS_H
 
 #include <cstddef>
+#include <limits>
 
 namespace caf
 {
@@ -99,6 +100,20 @@ namespace caf
       int      ixn  = -1;       ///< Index of SRInteraction in the SRTruthBranch
       PartType type = kUnknown; ///< Which of the particle collections this particle lives in
       int      part = -1;       ///< Index of SRParticle in the SRInteraction
+  };
+  
+  class FlashMatch
+  {
+    private:
+
+      static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
+
+    public:
+    
+      int   id            = -1;  ///< id of the matched flash in SROpticalFlash
+      float time          = NaN; ///< time of the matched flash
+      float total_pe      = NaN; ///< total pe of the matched flash
+      float hypothesis_pe = NaN; ///< hypothesis pe from reconstruction for this interaction
   };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?

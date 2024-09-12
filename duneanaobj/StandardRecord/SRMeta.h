@@ -18,10 +18,10 @@ namespace caf
     public:
       bool enabled = false;     ///< Does this detector have data present in this event?
 
-      unsigned int run    = 0;
-      unsigned int subrun = 0;
-      unsigned int event  = 0;
-      unsigned int subevt = 0;
+      int run    = -1;
+      int subrun = -1;
+      int event  = -1;
+      int subevt = -1;
 
       /// detector-dependent trigger type for the relevant readout window
       int triggertype = -1;

@@ -42,7 +42,8 @@
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
-  <class name="caf::SRDetectorMeta" ClassVersion="11">
+  <class name="caf::SRDetectorMeta" ClassVersion="12">
+   <version ClassVersion="12" checksum="989983909"/>
    <version ClassVersion="11" checksum="810717581"/>
    <version ClassVersion="10" checksum="2557124789"/>
   </class>
@@ -183,11 +184,13 @@
    <version ClassVersion="10" checksum="764455914"/>
   </class>
 
-  <class name="caf::SRNDShowerAssn" ClassVersion="10">
+  <class name="caf::SRNDShowerAssn" ClassVersion="11">
+   <version ClassVersion="11" checksum="2148903847"/>
    <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="13">
+  <class name="caf::SRNDTrackAssn" ClassVersion="14">
+   <version ClassVersion="14" checksum="2659631828"/>
    <version ClassVersion="13" checksum="744508541"/>
    <version ClassVersion="12" checksum="3802670637"/>
    <version ClassVersion="11" checksum="0"/>
@@ -196,12 +199,16 @@
   <class name="std::vector<caf::SRNDTrackAssn>">
   </class>
 
-  <class name="caf::SRNDLAr" ClassVersion="11">
+  <class name="caf::SRNDLAr" ClassVersion="12">
+   <version ClassVersion="12" checksum="620685221"/>
    <version ClassVersion="11" checksum="1183768120"/>
    <version ClassVersion="10" checksum="3845592869"/>
   </class>
 
-  <class name="caf::SRNDLArInt" ClassVersion="10">
+  <class name="caf::SRNDLArInt" ClassVersion="13">
+   <version ClassVersion="13" checksum="1379574528"/>
+   <version ClassVersion="12" checksum="947356810"/>
+   <version ClassVersion="11" checksum="1873045675"/>
    <version ClassVersion="10" checksum="947356810"/>
   </class>
 

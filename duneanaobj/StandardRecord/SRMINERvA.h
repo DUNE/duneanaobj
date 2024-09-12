@@ -27,8 +27,9 @@ namespace caf
   };
 
   /// The information needed to uniquely identify a MINERvA reco object
-  struct SRMINERvAID
+  class SRMINERvAID
   {
+  public: 
     int        ixn  = -1;            ///< interaction ID
     int        idx  = -1;            ///< index in container
   };
