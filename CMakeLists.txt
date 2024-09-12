@@ -17,7 +17,6 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 # cmake_policy(VERSION 3.18)
 
 find_package(cetmodules REQUIRED)
-<<<<<<< HEAD
 project(duneanaobj VERSION 03.06.01 LANGUAGES CXX)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.06.01)
 
