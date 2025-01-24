@@ -10,6 +10,7 @@
 
 #include <cstddef>
 #include <limits>
+#include <vector>
 
 namespace caf
 {
@@ -110,9 +111,10 @@ namespace caf
 
     public:
     
-      int   id            = -1;  ///< id of the matched flash in SROpticalFlash
-      float time          = NaN; ///< time of the matched flash
-      float total_pe      = NaN; ///< total pe of the matched flash
+      std::vector<int>    ids;     ///< ids of the matched flashes in SROpticalFlash
+      std::vector<int>    tpc_ids; ///< TPC ids of the matched flashes
+      std::vector<float>  times;   ///< times of the matched flashes
+      float total_pe      = NaN; ///< total pe of the matched flashes
       float hypothesis_pe = NaN; ///< hypothesis pe from reconstruction for this interaction
   };
 
