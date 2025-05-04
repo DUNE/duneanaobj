@@ -58,7 +58,8 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="10">
+  <class name="caf::SRInteractionBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="931864856"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
@@ -71,7 +72,7 @@
    <version ClassVersion="10" checksum="2433306859"/>
   </class>
 
-    <class name="caf::SRNeutrinoHypothesisBranch" ClassVersion="10">
+  <class name="caf::SRNeutrinoHypothesisBranch" ClassVersion="10">
    <version ClassVersion="10" checksum="3470794688"/>
   </class>
 
@@ -89,12 +90,14 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="11">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="841515619"/>
    <version ClassVersion="11" checksum="3413162475"/>
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="14">
+  <class name="caf::SRRecoParticle" ClassVersion="15">
+   <version ClassVersion="15" checksum="2557327340"/>
    <version ClassVersion="14" checksum="621972464"/>
    <version ClassVersion="13" checksum="2634132066"/>
    <version ClassVersion="12" checksum="223390088"/>
@@ -103,6 +106,16 @@
   </class>
 
   <class name="std::vector<caf::SRRecoParticle>">
+  </class>
+
+  <class name="caf::SRPIDScoreBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="1243175284"/>
+   <version ClassVersion="10" checksum="3470794688"/>
+  </class>
+
+  <class name="caf::SRGArPIDScoreBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="1197159544"/>
+   <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
   <enum name="PartEMethod" ClassVersion="10" />
@@ -218,11 +231,23 @@
    <version ClassVersion="10" checksum="2529880392"/>
   </class>
 
-  <class name="caf::SRGArInt" ClassVersion="10">
+  <class name="caf::SRGArInt" ClassVersion="12">
+   <version ClassVersion="12" checksum="3344169444"/>
+   <version ClassVersion="11" checksum="1975661202"/>
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="14">
+  <class name="caf::SRGArAssociation" ClassVersion="11">
+   <version ClassVersion="11" checksum="3999080296"/>
+   <version ClassVersion="10" checksum="4044067765"/>
+  </class>
+
+  <class name="std::vector<caf::SRGArAssociation>">
+  </class>
+  
+  <class name="caf::SRGArTrack" ClassVersion="16">
+   <version ClassVersion="16" checksum="723750910"/>
+   <version ClassVersion="15" checksum="721977257"/>
    <version ClassVersion="14" checksum="2591374164"/>
    <version ClassVersion="13" checksum="3987769238"/>
    <version ClassVersion="12" checksum="3869515338"/>
@@ -233,14 +258,18 @@
   <class name="std::vector<caf::SRGArTrack>">
   </class>
 
-  <class name="caf::SRGArECAL" ClassVersion="12">
+  <class name="caf::SRGArCalo" ClassVersion="14">
+   <version ClassVersion="14" checksum="2008078658"/>
+   <version ClassVersion="13" checksum="551049162"/>
    <version ClassVersion="12" checksum="3509084697"/>
    <version ClassVersion="11" checksum="2202249478"/>
    <version ClassVersion="10" checksum="4277816864"/>
   </class>
 
-  <class name="std::vector<caf::SRGArECAL>">
+  <class name="std::vector<caf::SRGArCalo>">
   </class>
+
+  <enum name="CaloClusterType" ClassVersion="10" />
 
   <class name="caf::SRTMS" ClassVersion="11">
    <version ClassVersion="11" checksum="2266596207"/>
@@ -251,7 +280,8 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-    <class name="caf::SRSAND" ClassVersion="13">
+    <class name="caf::SRSAND" ClassVersion="14">
+     <version ClassVersion="14" checksum="3811644425"/>
    <version ClassVersion="13" checksum="1270542721"/>
    <version ClassVersion="12" checksum="1233697569"/>
    <version ClassVersion="11" checksum="3795335384"/>

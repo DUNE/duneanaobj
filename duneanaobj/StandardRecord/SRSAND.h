@@ -37,7 +37,7 @@ namespace caf
       };
 
       std::size_t nixn = 0;
-      std::vector<SRGArInt> ixn;       ///< Reconstructed interactions
+      std::vector<SRSANDInt> ixn;       ///< Reconstructed interactions
 
     };
 

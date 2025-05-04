@@ -24,6 +24,9 @@ namespace caf
 
       int npida = 0;
       std::vector<SRRecoParticle> pida;      ///< Particles bearing weights from PIDA algorithm
+
+      int ngsft = 0;
+      std::vector<SRRecoParticle> gsft;      ///< Particles reconstructed by GArSoft
   };
 
 } // caf
