@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scatteringmode_475',['ScatteringMode',['../namespacecaf.html#ac4fe01eff72d722ca8a3efd0bb3d0987',1,'caf']]]
+  ['recoobjtype_0',['RecoObjType',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4',1,'caf']]]
 ];

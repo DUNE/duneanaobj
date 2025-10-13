@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['particle_316',['Particle',['../classcaf_1_1SRTruthBranch.html#a6d4c78c287af78ddc06f27e7d3224279',1,'caf::SRTruthBranch']]]
+  ['is0hc_0',['is0HC',['../classcaf_1_1SRBeamBranch.html#a25f05e02bbe3b6a580fa605b84bda7b8',1,'caf::SRBeamBranch']]],
+  ['isrhc_1',['isRHC',['../classcaf_1_1SRBeamBranch.html#ae9076399a66a68cafaa59ef9837fa8bd',1,'caf::SRBeamBranch']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reco_317',['Reco',['../classcaf_1_1SRFD.html#a3f613ba31fa549ce3f01bb0850e2cb7e',1,'caf::SRFD::Reco()'],['../classcaf_1_1SRMINERvA.html#a72635d341e2a6f7107c1026f8933bce2',1,'caf::SRMINERvA::Reco()'],['../classcaf_1_1SRNDLAr.html#afd9b6bd8d2bfbae8a12d30548d18729e',1,'caf::SRNDLAr::Reco()']]]
+  ['operator_20tlorentzvector_0',['operator TLorentzVector',['../classcaf_1_1SRLorentzVector.html#ae26bd7fa4d685cbef38afaab8e33af11',1,'caf::SRLorentzVector']]],
+  ['operator_20tvector3_1',['operator TVector3',['../classcaf_1_1SRVector3D.html#a35dc394fecc9c8fd3b613b31cd3282e8',1,'caf::SRVector3D']]]
 ];

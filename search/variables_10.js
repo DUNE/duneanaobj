@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['sand_446',['sand',['../classcaf_1_1SRDetectorMetaBranch.html#abcc21929e3bd15cf9749d0e0137d6f70',1,'caf::SRDetectorMetaBranch']]],
-  ['score_447',['score',['../classcaf_1_1SRRecoParticle.html#af59d06f467ced5262a990b183de8d62c',1,'caf::SRRecoParticle']]],
-  ['sec_448',['sec',['../classcaf_1_1SRTrueInteraction.html#accc719ba478776a47473ccd92a573c85',1,'caf::SRTrueInteraction']]],
-  ['shw_449',['shw',['../classcaf_1_1SRNDShowerAssn.html#ad11c0caa41fc98b2af6575ecca873012',1,'caf::SRNDShowerAssn']]],
-  ['start_450',['start',['../classcaf_1_1SRRecoParticle.html#ab5422318b77c6aba40d337c70695ab38',1,'caf::SRRecoParticle::start()'],['../classcaf_1_1SRShower.html#a999974afa3f05edc974a5ccacba6ec3b',1,'caf::SRShower::start()'],['../classcaf_1_1SRTrack.html#aa6e585a8e41a883c6e36f4bddd17c228',1,'caf::SRTrack::start()']]],
-  ['start_5fpos_451',['start_pos',['../classcaf_1_1SRTrueParticle.html#aa790b03b422c53e6f903199b77e2650d',1,'caf::SRTrueParticle']]]
+  ['readoutend_5fns_0',['readoutend_ns',['../classcaf_1_1SRDetectorMeta.html#a5ceabe6b6c10a8c06fa4525573b2f8b8',1,'caf::SRDetectorMeta']]],
+  ['readoutend_5fs_1',['readoutend_s',['../classcaf_1_1SRDetectorMeta.html#af5fbe2dfd5a41a9a875de4101c713cfa',1,'caf::SRDetectorMeta']]],
+  ['readoutstart_5fns_2',['readoutstart_ns',['../classcaf_1_1SRDetectorMeta.html#a76a60e1fca7136c0cf2451144d4378cc',1,'caf::SRDetectorMeta']]],
+  ['readoutstart_5fs_3',['readoutstart_s',['../classcaf_1_1SRDetectorMeta.html#a1028ef03977d4d8ce8fb39b36296708c',1,'caf::SRDetectorMeta']]],
+  ['reco_4',['reco',['../structcaf_1_1SRFDID.html#a5d44726d07351d2313cb6ea7caf7c306',1,'caf::SRFDID::reco'],['../classcaf_1_1SRNDLArID.html#a9d90ce5874f2954cfaf4d05e175af929',1,'caf::SRNDLArID::reco']]],
+  ['regcnn_5',['regcnn',['../classcaf_1_1SRNeutrinoEnergyBranch.html#af9743d52b7e0d6382d2656bc34d1e1ed',1,'caf::SRNeutrinoEnergyBranch']]],
+  ['removale_6',['removalE',['../classcaf_1_1SRTrueInteraction.html#a8a63670a3dbe374398e81a5bed4bbf9e',1,'caf::SRTrueInteraction']]],
+  ['resnum_7',['resnum',['../classcaf_1_1SRTrueInteraction.html#a72af8769fa87c482726d2217b5c8d6bc',1,'caf::SRTrueInteraction']]]
 ];

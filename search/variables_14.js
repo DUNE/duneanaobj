@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xsec_468',['xsec',['../classcaf_1_1SRTrueInteraction.html#adf40c5e376e4e395006a47b3dcd292d0',1,'caf::SRTrueInteraction']]],
-  ['xsec_5fcvwgt_469',['xsec_cvwgt',['../classcaf_1_1SRTrueInteraction.html#ada427a4bc76cf82f692ee043a04a3c97',1,'caf::SRTrueInteraction']]]
+  ['w_0',['W',['../classcaf_1_1SRTrueInteraction.html#a7d7f4750cb02de1d991dcc35f07d13b4',1,'caf::SRTrueInteraction']]],
+  ['walldist_1',['walldist',['../classcaf_1_1SRRecoParticle.html#abdbef71be153d40d345fdf298839047b',1,'caf::SRRecoParticle']]]
 ];

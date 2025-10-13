@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trueparticleid_293',['TrueParticleID',['../classcaf_1_1TrueParticleID.html',1,'caf']]]
+  ['proxy_0',['Proxy',['../classcaf_1_1Proxy.html',1,'caf']]]
 ];
