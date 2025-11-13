@@ -75,29 +75,32 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classcaf_1_1SRBeamBranch-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">caf::SRBeamBranch Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:af3cb89822063cc980fa7033f345e6067" id="r_af3cb89822063cc980fa7033f345e6067"><td class="memItemLeft" align="right" valign="top"><a id="af3cb89822063cc980fa7033f345e6067" name="af3cb89822063cc980fa7033f345e6067"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFHC</b> () const</td></tr>
-<tr class="separator:af3cb89822063cc980fa7033f345e6067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25f05e02bbe3b6a580fa605b84bda7b8" id="r_a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memItemLeft" align="right" valign="top"><a id="a25f05e02bbe3b6a580fa605b84bda7b8" name="a25f05e02bbe3b6a580fa605b84bda7b8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is0HC</b> () const</td></tr>
-<tr class="memdesc:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is positive --&gt; this is FHC. <br /></td></tr>
-<tr class="separator:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9076399a66a68cafaa59ef9837fa8bd" id="r_ae9076399a66a68cafaa59ef9837fa8bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcaf_1_1SRBeamBranch.html#ae9076399a66a68cafaa59ef9837fa8bd">isRHC</a> () const</td></tr>
-<tr class="memdesc:ae9076399a66a68cafaa59ef9837fa8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is zero.  <br /></td></tr>
-<tr class="separator:ae9076399a66a68cafaa59ef9837fa8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a015ca3dc6eb1a17e082c3f4694c3d2a7" id="r_a015ca3dc6eb1a17e082c3f4694c3d2a7"><td class="memItemLeft" align="right" valign="top"><a id="a015ca3dc6eb1a17e082c3f4694c3d2a7" name="a015ca3dc6eb1a17e082c3f4694c3d2a7"></a>
+static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>NaN</b> = std::numeric_limits&lt;float&gt;::signaling_NaN()</td></tr>
+<tr class="separator:a015ca3dc6eb1a17e082c3f4694c3d2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">beam variables</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Quantities used to characterize the spill-by-spill beam quality.</p>
+<p>These variables store measurements from multiple devices placed along the beam line.</p>
+<ul>
+<li><b>POT (Protons on Target):</b> Measured by the toroids E:TRTGDT, E:TOR101, and E:TR101D. <br  />
+ The POT value is given per pulse and includes a normalization factor of 1e12 so that users do not need to apply any additional scaling.</li>
+<li><b>Horn Current:</b> Determined as a linear combination of four strip-line measurements (NSLINA, NSLINB, NSLINC, and NSLIND). <br  />
+ The calculation follows the method described in <br  />
+ <a href="https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685">https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685</a>.</li>
+<li><b>Beam Position (Pre-target):</b> Measured by the monitors “121” and “TGT”, which provide the horizontal and vertical position of the beam, as well as its intensity, in the pre-target region for each of the six batches.</li>
+<li><b>Beam Position (On target):</b> Computed as an intensity-weighted average of the measurements from the 121 and TGT monitors.</li>
+<li><b>Beam Width (TGT location):</b> the MTGTDS device contains the readout voltages of horizontal and vertical wires (206 values, 48 horizontal + 48 vertical + additional values). The horizontal and vertical spread of the beam is obtained from a gaussian fit of the voltages as function of the wire postion </li>
+</ul>
+</td></tr>
 <tr class="memitem:a6a9ae42f636bafd897a636cbb764c21d" id="r_a6a9ae42f636bafd897a636cbb764c21d"><td class="memItemLeft" align="right" valign="top"><a id="a6a9ae42f636bafd897a636cbb764c21d" name="a6a9ae42f636bafd897a636cbb764c21d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ismc</b></td></tr>
 <tr class="memdesc:a6a9ae42f636bafd897a636cbb764c21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">data or simulated beam pulse? <br /></td></tr>
@@ -128,18 +131,70 @@ signed long long int&#160;</td><td class="memItemRight" valign="bottom"><b>delta
 <tr class="separator:a0e7b64a64d9f2776766e2c31d6b3a4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a947140b497e34861fc6cdf2c4b4a2984" id="r_a947140b497e34861fc6cdf2c4b4a2984"><td class="memItemLeft" align="right" valign="top"><a id="a947140b497e34861fc6cdf2c4b4a2984" name="a947140b497e34861fc6cdf2c4b4a2984"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>pulsepot</b> = NaN</td></tr>
-<tr class="memdesc:a947140b497e34861fc6cdf2c4b4a2984"><td class="mdescLeft">&#160;</td><td class="mdescRight">POT in pulse including factor of 1e12 so that a user does not have to apply this correction. <br /></td></tr>
+<tr class="memdesc:a947140b497e34861fc6cdf2c4b4a2984"><td class="mdescLeft">&#160;</td><td class="mdescRight">POT as measured by the toroid E:TRTGDT device. <br /></td></tr>
 <tr class="separator:a947140b497e34861fc6cdf2c4b4a2984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b592d17c90a2dc9aa0f841d5901611" id="r_ac4b592d17c90a2dc9aa0f841d5901611"><td class="memItemLeft" align="right" valign="top"><a id="ac4b592d17c90a2dc9aa0f841d5901611" name="ac4b592d17c90a2dc9aa0f841d5901611"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>potTOR101</b> = NaN</td></tr>
+<tr class="memdesc:ac4b592d17c90a2dc9aa0f841d5901611"><td class="mdescLeft">&#160;</td><td class="mdescRight">POT as measured by the toroid E:TOR101 device. <br /></td></tr>
+<tr class="separator:ac4b592d17c90a2dc9aa0f841d5901611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a471fb9e1c4bb518afbed2715036fdea1" id="r_a471fb9e1c4bb518afbed2715036fdea1"><td class="memItemLeft" align="right" valign="top"><a id="a471fb9e1c4bb518afbed2715036fdea1" name="a471fb9e1c4bb518afbed2715036fdea1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>potTR101D</b> = NaN</td></tr>
+<tr class="memdesc:a471fb9e1c4bb518afbed2715036fdea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">POT as measured by the toroid E:TR101D device. <br /></td></tr>
+<tr class="separator:a471fb9e1c4bb518afbed2715036fdea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a9680137fd3755fc92d14e7658ce4bf" id="r_a2a9680137fd3755fc92d14e7658ce4bf"><td class="memItemLeft" align="right" valign="top"><a id="a2a9680137fd3755fc92d14e7658ce4bf" name="a2a9680137fd3755fc92d14e7658ce4bf"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>hornI</b> = NaN</td></tr>
 <tr class="memdesc:a2a9680137fd3755fc92d14e7658ce4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horn current [kA]. <br /></td></tr>
 <tr class="separator:a2a9680137fd3755fc92d14e7658ce4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a015ca3dc6eb1a17e082c3f4694c3d2a7" id="r_a015ca3dc6eb1a17e082c3f4694c3d2a7"><td class="memItemLeft" align="right" valign="top"><a id="a015ca3dc6eb1a17e082c3f4694c3d2a7" name="a015ca3dc6eb1a17e082c3f4694c3d2a7"></a>
-static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>NaN</b> = std::numeric_limits&lt;float&gt;::signaling_NaN()</td></tr>
-<tr class="separator:a015ca3dc6eb1a17e082c3f4694c3d2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed909fd525c763979af789be7f78b081" id="r_aed909fd525c763979af789be7f78b081"><td class="memItemLeft" align="right" valign="top"><a id="aed909fd525c763979af789be7f78b081" name="aed909fd525c763979af789be7f78b081"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>hornDir</b> = NaN</td></tr>
+<tr class="memdesc:aed909fd525c763979af789be7f78b081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horn polarity [V]. <br /></td></tr>
+<tr class="separator:aed909fd525c763979af789be7f78b081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2aa27999e91a45b9b1a1d1c2bdcce3" id="r_a1f2aa27999e91a45b9b1a1d1c2bdcce3"><td class="memItemLeft" align="right" valign="top"><a id="a1f2aa27999e91a45b9b1a1d1c2bdcce3" name="a1f2aa27999e91a45b9b1a1d1c2bdcce3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>beamHwidth</b> = NaN</td></tr>
+<tr class="memdesc:a1f2aa27999e91a45b9b1a1d1c2bdcce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Beam horizontal width [mm]. <br /></td></tr>
+<tr class="separator:a1f2aa27999e91a45b9b1a1d1c2bdcce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ed65c6db6ed9ad6c33ee1c8042aa38" id="r_a61ed65c6db6ed9ad6c33ee1c8042aa38"><td class="memItemLeft" align="right" valign="top"><a id="a61ed65c6db6ed9ad6c33ee1c8042aa38" name="a61ed65c6db6ed9ad6c33ee1c8042aa38"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>beamVwidth</b> = NaN</td></tr>
+<tr class="memdesc:a61ed65c6db6ed9ad6c33ee1c8042aa38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Beam vertical width [mm]. <br /></td></tr>
+<tr class="separator:a61ed65c6db6ed9ad6c33ee1c8042aa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88ed456e16b392149b5e41ec34f5e66" id="r_ad88ed456e16b392149b5e41ec34f5e66"><td class="memItemLeft" align="right" valign="top"><a id="ad88ed456e16b392149b5e41ec34f5e66" name="ad88ed456e16b392149b5e41ec34f5e66"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>horizontalposTGT</b></td></tr>
+<tr class="memdesc:ad88ed456e16b392149b5e41ec34f5e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">horizontal beam position as measured by E:HPTGT device (7 values = 6 batches + 1 mean value) [mm] <br /></td></tr>
+<tr class="separator:ad88ed456e16b392149b5e41ec34f5e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa918a6dd7185bf5a82c5a271bae52c71" id="r_aa918a6dd7185bf5a82c5a271bae52c71"><td class="memItemLeft" align="right" valign="top"><a id="aa918a6dd7185bf5a82c5a271bae52c71" name="aa918a6dd7185bf5a82c5a271bae52c71"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>horizontalintTGT</b></td></tr>
+<tr class="memdesc:aa918a6dd7185bf5a82c5a271bae52c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">horizontal beam intensity as measured by E:HITGT device (7 values = 6 batches + 1 mean value) [] <br /></td></tr>
+<tr class="separator:aa918a6dd7185bf5a82c5a271bae52c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef2cf85d62d9babf92fb26cb6dcc326" id="r_a3ef2cf85d62d9babf92fb26cb6dcc326"><td class="memItemLeft" align="right" valign="top"><a id="a3ef2cf85d62d9babf92fb26cb6dcc326" name="a3ef2cf85d62d9babf92fb26cb6dcc326"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>horizontalpos121</b></td></tr>
+<tr class="memdesc:a3ef2cf85d62d9babf92fb26cb6dcc326"><td class="mdescLeft">&#160;</td><td class="mdescRight">horizontal beam position as measured by E:HP121 device (7 values = 6 batches + 1 mean value) [mm] <br /></td></tr>
+<tr class="separator:a3ef2cf85d62d9babf92fb26cb6dcc326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad99b2ccdfa20086435597f5168f73b93" id="r_ad99b2ccdfa20086435597f5168f73b93"><td class="memItemLeft" align="right" valign="top"><a id="ad99b2ccdfa20086435597f5168f73b93" name="ad99b2ccdfa20086435597f5168f73b93"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>verticalposTGT</b></td></tr>
+<tr class="memdesc:ad99b2ccdfa20086435597f5168f73b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">vertical beam position as measured by E:VPTGT device (7 values = 6 batches + 1 mean value) [] <br /></td></tr>
+<tr class="separator:ad99b2ccdfa20086435597f5168f73b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2a700b83bd627803e1656e6a240d95" id="r_abe2a700b83bd627803e1656e6a240d95"><td class="memItemLeft" align="right" valign="top"><a id="abe2a700b83bd627803e1656e6a240d95" name="abe2a700b83bd627803e1656e6a240d95"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>verticalintTGT</b></td></tr>
+<tr class="memdesc:abe2a700b83bd627803e1656e6a240d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">vertical beam intensity as measured by E:VITGT device (7 values = 6 batches + 1 mean value) [mm] <br /></td></tr>
+<tr class="separator:abe2a700b83bd627803e1656e6a240d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54b54de463567066e6c5a27b148954d" id="r_ae54b54de463567066e6c5a27b148954d"><td class="memItemLeft" align="right" valign="top"><a id="ae54b54de463567066e6c5a27b148954d" name="ae54b54de463567066e6c5a27b148954d"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>verticalpos121</b></td></tr>
+<tr class="memdesc:ae54b54de463567066e6c5a27b148954d"><td class="mdescLeft">&#160;</td><td class="mdescRight">vertical beam position as measured by E:VP121 device (7 values = 6 batches + 1 mean value) [mm] <br /></td></tr>
+<tr class="separator:ae54b54de463567066e6c5a27b148954d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8441fe04844cb79049ec1da110e29ce3" id="r_a8441fe04844cb79049ec1da110e29ce3"><td class="memItemLeft" align="right" valign="top"><a id="a8441fe04844cb79049ec1da110e29ce3" name="a8441fe04844cb79049ec1da110e29ce3"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>multiwireInfo</b></td></tr>
+<tr class="memdesc:a8441fe04844cb79049ec1da110e29ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">horizontal and vertical readout voltages measured by E:MTGTDS device (216 values) [a.u.] <br /></td></tr>
+<tr class="separator:a8441fe04844cb79049ec1da110e29ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cb89822063cc980fa7033f345e6067" id="r_af3cb89822063cc980fa7033f345e6067"><td class="memItemLeft" align="right" valign="top"><a id="af3cb89822063cc980fa7033f345e6067" name="af3cb89822063cc980fa7033f345e6067"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFHC</b> () const</td></tr>
+<tr class="separator:af3cb89822063cc980fa7033f345e6067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f05e02bbe3b6a580fa605b84bda7b8" id="r_a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memItemLeft" align="right" valign="top"><a id="a25f05e02bbe3b6a580fa605b84bda7b8" name="a25f05e02bbe3b6a580fa605b84bda7b8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is0HC</b> () const</td></tr>
+<tr class="memdesc:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is positive --&gt; this is FHC. <br /></td></tr>
+<tr class="separator:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9076399a66a68cafaa59ef9837fa8bd" id="r_ae9076399a66a68cafaa59ef9837fa8bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcaf_1_1SRBeamBranch.html#ae9076399a66a68cafaa59ef9837fa8bd">isRHC</a> () const</td></tr>
+<tr class="memdesc:ae9076399a66a68cafaa59ef9837fa8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is zero.  <br /></td></tr>
+<tr class="separator:ae9076399a66a68cafaa59ef9837fa8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae9076399a66a68cafaa59ef9837fa8bd" name="ae9076399a66a68cafaa59ef9837fa8bd"></a>

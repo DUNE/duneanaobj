@@ -12,5 +12,6 @@ var searchData=
   ['mu_5fhad_9',['mu_had',['../classcaf_1_1SRNeutrinoEnergyBranch.html#a922429105cfe6600f65f2508fd8e1a05',1,'caf::SRNeutrinoEnergyBranch']]],
   ['mu_5fmcs_10',['mu_mcs',['../classcaf_1_1SRNeutrinoEnergyBranch.html#a3ded12ee3e769792f9659656316ea113',1,'caf::SRNeutrinoEnergyBranch']]],
   ['mu_5fmcs_5fllhd_11',['mu_mcs_llhd',['../classcaf_1_1SRNeutrinoEnergyBranch.html#ae056f1eb328d5ffd49a52a295af70bb5',1,'caf::SRNeutrinoEnergyBranch']]],
-  ['mu_5frange_12',['mu_range',['../classcaf_1_1SRNeutrinoEnergyBranch.html#ace3ec4644830376331839a1bd0f8eed2',1,'caf::SRNeutrinoEnergyBranch']]]
+  ['mu_5frange_12',['mu_range',['../classcaf_1_1SRNeutrinoEnergyBranch.html#ace3ec4644830376331839a1bd0f8eed2',1,'caf::SRNeutrinoEnergyBranch']]],
+  ['multiwireinfo_13',['multiwireInfo',['../classcaf_1_1SRBeamBranch.html#a8441fe04844cb79049ec1da110e29ce3',1,'caf::SRBeamBranch']]]
 ];
