@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['daughters_0',['daughters',['../classcaf_1_1SRTrueParticle.html#ac1c1f126439168bb2ee0d00c39982d53',1,'caf::SRTrueParticle']]],
+  ['daughters_0',['daughters',['../classcaf_1_1SRRecoParticle.html#aa57423f1cb76ea5a49c10aa0900a961a',1,'caf::SRRecoParticle::daughters'],['../classcaf_1_1SRTrueParticle.html#ac1c1f126439168bb2ee0d00c39982d53',1,'caf::SRTrueParticle::daughters']]],
   ['dedx_5fbkwd_1',['dEdx_bkwd',['../classcaf_1_1SRGArTrack.html#a2909d55c21a16a99918f9d7e275dab31',1,'caf::SRGArTrack']]],
   ['dedx_5ffwd_2',['dEdx_fwd',['../classcaf_1_1SRGArTrack.html#a3204aa577b17a104730387a08afbaabe',1,'caf::SRGArTrack']]],
   ['deltapulsetimensec_3',['deltapulsetimensec',['../classcaf_1_1SRBeamBranch.html#a0e7b64a64d9f2776766e2c31d6b3a4c8',1,'caf::SRBeamBranch']]],
