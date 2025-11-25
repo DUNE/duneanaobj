@@ -12,5 +12,6 @@ var searchData=
   ['nproton_9',['nproton',['../classcaf_1_1SRTrueInteraction.html#af7061a77799177eae9771f3bc59990e9',1,'caf::SRTrueInteraction']]],
   ['nsec_10',['nsec',['../classcaf_1_1SRTrueInteraction.html#ac7128d4c701bf5c353b43e2938d1e08b',1,'caf::SRTrueInteraction']]],
   ['nu_11',['nu',['../classcaf_1_1SRTruthBranch.html#a0eb0474af3a99f10d0d4f971b7925428',1,'caf::SRTruthBranch']]],
-  ['nuhyp_12',['nuhyp',['../classcaf_1_1SRInteraction.html#aa7ba25e5ee29780b84f36a40aaf87111',1,'caf::SRInteraction']]]
+  ['nuhyp_12',['nuhyp',['../classcaf_1_1SRInteraction.html#aa7ba25e5ee29780b84f36a40aaf87111',1,'caf::SRInteraction']]],
+  ['num_5fcells_13',['num_cells',['../classcaf_1_1SRECALCluster.html#adbddb770e82f233b5b9db3ed77f9c2bb',1,'caf::SRECALCluster']]]
 ];

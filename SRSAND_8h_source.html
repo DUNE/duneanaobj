@@ -93,52 +93,57 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="SRTrack_8h.html">duneanaobj/StandardRecord/SRTrack.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="SRShower_8h.html">duneanaobj/StandardRecord/SRShower.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="SRRecoParticle_8h.html">duneanaobj/StandardRecord/SRRecoParticle.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="SRECALCluster_8h.html">duneanaobj/StandardRecord/SRECALCluster.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecaf.html">caf</a></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSANDInt.html">   18</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classcaf_1_1SRSANDInt.html">SRSANDInt</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      std::vector&lt;SRTrack&gt; tracks;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      std::size_t          ntracks  = 0;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      std::vector&lt;SRShower&gt; showers;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      std::size_t           nshowers = 0;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  };</div>
-</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecaf.html">caf</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSANDInt.html">   19</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classcaf_1_1SRSANDInt.html">SRSANDInt</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      std::vector&lt;SRTrack&gt; tracks;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      std::size_t          ntracks  = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      std::vector&lt;SRShower&gt; showers;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      std::size_t           nshowers = 0;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSAND.html">   29</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classcaf_1_1SRSAND.html">SRSAND</a></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      std::vector&lt;SRECALCluster&gt; ECALClusters; </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      std::size_t          nclusters=0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  };</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html">   33</a></span>      <span class="keyword">struct </span><a class="code hl_struct" href="structcaf_1_1SRSAND_1_1ID.html">ID</a></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">   35</a></span>        <span class="keywordtype">int</span>        <a class="code hl_variable" href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">ixn</a>  = -1;            </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">   36</a></span>        <span class="keywordtype">int</span>        <a class="code hl_variable" href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">idx</a>  = -1;            </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSAND.html">   33</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classcaf_1_1SRSAND.html">SRSAND</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html">   37</a></span>      <span class="keyword">struct </span><a class="code hl_struct" href="structcaf_1_1SRSAND_1_1ID.html">ID</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">   39</a></span>        <span class="keywordtype">int</span>        <a class="code hl_variable" href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">ixn</a>  = -1;            </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">   40</a></span>        <span class="keywordtype">int</span>        <a class="code hl_variable" href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">idx</a>  = -1;            </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      };</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      std::size_t nixn = 0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSAND.html#a9b6be73bc1b50fe2a15a1bda40cbf0e6">   40</a></span>      std::vector&lt;SRGArInt&gt; <a class="code hl_variable" href="classcaf_1_1SRSAND.html#a9b6be73bc1b50fe2a15a1bda40cbf0e6">ixn</a>;       </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      std::size_t nixn = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classcaf_1_1SRSAND.html#a1b3dd2c4d2d9718caa339de14fd7afaf">   44</a></span>      std::vector&lt;SRSANDInt&gt; <a class="code hl_variable" href="classcaf_1_1SRSAND.html#a1b3dd2c4d2d9718caa339de14fd7afaf">ixn</a>;       </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">//DUNEANAOBJ_SRSAND_H</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">//DUNEANAOBJ_SRSAND_H</span></div>
+<div class="ttc" id="aSRECALCluster_8h_html"><div class="ttname"><a href="SRECALCluster_8h.html">SRECALCluster.h</a></div><div class="ttdoc">Reconstructed ECAL cluster object.</div></div>
 <div class="ttc" id="aSRRecoParticle_8h_html"><div class="ttname"><a href="SRRecoParticle_8h.html">SRRecoParticle.h</a></div><div class="ttdoc">A general reconstructed particle container.</div></div>
 <div class="ttc" id="aSRShower_8h_html"><div class="ttname"><a href="SRShower_8h.html">SRShower.h</a></div><div class="ttdoc">Reconstructed shower object.</div></div>
 <div class="ttc" id="aSRTrack_8h_html"><div class="ttname"><a href="SRTrack_8h.html">SRTrack.h</a></div><div class="ttdoc">Reconstructed track object.</div></div>
-<div class="ttc" id="aclasscaf_1_1SRSANDInt_html"><div class="ttname"><a href="classcaf_1_1SRSANDInt.html">caf::SRSANDInt</a></div><div class="ttdoc">A SAND reconstructed neutrino interaction.</div><div class="ttdef"><b>Definition</b> SRSAND.h:19</div></div>
-<div class="ttc" id="aclasscaf_1_1SRSAND_html"><div class="ttname"><a href="classcaf_1_1SRSAND.html">caf::SRSAND</a></div><div class="ttdoc">SAND reconstruction output.</div><div class="ttdef"><b>Definition</b> SRSAND.h:30</div></div>
-<div class="ttc" id="aclasscaf_1_1SRSAND_html_a9b6be73bc1b50fe2a15a1bda40cbf0e6"><div class="ttname"><a href="classcaf_1_1SRSAND.html#a9b6be73bc1b50fe2a15a1bda40cbf0e6">caf::SRSAND::ixn</a></div><div class="ttdeci">std::vector&lt; SRGArInt &gt; ixn</div><div class="ttdoc">Reconstructed interactions.</div><div class="ttdef"><b>Definition</b> SRSAND.h:40</div></div>
+<div class="ttc" id="aclasscaf_1_1SRSANDInt_html"><div class="ttname"><a href="classcaf_1_1SRSANDInt.html">caf::SRSANDInt</a></div><div class="ttdoc">A SAND reconstructed neutrino interaction.</div><div class="ttdef"><b>Definition</b> SRSAND.h:20</div></div>
+<div class="ttc" id="aclasscaf_1_1SRSAND_html"><div class="ttname"><a href="classcaf_1_1SRSAND.html">caf::SRSAND</a></div><div class="ttdoc">SAND reconstruction output.</div><div class="ttdef"><b>Definition</b> SRSAND.h:34</div></div>
+<div class="ttc" id="aclasscaf_1_1SRSAND_html_a1b3dd2c4d2d9718caa339de14fd7afaf"><div class="ttname"><a href="classcaf_1_1SRSAND.html#a1b3dd2c4d2d9718caa339de14fd7afaf">caf::SRSAND::ixn</a></div><div class="ttdeci">std::vector&lt; SRSANDInt &gt; ixn</div><div class="ttdoc">Reconstructed interactions.</div><div class="ttdef"><b>Definition</b> SRSAND.h:44</div></div>
 <div class="ttc" id="anamespacecaf_html"><div class="ttname"><a href="namespacecaf.html">caf</a></div><div class="ttdoc">Common Analysis Files.</div><div class="ttdef"><b>Definition</b> Navigate.cxx:8</div></div>
-<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html">caf::SRSAND::ID</a></div><div class="ttdoc">The information needed to uniquely identify a SAND reco object.</div><div class="ttdef"><b>Definition</b> SRSAND.h:34</div></div>
-<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html_a649dbdd9ad45f24487976df884a9ddbe"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">caf::SRSAND::ID::ixn</a></div><div class="ttdeci">int ixn</div><div class="ttdoc">interaction ID</div><div class="ttdef"><b>Definition</b> SRSAND.h:35</div></div>
-<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html_af3763c0a30d42096a2b529a17e84d2f7"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">caf::SRSAND::ID::idx</a></div><div class="ttdeci">int idx</div><div class="ttdoc">index in container</div><div class="ttdef"><b>Definition</b> SRSAND.h:36</div></div>
+<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html">caf::SRSAND::ID</a></div><div class="ttdoc">The information needed to uniquely identify a SAND reco object.</div><div class="ttdef"><b>Definition</b> SRSAND.h:38</div></div>
+<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html_a649dbdd9ad45f24487976df884a9ddbe"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html#a649dbdd9ad45f24487976df884a9ddbe">caf::SRSAND::ID::ixn</a></div><div class="ttdeci">int ixn</div><div class="ttdoc">interaction ID</div><div class="ttdef"><b>Definition</b> SRSAND.h:39</div></div>
+<div class="ttc" id="astructcaf_1_1SRSAND_1_1ID_html_af3763c0a30d42096a2b529a17e84d2f7"><div class="ttname"><a href="structcaf_1_1SRSAND_1_1ID.html#af3763c0a30d42096a2b529a17e84d2f7">caf::SRSAND::ID::idx</a></div><div class="ttdeci">int idx</div><div class="ttdoc">index in container</div><div class="ttdef"><b>Definition</b> SRSAND.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
