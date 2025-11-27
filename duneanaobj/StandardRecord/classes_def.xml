@@ -32,7 +32,8 @@
 
   <!-- - - - - - - - - - - Beam-related - - - - - - - - - - - - - -->
 
-  <class name="caf::SRBeamBranch" ClassVersion="10">
+  <class name="caf::SRBeamBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="2626321545"/>
    <version ClassVersion="10" checksum="3825039376"/>
   </class>
 
@@ -180,7 +181,8 @@
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="10">
+  <class name="caf::SRPFP" ClassVersion="11">
+   <version ClassVersion="11" checksum="2010222601"/>
    <version ClassVersion="10" checksum="3744464743"/>
   </class>
 
