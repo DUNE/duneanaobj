@@ -1,0 +1,17 @@
+#include "duneanaobj/StandardRecord/StandardRecord.h"
+
+#include <limits>
+
+namespace caf
+{
+  StandardRecord::StandardRecord() :
+    duneanaobj_gitshorthash("@duneanaobj_GITSHORTHASH8@"),
+    duneanaobj_version{@duneanaobj_VERSION_MAJOR@,@duneanaobj_VERSION_MINOR@,@duneanaobj_VERSION_PATCH@}
+  {
+  }
+
+  StandardRecord::~StandardRecord()
+  {
+  }
+
+} // end namespace caf

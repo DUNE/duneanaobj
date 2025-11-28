@@ -1,0 +1,42 @@
+@PACKAGE_INIT@
+
+set(duneanaobj_VERSION @PROJECT_VERSION@)
+
+find_package(SRProxy @SRProxy_MIN_VERSION@ REQUIRED)
+
+set(duneanaobj_CXX_STANDARD @duneanaobj_CXX_STANDARD@)
+
+set(duneanaobj_FOUND TRUE)
+
+include(${CMAKE_CURRENT_LIST_DIR}/duneanaobj_targets.cmake)
+if(NOT TARGET duneanaobj::all)
+  message(WARNING "Expected to find target duneanaobj::all in ${CMAKE_CURRENT_LIST_DIR}/duneanaobj_targets.cmake")
+  set(duneanaobj_FOUND FALSE)
+  return()
+endif()
+
+get_filename_component(duneanaobj_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+find_path(duneanaobj_INCLUDE_DIR
+  NAMES duneanaobj/StandardRecord/StandardRecord.h
+  PATHS ${duneanaobj_CMAKE_DIR}/../../../include
+)
+
+find_path(duneanaobj_LIB_DIR
+  NAMES libduneanaobj_StandardRecord.so
+  PATHS ${duneanaobj_CMAKE_DIR}/../../
+)
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(duneanaobj
+    REQUIRED_VARS
+      duneanaobj_INCLUDE_DIR
+      duneanaobj_LIB_DIR
+    VERSION_VAR
+      duneanaobj_VERSION
+)
+
+message(STATUS "Found duneanaobj Version: ${duneanaobj_VERSION} in \"${duneanaobj_CMAKE_DIR}\"")
+message(STATUS "    duneanaobj_CXX_STANDARD: ${duneanaobj_CXX_STANDARD}")
+message(STATUS "    duneanaobj_INCLUDE_DIR: ${duneanaobj_INCLUDE_DIR}")
+message(STATUS "    duneanaobj_LIB_DIR: ${duneanaobj_LIB_DIR}")

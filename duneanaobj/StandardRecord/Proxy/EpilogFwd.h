@@ -1,3 +1,3 @@
-
-namespace caf{using SRProxy = caf::Proxy<caf::StandardRecord>;}
-
+namespace caf {
+using SRProxy = caf::Proxy<caf::StandardRecord>;
+}

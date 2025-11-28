@@ -24,6 +24,13 @@ namespace caf
   class StandardRecord
   {
     public:
+
+      StandardRecord();
+      ~StandardRecord();
+
+      std::string duneanaobj_gitshorthash;
+      unsigned short duneanaobj_version[3];
+
       /// Metadata about the detectors
       SRDetectorMetaBranch meta;
 

@@ -30,8 +30,6 @@ namespace caf
       SRLorentzVector();
       virtual ~SRLorentzVector() = default;
 
-#if !defined(__GCCXML__) && !defined(__castxml__)
-
       SRLorentzVector(const TLorentzVector& v);
 
       /// Recommend users convert back to TLorentzVector for boosts etc
@@ -50,7 +48,6 @@ namespace caf
       float Gamma() const {return 1.0/sqrt(1-Beta()*Beta());}
 
       TVector3 Vect() const {return TVector3(px, py, pz);}
-#endif
 
       float E;
       float px;
