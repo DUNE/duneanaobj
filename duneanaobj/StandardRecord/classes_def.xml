@@ -122,7 +122,8 @@
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
-  <class name="caf::SRTrack" ClassVersion="19">
+  <class name="caf::SRTrack" ClassVersion="20">
+   <version ClassVersion="20" checksum="1537377624"/>
    <version ClassVersion="19" checksum="3416692108"/>
    <version ClassVersion="18" checksum="2409174386"/>
    <version ClassVersion="17" checksum="3391134008"/>
@@ -260,7 +261,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="15">
+    <class name="caf::SRGArTrack" ClassVersion="16">
+     <version ClassVersion="16" checksum="3840676086"/>
      <version ClassVersion="15" checksum="4066948530"/>
    <version ClassVersion="14" checksum="2591374164"/>
    <version ClassVersion="13" checksum="3987769238"/>

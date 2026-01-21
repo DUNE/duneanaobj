@@ -13,6 +13,15 @@
 
 namespace caf
 {
+
+  struct SRCaloPID {
+    int ndof = 0;
+    float proton_score = 0;
+    float muon_score = 0;
+    float pion_score = 0;
+    float kaon_score = 0;
+  };
+
   class SRTrack
   {
     public:
@@ -35,6 +44,8 @@ namespace caf
       float len_cm   = NaN;  ///< Track length in centimeter (actual physical distance)
 
       float E = NaN;         ///< Track energy estimate in MeV
+
+      SRCaloPID calo_pid;
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this track and true particle
