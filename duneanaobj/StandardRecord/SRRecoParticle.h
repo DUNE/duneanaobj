@@ -44,6 +44,9 @@ namespace caf
 
       RecoObjType origRecoObjType = RecoObjType::kUnknownRecoObj;  ///< Is this a track or a shower?
 
+      int parent = -1;                                ///< Index of parent SRRecoParticle in the same branch, defaults to -1 if no parent
+      std::vector<unsigned int> daughters;             ///< Indices of daughters SRRecoParticles in the same branch
+
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
   };

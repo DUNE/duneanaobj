@@ -3,6 +3,26 @@
 
 ##### current
 
+##### [v03_12_00] -- 2025-12-01
+* SAND detector specific fields [#53]
+* Initialize G4 process codes better [#59]
+* Improved beam quality info [#60]
+* Storage for reco particle hierarchy relationships [#61]
+* Fix automated Doxygen generation [074e1a]
+
+##### [v03_11_00] -- 2025-09-17
+* Updated ROOT software stack (v6_26_06b)
+* Improved ND track matching [#57, #58]
+
+##### [v03_10_00] -- 2025-06-26
+* Storage for muon energy from MCS [#54]
+
+##### [v03_09_00] -- 2025-06-13
+* Add fields for storing Pandora PFP (reco particles) [#52]
+
+##### [v03_08_00] -- 2025-05-08
+* Add more energy estimator, other info relevant for atmospheric analysis  [#51]
+
 ##### [v03_07_00] -- 2025-04-17
 * Add convenience navigation functions for ancestry traversal with SRProxy [#50]
 * Bump default qual to e26, srproxy to v00.45; eliminate e20
