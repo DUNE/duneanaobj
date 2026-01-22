@@ -38,7 +38,9 @@
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRDetectorMetaBranch" ClassVersion="10">
+  <class name="caf::SRDetectorMetaBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="175116589"/>
+   <version ClassVersion="11" checksum="1991127134"/>
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
@@ -189,7 +191,9 @@
 
     <!-- - - - - - - - - - ND specific - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRNDBranch" ClassVersion="15">
+  <class name="caf::SRNDBranch" ClassVersion="17">
+   <version ClassVersion="17" checksum="726502342"/>
+   <version ClassVersion="16" checksum="3854777445"/>
    <version ClassVersion="15" checksum="726502342"/>
    <version ClassVersion="14" checksum="2431680929"/>
    <version ClassVersion="13" checksum="688841544"/>
@@ -295,7 +299,9 @@
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-<class name="caf::SRSANDInt" ClassVersion="12">
+<class name="caf::SRSANDInt" ClassVersion="14">
+ <version ClassVersion="14" checksum="3038143830"/>
+ <version ClassVersion="13" checksum="1933940020"/>
  <version ClassVersion="12" checksum="3038143830"/>
  <version ClassVersion="11" checksum="515563825"/>
    <version ClassVersion="10" checksum="87138233"/>
@@ -312,7 +318,7 @@
   <class name="caf::SRMINERvAID"  ClassVersion="10">
    <version ClassVersion="10" checksum="4040824592"/>
   </class>
-
+  
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
