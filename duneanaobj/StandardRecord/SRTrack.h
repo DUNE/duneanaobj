@@ -31,6 +31,8 @@ namespace caf
       // Track characteristics
       float qual = NaN;      ///< Reco-specific quality metric (in TMS, equivalent to "hits in track"/"total hits in event"
 
+      short int charge = NaN; ///< Reconstructed charge for the track, values are (-1, 0, 1) for negative/neutral/positive tracks
+
       float len_gcm2 = NaN;  ///< Track length in g/cm2
       float len_cm   = NaN;  ///< Track length in centimeter (actual physical distance)
 
