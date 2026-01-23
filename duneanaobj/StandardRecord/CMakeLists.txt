@@ -58,7 +58,7 @@ elseif(SKIP_CET)
                                  )
 
     write_basic_package_version_file( "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
-                                      VERSION 0.1.0
+                                      VERSION ${PROJECT_VERSION}
                                       COMPATIBILITY SameMajorVersion
                                     )
 
