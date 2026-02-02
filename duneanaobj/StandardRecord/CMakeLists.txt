@@ -15,6 +15,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../..)
 ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
   LINKDEF classes_def.xml)
 
+# ls *.cxx | sed "s:[[:space:]]\+: :g" to gen list, best not to GLOB for sources
 SET(SR_IMPL_FILES
   Navigate.cxx
   SRFD.cxx
@@ -22,8 +23,8 @@ SET(SR_IMPL_FILES
   SRGlobal.cxx
   SRInteraction.cxx
   SRLorentzVector.cxx
-  SRMeta.cxx
   SRMINERvA.cxx
+  SRMeta.cxx
   SRNDLAr.cxx
   SRSystParamHeader.cxx
   SRTrack.cxx
@@ -35,9 +36,10 @@ SET(SR_IMPL_FILES
 )
 
 SET(SR_HEADER_FILES
+  Navigate.h
   SRBeamBranch.h
-  SRCommonRecoBranch.h
   SRCVNScoreBranch.h
+  SRCommonRecoBranch.h
   SRDetectorMetaBranch.h
   SRDirectionBranch.h
   SREnums.h
@@ -50,8 +52,8 @@ SET(SR_HEADER_FILES
   SRInteraction.h
   SRInteractionBranch.h
   SRLorentzVector.h
-  SRMeta.h
   SRMINERvA.h
+  SRMeta.h
   SRNDAssnBranch.h
   SRNDBranch.h
   SRNDLAr.h
