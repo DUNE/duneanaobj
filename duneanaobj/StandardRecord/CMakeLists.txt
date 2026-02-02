@@ -73,6 +73,7 @@ SET(SR_HEADER_FILES
   SRTruthBranch.h
   SRVector3D.h
   SRWeightGlobal.h
+  StandardRecord.h
 )
 
 add_library(duneanaobj_StandardRecord SHARED ${SR_IMPL_FILES})
