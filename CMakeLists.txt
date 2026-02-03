@@ -16,13 +16,15 @@
 cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 # cmake_policy(VERSION 3.18)
 
-find_package(cetmodules REQUIRED)
-project(duneanaobj LANGUAGES CXX)
-set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.12.00)
+project(duneanaobj VERSION 03.12.00 LANGUAGES CXX)
+set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING ${PROJECT_VERSION})
 
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
+option(SKIP_CET "Build without CET/cetmodules dependencies" OFF)
+
 if(DEFINED ENV{UPS_DIR})
+    find_package(cetmodules REQUIRED)
     # cetbuildtools contains our cmake modules
 
     include(CetCMakeEnv)
@@ -59,4 +61,6 @@ endif()
 
 add_subdirectory(duneanaobj)
 
-cet_cmake_config()
+if (NOT SKIP_CET)
+    cet_cmake_config()
+endif()
