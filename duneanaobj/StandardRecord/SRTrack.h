@@ -19,6 +19,8 @@ namespace caf
       // less typing further below
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
 
+      unsigned int uid = 0; ///< Unique identifier to associate this SRTrack with its SRRecoParticle object
+
       SRVector3D start;      ///< Track 3D start point [cm]
       SRVector3D end;        ///< Track 3D end point [cm]
       SRVector3D dir;        ///< Unit vector representing estimate of track direction *taken from start point*
