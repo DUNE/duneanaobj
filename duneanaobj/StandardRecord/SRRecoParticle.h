@@ -23,8 +23,7 @@ namespace caf
     public:
       static constexpr int kPdgHadronicBlob = 2000000002;   ///< Special PDG code used for a "hadronic blob" (usu. calorimetrically reconstructed), borrowed from GENIE
       
-      unsigned int trackUID = 0; ///< Unique identifier for the SRTrack (if any) associated to this SRRecoParticle
-      unsigned int showerUID = 0; ///< Unique identifier for the SRShower (if any) associated to this SRRecoParticle
+      unsigned int uid = 0; ///< Unique identifier for the SRTrack/SRShower (if any) associated to this SRRecoParticle
 
       bool        primary  = false;                   ///< Is this reco particle a "primary" one (i.e. emanates directly from the reconstructed vertex)?
 

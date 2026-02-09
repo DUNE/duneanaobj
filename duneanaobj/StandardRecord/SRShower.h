@@ -24,7 +24,7 @@ namespace caf
       SRVector3D start;      ///< Shower 3D start point [cm]
       SRVector3D direction;  ///< Shower 3D end point [cm]
 
-      double time     = NaN;  ///< Time of track formation [ns]
+      double time     = NaN;  ///< Time of shower formation [ns]
       
       float Evis = -999.;    ///< Visible energy in voxels corresponding to this shower
       
