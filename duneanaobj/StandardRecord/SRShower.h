@@ -22,7 +22,8 @@ namespace caf
       unsigned int uid = 0; ///< Unique identifier to associate this SRShower with its SRRecoParticle object
 
       SRVector3D start;      ///< Shower 3D start point [cm]
-      SRVector3D direction;  ///< Shower 3D end point [cm]
+      SRVector3D end;        ///< Shower 3D end point [cm]
+      SRVector3D direction;  ///< Shower direction [cm]
 
       double time     = NaN;  ///< Time of shower formation [ns]
       
