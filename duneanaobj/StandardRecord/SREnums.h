@@ -65,6 +65,7 @@ namespace caf
     kRange,         ///< Amount of material traversed by particle
     kMCS,           ///< Multiple scattering
     kCalorimetry,   ///< Observed energy deposited in active volume
+    kEnergyDeposition, ///< From visible light 
   };
 
   /// \brief Neutrino interaction categories.
@@ -155,6 +156,23 @@ namespace caf
     kTrack          = 1,  ///< track
     kShower         = 2,  ///< shower
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
+  };
+
+  //NEW NEW NEW 
+  
+  enum SelectionType
+  {
+      kGRAINcontained,   ///< Event fully contained in GRAIN
+      kECALcontained,    ///< Event fully contained in ECAL
+      kTRACKERcontained  ///< Event fully contained in Tracker
+  };
+
+  /// \brief Which reconstruction type was applied to a detector object
+  enum RecoType
+  {
+      kNone,      ///< No reconstruction applied
+      kRealReco,  ///< Real reconstruction algorithm
+      kSmearing   ///< Smearing applied
   };
 
 }

@@ -14,6 +14,7 @@
 #include "duneanaobj/StandardRecord/SRFDBranch.h"
 #include "duneanaobj/StandardRecord/SRNDBranch.h"
 #include "duneanaobj/StandardRecord/SRTruthBranch.h"
+#include "duneanaobj/StandardRecord/SRSANDDetectorMeta.h"
 
 /// Common Analysis Files
 namespace caf

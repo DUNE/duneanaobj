@@ -28,6 +28,9 @@ namespace caf
       float mu_had = NaN;  ///< NuMu hadronic energy (calorimetric estimate from all non-primary-track hits)
 
       float regcnn   = NaN;  ///< Regression CNN (assumes nue hypothesis)
+
+      //NEW -- GRAIN 
+      float part_energy_sum = NaN; ///<Energy estimate using final state particles energy 
   };
 
 } // caf

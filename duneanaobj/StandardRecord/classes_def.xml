@@ -39,7 +39,8 @@
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRDetectorMetaBranch" ClassVersion="12">
+  <class name="caf::SRDetectorMetaBranch" ClassVersion="13">
+   <version ClassVersion="13" checksum="1740630901"/>
    <version ClassVersion="12" checksum="175116589"/>
    <version ClassVersion="11" checksum="1991127134"/>
    <version ClassVersion="10" checksum="175116589"/>
@@ -90,7 +91,8 @@
    <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
-  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="16">
+  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="17">
+   <version ClassVersion="17" checksum="3605718211"/>
    <version ClassVersion="16" checksum="3331961107"/>
    <version ClassVersion="15" checksum="3582001491"/>
    <version ClassVersion="14" checksum="3497414748"/>
@@ -301,7 +303,13 @@
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-<class name="caf::SRSANDInt" ClassVersion="14">
+<class name="caf::SRSANDInt" ClassVersion="20">
+ <version ClassVersion="20" checksum="858502929"/>
+ <version ClassVersion="19" checksum="294321243"/>
+ <version ClassVersion="18" checksum="858502929"/>
+ <version ClassVersion="17" checksum="294321243"/>
+ <version ClassVersion="16" checksum="256951120"/>
+ <version ClassVersion="15" checksum="1933940020"/>
  <version ClassVersion="14" checksum="3038143830"/>
  <version ClassVersion="13" checksum="1933940020"/>
  <version ClassVersion="12" checksum="3038143830"/>
@@ -361,6 +369,13 @@
  </class>
  <class name="caf::SROpticalFlash" ClassVersion="10">
   <version ClassVersion="10" checksum="3730213350"/>
+ </class>
+
+ <class name="caf::SRSANDDetectorMeta" ClassVersion="13">
+  <version ClassVersion="13" checksum="3315898698"/>
+  <version ClassVersion="12" checksum="303381571"/>
+  <version ClassVersion="11" checksum="1777394395"/>
+  <version ClassVersion="10" checksum="417345903"/>
  </class>
 
 </lcgdict>
