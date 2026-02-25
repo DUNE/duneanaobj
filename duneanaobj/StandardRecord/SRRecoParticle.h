@@ -23,8 +23,6 @@ namespace caf
     public:
       static constexpr int kPdgHadronicBlob = 2000000002;   ///< Special PDG code used for a "hadronic blob" (usu. calorimetrically reconstructed), borrowed from GENIE
       
-      unsigned int uid = 0; ///< Unique identifier for the SRTrack/SRShower (if any) associated to this SRRecoParticle
-
       bool        primary  = false;                   ///< Is this reco particle a "primary" one (i.e. emanates directly from the reconstructed vertex)?
 
       int         pdg      = 0;                       ///< PDG code inferred for this particle.

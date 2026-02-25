@@ -19,23 +19,19 @@ namespace caf
       // less typing further below
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
 
-      unsigned int uid = 0; ///< Unique identifier to associate this SRShower with its SRRecoParticle object
-
       SRVector3D start;      ///< Shower 3D start point [cm]
-      SRVector3D end;        ///< Shower 3D end point [cm]
-      SRVector3D direction;  ///< Shower direction [cm]
+      SRVector3D direction;  ///< Shower direction (unit vector).
 
-      double time     = NaN;  ///< Time of shower formation [ns]
+      double time = NaN;     ///< Time of shower formation [ns]
       
       float Evis = -999.;    ///< Visible energy in voxels corresponding to this shower
       
       float qual = NaN;      ///< Reco-specific quality metric (for istance trackScore value) 
 
-      float len_gcm2 = NaN;  ///< Shower length in g/cm2
-      float len_cm   = NaN;  ///< Shower length in centimeter (actual physical distance)
+      float len_cm   = NaN;  ///< Shower length [cm]. The definition is reco-dependent; consult the documentation of the specific reconstruction algorithm (e.g. Pandora, SPINE) for its exact meaning before use.
       
-      float dEdx; ///< dE/dx value at the shower start
-      float conversionGap; ///< Spatial distance between the photon creation and its conversion into e+e- pair [cm]
+      float initial_dEdx;    ///< dE/dx value at the shower start
+      float conversionGap;   ///< Spatial distance between the photon creation and its conversion into e+e- pair [cm]
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this shower and true particle
