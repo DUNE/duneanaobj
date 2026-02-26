@@ -162,6 +162,7 @@ namespace caf
   
   enum SelectionType
   {
+      kUnknownSelection = -1,   
       kGRAINcontained,   ///< Event fully contained in GRAIN
       kECALcontained,    ///< Event fully contained in ECAL
       kTRACKERcontained  ///< Event fully contained in Tracker
