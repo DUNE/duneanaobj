@@ -11,6 +11,7 @@
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRECALCluster.h"
+#include "duneanaobj/StandardRecord/SREnums.h" 
 
 namespace caf
 {
@@ -60,6 +61,18 @@ namespace caf
         SRGRAIN grain;      ///< GRAIN reconstruction
         SRTracker tracker;  ///< Tracker reconstruction
         SREcal ecal;        ///< ECAL reconstruction
+
+        // Ricostruzioni specifiche per questa interazione
+        RecoType grain_reco_type   = kRealReco;
+        RecoType tracker_reco_type = kSmearing;
+        RecoType ecal_reco_type    = kNone;
+
+        void SetRecoDefaults()
+        {
+            grain_reco_type   = caf::kRealReco;
+            tracker_reco_type = caf::kSmearing;
+            ecal_reco_type    = caf::kNone;
+        }
     };
 
     // ==================================================
@@ -77,10 +90,18 @@ namespace caf
 
         std::size_t nixn = 0;
         std::vector<SRSANDInt> ixn; ///< Reconstructed interactions
+
+        // Reconstruction & interaction info — parte di SAND globale
+        SelectionType selection_type     = kGRAINcontained;
+        ScatteringMode interaction_type  = kQE;
+
+        void SetDefaults()
+        {
+            selection_type     = caf::kGRAINcontained;
+            interaction_type   = caf::kQE;
+        }
     };
 
-    } // namespace caf
+} // namespace caf
 
 #endif // DUNEANAOBJ_SRSAND_H
-
-
