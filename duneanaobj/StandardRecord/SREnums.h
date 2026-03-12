@@ -158,23 +158,6 @@ namespace caf
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
   };
 
-  //NEW NEW NEW 
-  
-  enum SelectionType
-  {
-      kUnknownSelection = -1,   
-      kGRAINcontained,   ///< Event fully contained in GRAIN
-      kECALcontained,    ///< Event fully contained in ECAL
-      kTRACKERcontained  ///< Event fully contained in Tracker
-  };
-
-  /// \brief Which reconstruction type was applied to a detector object
-  enum RecoType
-  {
-      kNone,      ///< No reconstruction applied
-      kRealReco,  ///< Real reconstruction algorithm
-      kSmearing   ///< Smearing applied
-  };
 
 }
 
