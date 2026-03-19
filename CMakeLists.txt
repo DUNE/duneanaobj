@@ -61,4 +61,6 @@ endif()
 
 add_subdirectory(duneanaobj)
 
-cet_cmake_config()
+if (NOT SKIP_CET)
+    cet_cmake_config()
+endif()
