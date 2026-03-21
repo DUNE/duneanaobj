@@ -8,6 +8,7 @@
 #define DUNEANAOBJ_SRRECOOBJBASE_H
 
 #include "duneanaobj/StandardRecord/SRTrueParticle.h"
+#include "duneanaobj/StandardRecord/SREnums.h"
 
 namespace caf
 {
@@ -17,7 +18,7 @@ namespace caf
   class SRRecoObjBase
   {
     public:
-      int dummy = 0; ///< Dummy member to prevent empty class issues
+      SRRecoParticleID part; // The particle this object is associated with
   };
 
 } // caf
