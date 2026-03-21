@@ -125,10 +125,10 @@ namespace caf
   /// \brief Identifies a reconstructed particle by the interaction it belongs to, 
   /// which collection of reconstructed particles it belongs to, and its index 
   /// within that collection.
-  class RecoParticleID
+  class SRRecoParticleID
   {
     public:
-      enum RecoParticleCollectionType
+      enum SRRecoParticleCollectionType
       {
         kUnknown,
         kSPINE,
@@ -137,9 +137,9 @@ namespace caf
         kSandreco
       };
 
-    int ixn = -1;                               ///< Index of SRInteraction in the SRInteractionBranch
-    RecoParticleCollectionType type = kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
-    int ipart = -1;                             ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
+    int ixn = -1;                                 ///< Index of SRInteraction in the SRInteractionBranch
+    SRRecoParticleCollectionType type = kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
+    int ipart = -1;                               ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
   };  
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
