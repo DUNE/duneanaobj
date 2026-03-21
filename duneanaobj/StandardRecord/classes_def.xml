@@ -122,7 +122,8 @@
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
-  <class name="caf::SRTrack" ClassVersion="20">
+  <class name="caf::SRTrack" ClassVersion="21">
+   <version ClassVersion="21" checksum="3631361424"/>
    <version ClassVersion="20" checksum="2342285040"/>
    <version ClassVersion="19" checksum="3416692108"/>
    <version ClassVersion="18" checksum="2409174386"/>
@@ -139,7 +140,8 @@
   <class name="std::vector<caf::SRTrack>">
   </class>
 
-  <class name="caf::SRShower" ClassVersion="16">
+  <class name="caf::SRShower" ClassVersion="17">
+   <version ClassVersion="17" checksum="3141158752"/>
    <version ClassVersion="16" checksum="2739725490"/>
    <version ClassVersion="15" checksum="1197469375"/>
    <version ClassVersion="14" checksum="772507687"/>
@@ -222,12 +224,14 @@
    <version ClassVersion="10" checksum="764455914"/>
   </class>
 
-  <class name="caf::SRNDShowerAssn" ClassVersion="11">
+  <class name="caf::SRNDShowerAssn" ClassVersion="12">
+   <version ClassVersion="12" checksum="3759476703"/>
    <version ClassVersion="11" checksum="2148903847"/>
    <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="15">
+  <class name="caf::SRNDTrackAssn" ClassVersion="16">
+   <version ClassVersion="16" checksum="3457555277"/>
    <version ClassVersion="15" checksum="2460195191"/>
    <version ClassVersion="14" checksum="2659631828"/>
    <version ClassVersion="13" checksum="744508541"/>
@@ -261,7 +265,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="16">
+    <class name="caf::SRGArTrack" ClassVersion="17">
+     <version ClassVersion="17" checksum="3841055326"/>
      <version ClassVersion="16" checksum="1020294526"/>
      <version ClassVersion="15" checksum="4066948530"/>
    <version ClassVersion="14" checksum="2591374164"/>
