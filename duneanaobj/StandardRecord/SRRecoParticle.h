@@ -52,7 +52,7 @@ namespace caf
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
       
-      const SRRecoObjBase * base = nullptr;           ///< Base (detector-specific) reco object this SRRecoParticle was made from.
+      // const SRRecoObjBase * base = nullptr;           ///< Base (detector-specific) reco object this SRRecoParticle was made from.
   };
 
 } // caf

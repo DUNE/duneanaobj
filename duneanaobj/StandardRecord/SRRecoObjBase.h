@@ -15,7 +15,10 @@ namespace caf
   /// Base class for reco objects (allows a base pointer to be stored in SRRecoParticle)
   // Leave it empty because inherited members are easily overlooked in the derived classes
   class SRRecoObjBase
-  {};
+  {
+    public:
+      int dummy = 0; ///< Dummy member to prevent empty class issues
+  };
 
 } // caf
 
