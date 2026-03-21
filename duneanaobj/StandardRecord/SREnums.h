@@ -122,6 +122,26 @@ namespace caf
       float hypothesis_pe = NaN; ///< hypothesis pe from reconstruction for this interaction
   };
 
+  /// \brief Identifies a reconstructed particle by the interaction it belongs to, 
+  /// which collection of reconstructed particles it belongs to, and its index 
+  /// within that collection.
+  class SRRecoParticleID
+  {
+    public:
+      enum SRRecoParticleCollectionType
+      {
+        kUnknown,
+        kSPINE,
+        kPandora,
+        kPida,
+        kSandreco
+      };
+
+    int ixn = -1;                                 ///< Index of SRInteraction in the SRInteractionBranch
+    SRRecoParticleCollectionType type = kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
+    int ipart = -1;                               ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
+  };  
+
   /// Which reconstruction toolkit was used to reconstruct this FD event?
   enum FD_RECO_STACK
   {
