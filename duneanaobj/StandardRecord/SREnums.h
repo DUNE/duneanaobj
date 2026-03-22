@@ -140,7 +140,37 @@ namespace caf
     int ixn = -1;                                 ///< Index of SRInteraction in the SRInteractionBranch
     SRRecoParticleCollectionType type = kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
     int ipart = -1;                               ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
-  };  
+  };
+
+  /// \brief Identifies a reconstructed object by the interaction it belongs to,
+  /// which collection of reconstructed objects it belongs to, and its index
+  /// within that collection.
+  class SRRecoBaseID
+  {
+    public:
+    
+      enum SRRecoBaseCollectionType {
+          kUnknown,
+          // FD
+          kFDPandoraTrack,
+          KFDPandoraShower,
+          // NDLAr
+          kNDLArDLPTrack,
+          kNDLArDLPShower,
+          kNDLArPandoraTrack,
+          kNDLARPandoraShower,
+          // TMS
+          kTMSTrack,
+          // SAND
+          kSANDTrack,
+          kSANDShower,
+          kSANDECalCluster
+      };
+
+      int      ixn   = -1;                       ///< Index of SRInteraction in the SRInteractionBranch
+      SRRecoBaseCollectionType type = kUnknown;  ///< Which of the low-level reco objects collections this object lives in
+      int      irecoobj = -1;                    ///< Index of SRRecoObjBase in the specified reco objects collection of the SRInteraction 
+  };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
   enum FD_RECO_STACK
