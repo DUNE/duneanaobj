@@ -180,9 +180,9 @@ namespace caf
           kGArEcalCluster
       };
 
-      int      ixn   = -1;                       ///< Index of SRInteraction in the SRInteractionBranch
-      SRRecoBaseCollectionType type = kUnknown;  ///< Which of the low-level reco objects collections this object lives in
-      int      irecoobj = -1;                    ///< Index of SRRecoObjBase in the specified reco objects collection of the SRInteraction 
+      int      ixn   = -1;                                                 ///< Index of SRInteraction in the SRInteractionBranch
+      SRRecoBaseCollectionType type = SRRecoBaseCollectionType::kUnknown;  ///< Which of the low-level reco objects collections this object lives in
+      int      irecoobj = -1;                                              ///< Index of SRRecoObjBase in the specified reco objects collection of the SRInteraction 
   };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
