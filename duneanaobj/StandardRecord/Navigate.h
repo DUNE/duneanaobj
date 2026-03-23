@@ -33,6 +33,8 @@ namespace caf
                                   SRTrueInteraction, SRTrueInteractionProxy>::type * 
     FindInteraction(const TruthBranchType & truth,  long int id);
 
+  const SRRecoParticle * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id);
+  
   const SRRecoObjBase *FindRecoObjBase(const StandardRecord &sr, const SRRecoBaseID &id);
 }
 #endif //DUNEANAOBJ_NAVIGATE_H
