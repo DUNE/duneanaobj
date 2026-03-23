@@ -137,9 +137,9 @@ namespace caf
         kSandreco
       };
 
-    int ixn = -1;                                 ///< Index of SRInteraction in the SRInteractionBranch
-    SRRecoParticleCollectionType type = kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
-    int ipart = -1;                               ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
+    int ixn = -1;                                                               ///< Index of SRInteraction in the SRInteractionBranch
+    SRRecoParticleCollectionType type = SRRecoParticleCollectionType::kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
+    int ipart = -1;                                                             ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
   };
 
   /// \brief Identifies a reconstructed object by the interaction it belongs to,
@@ -152,8 +152,18 @@ namespace caf
       enum SRRecoBaseCollectionType {
           kUnknown,
           // FD
-          kFDPandoraTrack,
-          KFDPandoraShower,
+          kFDHDPandoraTrack,
+          KFDHDPandoraShower,
+          KFDHDPandoraPFP,
+          kFDVDPandoraTrack,
+          KFDVDPandoraShower,
+          KFDVDPandoraPFP,
+          kFDPDHDPandoraTrack,
+          KFDPDHDPandoraShower,
+          KFDPDHDPandoraPFP,
+          kFDPDVDPandoraTrack,
+          KFDPDVDPandoraShower,
+          KFDPDVDPandoraPFP,
           // NDLAr
           kNDLArDLPTrack,
           kNDLArDLPShower,
@@ -164,7 +174,10 @@ namespace caf
           // SAND
           kSANDTrack,
           kSANDShower,
-          kSANDECalCluster
+          kSANDECalCluster,
+          // GAr
+          kGArTrack,
+          kGArEcalCluster
       };
 
       int      ixn   = -1;                       ///< Index of SRInteraction in the SRInteractionBranch

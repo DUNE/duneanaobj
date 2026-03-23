@@ -31,4 +31,71 @@ namespace caf
     return &truth.nu[id];
   }
 
+  const SRRecoParticle * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id)
+  {
+    if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kUnknown || id.ixn < 0 || id.ipart < 0)
+      return nullptr;
+    if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSPINE)
+      return &sr.common.ixn.dlp[id.ixn].part.dlp[id.ipart];
+    else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPandora)
+      return &sr.common.ixn.pandora[id.ixn].part.pandora[id.ipart];
+    else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPida)
+      throw std::domain_error("Not implemented: " + std::to_string(id.type));
+    else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSandreco)
+      return &sr.common.ixn.sandreco[id.ixn].part.sandreco[id.ipart];
+    else
+      throw std::domain_error("Unknown SRRecoParticleCollectionType: " + std::to_string(id.type));
+  }
+
+  const SRRecoObjBase * FindRecoObjBase(const StandardRecord & sr, const SRRecoBaseID& id)
+  {
+    if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kUnknown || id.ixn < 0 || id.irecoobj < 0)
+      return nullptr;
+    if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDHDPandoraTrack)
+      return &sr.fd.hd.pandora[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDHDPandoraShower)
+      return &sr.fd.hd.pandora[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDHDPandoraPFP)
+      return &sr.fd.hd.pandora[id.ixn].pfps[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDVDPandoraTrack)
+      return &sr.fd.vd.pandora[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDVDPandoraShower)
+      return &sr.fd.vd.pandora[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDVDPandoraPFP)
+      return &sr.fd.vd.pandora[id.ixn].pfps[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDPDHDPandoraTrack)
+      return &sr.fd.pd_hd.pandora[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDHDPandoraShower)
+      return &sr.fd.pd_hd.pandora[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDHDPandoraPFP)
+      return &sr.fd.pd_hd.pandora[id.ixn].pfps[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDPDVDPandoraTrack)
+      return &sr.fd.pd_vd.pandora[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDVDPandoraShower)
+      return &sr.fd.pd_vd.pandora[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDVDPandoraPFP)
+      return &sr.fd.pd_vd.pandora[id.ixn].pfps[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArDLPTrack)
+      return &sr.nd.lar.dlp[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArDLPShower)
+      return &sr.nd.lar.dlp[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArPandoraTrack)
+      return &sr.nd.lar.pandora[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLARPandoraShower)
+      return &sr.nd.lar.pandora[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kTMSTrack)
+      return &sr.nd.tms.ixn[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrack)
+      return &sr.nd.sand.ixn[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDShower)
+      return &sr.nd.sand.ixn[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDECalCluster)
+      return &sr.nd.sand.ixn[id.ixn].ECALClusters[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArTrack)
+      return &sr.nd.gar.ixn[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArEcalCluster)
+      return &sr.nd.gar.ixn[id.ixn].clusters[id.irecoobj];
+    else
+      throw std::domain_error("Unknown SRRecoBaseCollectionType: " + std::to_string(id.type));
+  }
 }
