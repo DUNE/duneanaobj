@@ -11,4 +11,8 @@ namespace caf
   template const SRTrueParticle * FindParticle(const SRTruthBranch & truth, const TrueParticleID & id);
 
   template const SRTrueInteraction * FindInteraction(const SRTruthBranch & truth,  long int id);
+
+  const SRRecoParticle  * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id);
+
+  const SRRecoObjBase * FindRecoObjBase(const StandardRecord & sr, const SRRecoBaseID& id);
 }

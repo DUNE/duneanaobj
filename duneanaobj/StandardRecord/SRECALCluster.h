@@ -10,10 +10,11 @@
 
 #include "duneanaobj/StandardRecord/SRVector3D.h"
 #include "duneanaobj/StandardRecord/SRTrueParticle.h"
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 
 namespace caf
 {
-  class SRECALCluster
+  class SRECALCluster : public SRRecoObjBase
   {
     public:
       int id; ///< Cluster id 
