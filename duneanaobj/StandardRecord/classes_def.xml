@@ -155,7 +155,8 @@
   <class name="std::vector<caf::SRShower>">
   </class>
 
-<class name="caf::SRECALCluster" ClassVersion="16">
+<class name="caf::SRECALCluster" ClassVersion="17">
+ <version ClassVersion="17" checksum="2003075550"/>
  <version ClassVersion="16" checksum="3312245962"/>
    <version ClassVersion="15" checksum="1197469375"/>
    <version ClassVersion="14" checksum="772507687"/>
@@ -186,7 +187,8 @@
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="10">
+  <class name="caf::SRPFP" ClassVersion="11">
+   <version ClassVersion="11" checksum="3636199025"/>
    <version ClassVersion="10" checksum="3744464743"/>
   </class>
 
@@ -280,7 +282,8 @@
   <class name="std::vector<caf::SRGArTrack>">
   </class>
 
-  <class name="caf::SRGArECAL" ClassVersion="12">
+  <class name="caf::SRGArECAL" ClassVersion="13">
+   <version ClassVersion="13" checksum="594495245"/>
    <version ClassVersion="12" checksum="3509084697"/>
    <version ClassVersion="11" checksum="2202249478"/>
    <version ClassVersion="10" checksum="4277816864"/>
