@@ -9,7 +9,6 @@
 #define DUNEANAOBJ_SRPFP_H
 
 #include "duneanaobj/StandardRecord/SRVector3D.h"
-#include "duneanaobj/StandardRecord/SRTrueParticle.h"
 #include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 
 namespace caf
