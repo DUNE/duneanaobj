@@ -13,8 +13,7 @@
 namespace caf
 {
 
-  /// Base class for reco objects (allows a base pointer to be stored in SRRecoParticle)
-  // Leave it empty because inherited members are easily overlooked in the derived classes
+  /// Base class for reco objects (enables navigation between SRRecoParticle and the underlying object it was made from)
   class SRRecoObjBase
   {
     public:

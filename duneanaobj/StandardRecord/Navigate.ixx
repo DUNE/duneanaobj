@@ -33,7 +33,7 @@ namespace caf
 
   const SRRecoParticle * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id)
   {
-    if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kUnknown || id.ixn < 0 || id.ipart < 0)
+    if (!id)
       return nullptr;
     if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSPINE)
       return &sr.common.ixn.dlp[id.ixn].part.dlp[id.ipart];
@@ -49,7 +49,7 @@ namespace caf
 
   const SRRecoObjBase * FindRecoObjBase(const StandardRecord & sr, const SRRecoBaseID& id)
   {
-    if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kUnknown || id.ixn < 0 || id.irecoobj < 0)
+    if (!id)
       return nullptr;
     if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDHDPandoraTrack)
       return &sr.fd.hd.pandora[id.ixn].tracks[id.irecoobj];
