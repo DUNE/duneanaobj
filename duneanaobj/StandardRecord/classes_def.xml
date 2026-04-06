@@ -16,7 +16,8 @@
    <version ClassVersion="10" checksum="1612203321"/>
   </class>
 
-  <class name="caf::SRSystParamHeader" ClassVersion="10">
+  <class name="caf::SRSystParamHeader" ClassVersion="11">
+   <version ClassVersion="11" checksum="4008846007"/>
    <version ClassVersion="10" checksum="621537544"/>
   </class>
 
@@ -324,7 +325,8 @@
    <version ClassVersion="10" checksum="2608785459"/>
   </class>
 
-  <class name="caf::SRTrueInteraction" ClassVersion="17">
+  <class name="caf::SRTrueInteraction" ClassVersion="18">
+   <version ClassVersion="18" checksum="1807033241"/>
    <version ClassVersion="17" checksum="1565545093"/>
    <version ClassVersion="16" checksum="358248003"/>
    <version ClassVersion="15" checksum="880834593"/>
@@ -347,6 +349,9 @@
    <version ClassVersion="12" checksum="941873740"/>
    <version ClassVersion="11" checksum="4112437168"/>
     <version ClassVersion="10" checksum="3381095522"/>
+  </class>
+  <class name="caf::SRDialWeights" ClassVersion="10">
+   <version ClassVersion="10" checksum="2304707688"/>
   </class>
 
   <enum name="caf::Generator" ClassVersion="10" />
