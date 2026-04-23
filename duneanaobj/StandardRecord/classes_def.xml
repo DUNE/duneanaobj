@@ -39,7 +39,8 @@
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRDetectorMetaBranch" ClassVersion="13">
+  <class name="caf::SRDetectorMetaBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="175116589"/>
    <version ClassVersion="13" checksum="1740630901"/>
    <version ClassVersion="12" checksum="175116589"/>
    <version ClassVersion="11" checksum="1991127134"/>
@@ -295,15 +296,22 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-    <class name="caf::SRSAND" ClassVersion="14">
-     <version ClassVersion="14" checksum="3811644425"/>
+  <class name="caf::SRSAND" ClassVersion="17">
+   <version ClassVersion="17" checksum="3811644425"/>
+   <version ClassVersion="16" checksum="1866131598"/>
+   <version ClassVersion="15" checksum="911217381"/>
+   <version ClassVersion="14" checksum="3811644425"/>
    <version ClassVersion="13" checksum="1270542721"/>
    <version ClassVersion="12" checksum="1233697569"/>
    <version ClassVersion="11" checksum="3795335384"/>
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-<class name="caf::SRSANDInt" ClassVersion="20">
+<class name="caf::SRSANDInt" ClassVersion="24">
+ <version ClassVersion="24" checksum="858502929"/>
+ <version ClassVersion="23" checksum="3190481744"/>
+ <version ClassVersion="22" checksum="858502929"/>
+ <version ClassVersion="21" checksum="2703820925"/>
  <version ClassVersion="20" checksum="858502929"/>
  <version ClassVersion="19" checksum="294321243"/>
  <version ClassVersion="18" checksum="858502929"/>
@@ -369,13 +377,6 @@
  </class>
  <class name="caf::SROpticalFlash" ClassVersion="10">
   <version ClassVersion="10" checksum="3730213350"/>
- </class>
-
- <class name="caf::SRSANDDetectorMeta" ClassVersion="13">
-  <version ClassVersion="13" checksum="3315898698"/>
-  <version ClassVersion="12" checksum="303381571"/>
-  <version ClassVersion="11" checksum="1777394395"/>
-  <version ClassVersion="10" checksum="417345903"/>
  </class>
 
 </lcgdict>
