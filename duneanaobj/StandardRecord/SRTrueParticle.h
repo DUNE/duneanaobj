@@ -7,6 +7,7 @@
 #define DUNEANAOBJ_SRTRUEPARTICLE_H
 
 #include <vector>
+#include <tuple>
 
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
@@ -27,6 +28,8 @@ namespace caf
     public:
       int       pdg             = 0;     ///< Particle
       int       G4ID            = -1;    ///< ID of the particle (taken from GEANT4 -- -1 if this particle is not propogated by G4)
+      std::tuple<int, int, int> thisIndex = std::make_tuple(-1, -1, -1); // will have size 3, with the indices for interaction, primary, and secondary arrays respectively.  Will be -1 if not applicable (e.g. for a primary particle, the secondary index will be -1)
+
       long int  interaction_id  = -1;    ///< True interaction ID (edep-sim 'vertexID' for ND, or GENIe record number for FD) of the source of this particle
       double     time            = NaN;   ///< Generation time at true interaction vertex [ns]
 
@@ -37,7 +40,9 @@ namespace caf
       SRVector3D      end_pos;          ///< Particle end position (decay, interaction, stop) [cm]
 
       int parent               = -1;       ///< GEANT4 trackID of parent particle from this particle
+      std::tuple<int, int, int> parentIndex = std::make_tuple(-1, -1, -1); // will have size 3, with the indices for interaction, primary, and secondary arrays respectively.  Will be -1 if not applicable (e.g. for a primary particle, the secondary index will be -1)
       std::vector<unsigned int> daughters; ///< GEANT4 trackIDs of daughter particles from this particle
+      std::vector<std::tuple<int, int, int>> daughterIndices; // will have size 3, with the indices for interaction, primary, and secondary arrays respectively.  Will be empty if not applicable (e.g. for a primary particle, the secondary index will be empty)
 
       /// @name GEANT4 process codes.
       ///   The "process" codes are defined here: https://geant4.kek.jp/Reference/11.1.1/G4ProcessType_8hh_source.html

@@ -41,7 +41,10 @@ namespace caf
       bool preselected = false; ///< Was this interaction preselected?  (Useful for workflows where CAFs are preprocessed / filtered in the process of making concatenated files)
 
       bool contained() const; ///< Convenience function to check if the interaction is contained in the detector by checking the contained flag of all reco particles
-  };
+
+      bool isBeamSlice = false; 
+      
+    };
 
 } // caf
 
