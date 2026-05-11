@@ -60,7 +60,8 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="18">
+  <class name="caf::SRInteractionBranch" ClassVersion="19">
+   <version ClassVersion="19" checksum="1610362670"/>
    <version ClassVersion="18" checksum="1572816117"/>
    <version ClassVersion="17" checksum="2838705083"/>
    <version ClassVersion="16" checksum="1999633423"/>
@@ -350,7 +351,8 @@
    <version ClassVersion="10" checksum="2662412328"/>
   </class>
 
-  <class name="caf::SRTrueParticle" ClassVersion="19">
+  <class name="caf::SRTrueParticle" ClassVersion="20">
+   <version ClassVersion="20" checksum="1577246711"/>
    <version ClassVersion="19" checksum="3434896655"/>
    <version ClassVersion="18" checksum="2703534434"/>
    <version ClassVersion="17" checksum="2332556504"/>

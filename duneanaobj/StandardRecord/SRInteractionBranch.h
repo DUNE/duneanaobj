@@ -50,6 +50,8 @@ namespace caf
       std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
       std::size_t nsandreco;
 
+      double reco_beam_interactingEnergy{-1.0}; //Reconstructed beam energy for the beam particle
+
       double beam_inst_P{-1.0};
       bool beam_inst_valid{false};
       int beam_inst_trigger{-1};
