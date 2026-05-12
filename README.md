@@ -147,6 +147,7 @@ Warning in <TTreeFormula::DefinedVariable>: TTreeFormula support only 2 level of
 
 It is recommended to use alternative methods for analyzing complex data structures or to be aware of this limitation when working with `TTree::Scan`.
 
+One possible avenue for interrogating deeply into the hierarchy is to explore the use of 'flat' CAFs, which reorganize the `duneanaobj` structure into simple branches with names following the `duneanaobj` structure.  The CAFMakers can produce these files if so configured.
 ## Building yourself
 
 If you want to make modifications to the `StandardRecord` you'll probably want to build it yourself in order to test out your changes.
