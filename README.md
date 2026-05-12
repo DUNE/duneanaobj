@@ -107,6 +107,46 @@ or execute a macro that reads them:
 root -l -b -q /path/to/macro.C
 ```
 
+### Limitations in using TTree::Scan
+
+The ROOT class `TTreeFormula` has an intrinsic limitation: it supports only 2 levels of variable-sized collections. This limitation can prevent correct scanning of `duneanaobj` fields using `TTree::Scan`. For example, some values may not be displayed correctly in the scan output, as shown below:
+
+```
+root [41] cafTree->Scan("rec.nd.lar.tracks.truth:rec.nd.lar.tracks.truthOverlap")
+Warning in <TTreeFormula::DefinedVariable>: TTreeFormula support only 2 level of variables size collections.  Assuming '@' notation for the collection truth.
+Warning in <TTreeFormula::DefinedVariable>: TTreeFormula support only 2 level of variables size collections.  Assuming '@' notation for the collection truthOverlap.
+***********************************************
+*    Row   * Instance * rec.nd.la * rec.nd.la *
+***********************************************
+*        0 *        0 *         0 *         0 *
+*        0 *        1 *         0 *         0 *
+*        0 *        2 *           *         0 *
+*        0 *        3 *           *         0 *
+*        0 *        4 *           *         0 *
+*        0 *        5 *           *         0 *
+*        0 *        6 *           *         0 *
+*        0 *        7 *           *         0 *
+*        0 *        8 *         0 *         0 *
+*        0 *        9 *           *         0 *
+*        0 *       10 *         0 *         0 *
+*        0 *       11 *         0 *         0 *
+*        0 *       12 *           *         0 *
+*        0 *       13 *           *         0 *
+*        0 *       14 *         0 *         0 *
+*        0 *       15 *         0 *         0 *
+*        0 *       16 *           *         0 *
+*        0 *       17 *           *         0 *
+*        0 *       18 *         0 *         0 *
+*        0 *       19 *         0 *         0 *
+*        0 *       20 *           *         0 *
+*        0 *       21 *           *         0 *
+*        0 *       22 *           *         0 *
+*        0 *       23 *         0 *         0 *
+*        0 *       24 *           *         0 *
+```
+
+It is recommended to use alternative methods for analyzing complex data structures or to be aware of this limitation when working with `TTree::Scan`.
+
 ## Building yourself
 
 If you want to make modifications to the `StandardRecord` you'll probably want to build it yourself in order to test out your changes.
