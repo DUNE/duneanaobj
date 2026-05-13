@@ -49,19 +49,6 @@ namespace caf
 
       std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
       std::size_t nsandreco;
-
-      double beam_inst_P{-1.0};
-      bool beam_inst_valid{false};
-      int beam_inst_trigger{-1};
-      std::vector<double> beam_inst_TOF{};
-      std::vector< int > beam_inst_PDG_candidates{}, beam_inst_TOF_Chan{};
-      double beam_inst_X{-1.0}, beam_inst_Y{-1.0}, beam_inst_Z{-1.0};
-      double beam_inst_dirX{-1.0}, beam_inst_dirY{-1.0}, beam_inst_dirZ{-1.0};
-      int beam_inst_nFibersP1{-1}, beam_inst_nFibersP2{-1}, beam_inst_nFibersP3{-1};
-      int beam_inst_nTracks{-1}, beam_inst_nMomenta{-1};
-      int beam_inst_C0{-1}, beam_inst_C1{-1};
-      double beam_inst_C0_pressure{-1.0}, beam_inst_C1_pressure{-1.0};
-
   };
 }
 
