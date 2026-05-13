@@ -7,7 +7,6 @@
 #define DUNEANAOBJ_SRTRUEPARTICLE_H
 
 #include <vector>
-#include <tuple>
 
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
