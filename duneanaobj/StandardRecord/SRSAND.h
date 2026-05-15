@@ -58,9 +58,19 @@ namespace caf
     class SRSANDInt
     {
     public:
+    
+        enum class SRIntTarget
+        {
+            kGraphite = 0,
+            kC3H6 = 1,
+            kArgon = 2,
+            kOther = 3
+        };
+
         SRGRAIN grain;      ///< GRAIN reconstruction
         SRTracker tracker;  ///< Tracker reconstruction
         SREcal ecal;        ///< ECAL reconstruction
+        SRIntTarget target; ///< Target material of the interaction
     };
 
     // ==================================================
