@@ -3,7 +3,7 @@
 namespace caf
 {
   SRSystParamHeader::SRSystParamHeader()
-    : vals(0), id(-1)
+    : id(-1)
   {
   }
 
