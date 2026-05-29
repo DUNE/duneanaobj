@@ -64,8 +64,8 @@ namespace caf
     kUnknownMethod,
     kRange,         ///< Amount of material traversed by particle
     kMCS,           ///< Multiple scattering
-    kCalorimetry,   ///< Observed energy deposited in active volume
-    kEnergyDeposition, ///< From visible light 
+    kCalorimetry,   ///< Computed from energy deposited in active volumes, possibly with corrections for invisible energy
+    kVisibleEnergy, ///< Computed from the number of photons collected with an appropriate calibration for the conversion 
   };
 
   /// \brief Neutrino interaction categories.
