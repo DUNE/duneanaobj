@@ -1,49 +1,86 @@
 ////////////////////////////////////////////////////////////////////////
 // \file    SRSAND.h
-// \brief   SAND reconstruction output.
-// \author  L.Di Noto
-// \date    Jan. 2023
+// \brief   SAND reconstruction output 
+// \author  S. Repetto
+// \date    Feb. 2026
 ////////////////////////////////////////////////////////////////////////
+
 #ifndef DUNEANAOBJ_SRSAND_H
 #define DUNEANAOBJ_SRSAND_H
 
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
-#include "duneanaobj/StandardRecord/SRRecoParticle.h"
 #include "duneanaobj/StandardRecord/SRECALCluster.h"
-
+#include "duneanaobj/StandardRecord/SREnums.h" 
 
 namespace caf
 {
-  /// A SAND reconstructed neutrino interaction
-  class SRSANDInt
-  {
+
+    // ==================================================
+    // GRAIN reconstruction
+    // ==================================================
+    class SRGRAIN
+    {
     public:
-      std::vector<SRTrack> tracks;
-      std::size_t          ntracks  = 0;
+        std::vector<SRTrack> tracks;
+        std::size_t ntracks = 0;
 
-      std::vector<SRShower> showers;
-      std::size_t           nshowers = 0;
+        std::vector<SRShower> showers;
+        std::size_t nshowers = 0;
+    };
 
-      std::vector<SRECALCluster> ECALClusters; 
-      std::size_t          nclusters=0;
-  };
-
-  /// SAND reconstruction output
-  class SRSAND
-  {
+    // ==================================================
+    // Tracker reconstruction
+    // ==================================================
+    class SRTracker
+    {
     public:
-      /// The information needed to uniquely identify a SAND reco object
-      struct ID
-      {
-        int        ixn  = -1;            ///< interaction ID
-        int        idx  = -1;            ///< index in container
-      };
+        std::vector<SRTrack> tracks;
+        std::size_t ntracks = 0;
 
-      std::size_t nixn = 0;
-      std::vector<SRSANDInt> ixn;       ///< Reconstructed interactions
+        std::vector<SRShower> showers;
+        std::size_t nshowers = 0;
+    };
+
+    // ==================================================
+    // ECAL reconstruction
+    // ==================================================
+    class SREcal
+    {
+    public:
+        std::vector<SRECALCluster> clusters;
+        std::size_t nclusters = 0;
+    };
+
+    // ==================================================
+    // A SAND reconstructed neutrino interaction
+    // ==================================================
+    class SRSANDInt
+    {
+    public:
+        SRGRAIN grain;      ///< GRAIN reconstruction
+        SRTracker tracker;  ///< Tracker reconstruction
+        SREcal ecal;        ///< ECAL reconstruction
+    };
+
+    // ==================================================
+    // SAND reconstruction container
+    // ==================================================
+    class SRSAND
+    {
+    public:
+        /// Unique identifier for each interaction
+        struct ID
+        {
+            int ixn = -1;  ///< interaction ID
+            int idx = -1;  ///< index in container
+        };
+
+        std::size_t nixn = 0;
+        std::vector<SRSANDInt> ixn; ///< Reconstructed interactions
 
     };
 
-}
-#endif //DUNEANAOBJ_SRSAND_H
+} // namespace caf
+
+#endif // DUNEANAOBJ_SRSAND_H
