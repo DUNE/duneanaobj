@@ -235,7 +235,8 @@
    <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="15">
+  <class name="caf::SRNDTrackAssn" ClassVersion="16">
+   <version ClassVersion="16" checksum="1266506394"/>
    <version ClassVersion="15" checksum="2460195191"/>
    <version ClassVersion="14" checksum="2659631828"/>
    <version ClassVersion="13" checksum="744508541"/>
