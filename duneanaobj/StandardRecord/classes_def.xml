@@ -78,7 +78,8 @@
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="13">
+  <class name="caf::SRInteraction" ClassVersion="14">
+   <version ClassVersion="14" checksum="2923159878"/>
    <version ClassVersion="13" checksum="319519243"/>
    <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
@@ -120,7 +121,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="19">
+  <class name="caf::SRRecoParticle" ClassVersion="20">
+   <version ClassVersion="20" checksum="4230274279"/>
    <version ClassVersion="19" checksum="2513933526"/>
    <version ClassVersion="18" checksum="1754766699"/>
    <version ClassVersion="17" checksum="3246791971"/>

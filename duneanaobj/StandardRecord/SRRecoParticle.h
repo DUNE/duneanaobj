@@ -49,7 +49,6 @@ namespace caf
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
-      int         truthMatchIndex = -1;     ///< Index of the best truth match by hits in truth and truthOverlap array, defaults to -1 if no match
 
   };
 
