@@ -42,8 +42,12 @@ namespace caf
 
       bool contained() const; ///< Convenience function to check if the interaction is contained in the detector by checking the contained flag of all reco particles
 
-      bool isBeamSlice = false; 
-      
+      bool isFromTrigger = true;  ///< Did this interaction arise from the physics process that triggered this readout?
+                                  ///< e.g. for a neutrino beam trigger, this is true for beam-induced neutrino                                            
+                                  ///< interactions and false for cosmic overlays; for a ProtoDUNE test-beam trigger,                                    
+                                  ///< true for the beam particle interaction and false for cosmics in the readout window.                                 
+                                  ///< In the ND with significant pileup, multiple interactions in the same SR may be true.                              
+                                  ///< Defaults to true since in most contexts beam-induced interactions are the expected case.  
     };
 
 } // caf
