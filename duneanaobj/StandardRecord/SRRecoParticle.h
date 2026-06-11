@@ -7,8 +7,6 @@
 #ifndef DUNEANAOBJ_SRRECOPARTICLE_H
 #define DUNEANAOBJ_SRRECOPARTICLE_H
 
-#include <tuple>
-
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
@@ -52,8 +50,7 @@ namespace caf
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
       int         truthMatchByHits = -1;     ///< Index of the best truth match by hits in the SRTruthBranch, or -1 if no match
-      std::tuple<int, int, int> truthMatchByHitsIndex = std::make_tuple(-1, -1, -1);      
-
+      TrueParticleID truthMatchByHitsIndex; ///< Tuple with the interaction index, particle type (primary/secondary) and particle index of the best truth match by hits in the SRTruthBranch, or (-1, -1, -1) if no match
   };
 
 } // caf
