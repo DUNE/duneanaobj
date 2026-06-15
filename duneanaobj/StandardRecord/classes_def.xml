@@ -65,22 +65,13 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="19">
-   <version ClassVersion="19" checksum="995432799"/>
-   <version ClassVersion="18" checksum="1572816117"/>
-   <version ClassVersion="17" checksum="2838705083"/>
-   <version ClassVersion="16" checksum="1999633423"/>
-   <version ClassVersion="15" checksum="4122733970"/>
-   <version ClassVersion="14" checksum="1999633423"/>
-   <version ClassVersion="13" checksum="5494552"/>
-   <version ClassVersion="12" checksum="995432799"/>
+  <class name="caf::SRInteractionBranch" ClassVersion="11">
    <version ClassVersion="11" checksum="3254538684"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="14">
-   <version ClassVersion="14" checksum="2923159878"/>
-   <version ClassVersion="13" checksum="319519243"/>
+  <class name="caf::SRInteraction" ClassVersion="13">
+   <version ClassVersion="13" checksum="2923159878"/>
    <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
    <version ClassVersion="10" checksum="2468658506"/>
@@ -121,11 +112,7 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="20">
-   <version ClassVersion="20" checksum="4230274279"/>
-   <version ClassVersion="19" checksum="2513933526"/>
-   <version ClassVersion="18" checksum="1754766699"/>
-   <version ClassVersion="17" checksum="3246791971"/>
+  <class name="caf::SRRecoParticle" ClassVersion="16">
    <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
@@ -203,9 +190,7 @@
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="12">
-   <version ClassVersion="12" checksum="3744464743"/>
-   <version ClassVersion="11" checksum="126299658"/>
+  <class name="caf::SRPFP" ClassVersion="10">
    <version ClassVersion="10" checksum="3744464743"/>
   </class>
 
@@ -380,12 +365,8 @@
    <version ClassVersion="10" checksum="2662412328"/>
   </class>
 
-  <class name="caf::SRTrueParticle" ClassVersion="21">
-   <version ClassVersion="21" checksum="1858967982"/>
-   <version ClassVersion="20" checksum="399263066"/>
-   <version ClassVersion="19" checksum="3434896655"/>
-   <version ClassVersion="18" checksum="2703534434"/>
-   <version ClassVersion="17" checksum="2332556504"/>
+  <class name="caf::SRTrueParticle" ClassVersion="17">
+   <version ClassVersion="17" checksum="1858967982"/>
    <version ClassVersion="16" checksum="399263066"/>
    <version ClassVersion="15" checksum="1980366129"/>
    <version ClassVersion="14" checksum="1907525372"/>

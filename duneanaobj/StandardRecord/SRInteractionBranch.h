@@ -21,7 +21,6 @@ namespace caf
 
       std::vector<SRInteraction> pandora;   ///< Interactions from Pandora reconstruction
       std::size_t npandora;
-      int beamPandoraSliceIndex = -1; ///< Index of the slice identified as the beam slice by the reconstruction (if any)
 
       std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
       std::size_t nsandreco;
