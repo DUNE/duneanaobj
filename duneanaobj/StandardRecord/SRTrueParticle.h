@@ -40,6 +40,9 @@ namespace caf
       int parent               = -1;       ///< GEANT4 trackID of parent particle from this particle
       std::vector<unsigned int> daughters; ///< GEANT4 trackIDs of daughter particles from this particle
 
+      TrueParticleID parentID;                   ///< SR index reference to parent particle (ixn + type + part index); unset if primary or not found
+      std::vector<TrueParticleID> daughtersID;   ///< SR index references to daughter particles
+
       /// @name GEANT4 process codes.
       ///   The "process" codes are defined here: https://geant4.kek.jp/Reference/11.1.1/G4ProcessType_8hh_source.html
       ///   The "subprocess" codes depend on the value of the "process" code (see previous).  The most relevant ones are:
