@@ -50,6 +50,7 @@ namespace caf
 
       //Track/Shower BDT score
       float track_score = NaN;
+
   };
 
 }
