@@ -3,6 +3,9 @@
 
 ##### current
 
+##### [v03_16_00] -- 2026-06-17
+* Add fields for ProtoDUNE use [#87]
+
 ##### [v03_15_00] -- 2026-06-04
 * Some build updates [#75, #82]
 * Added fields for saving xsec reweights [#88]
