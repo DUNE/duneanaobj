@@ -13,6 +13,22 @@
 
 namespace caf
 {
+
+  enum TrackRecoMethod
+  {
+    kUnknownTrackReco = 0,
+    kTrackerReco      = 1,
+    kGRAINReco        = 2
+  };
+
+  /// \brief What input data type was used to reconstruct this track?
+  enum TrackInputType
+  {
+    kUnknownInput  = 0,
+    kNonVoxelInput = 1,
+    kVoxelInput    = 2
+  };
+  
   class SRTrack : public SRRecoObjBase
   {
     public:
@@ -49,3 +65,4 @@ std::ostream & operator<<(std::ostream & stream, const caf::SRTrack & tr);
 #endif
 
 #endif //DUNEANAOBJ_SRTRACK_H
+

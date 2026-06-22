@@ -15,6 +15,7 @@ namespace caf
   class SRInteractionBranch
   {
     public:
+
       std::vector<SRInteraction> dlp;       ///< Interactions from Deep Learn Physics machine learning reconstruction
       std::size_t ndlp;
 
@@ -23,7 +24,6 @@ namespace caf
 
       std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
       std::size_t nsandreco;
-
   };
 }
 

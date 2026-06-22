@@ -27,7 +27,7 @@ namespace caf
 
 
       float transdispl  = NaN;     ///< perpendicular distance between the two tracks at longitudinal position of matching point
-      float angdispl    = NaN;     ///< angular difference between the two tracks at longitudinal position of matching point
+      float cosangdispl = NaN;     ///< cosine of the angular difference between the two tracks at longitudinal position of matching point
       float matchScore  = NaN;     ///< quantifies how well a LAr and TMS track match each other
 
       NDRecoMatchType matchType = caf::NDRecoMatchType::kUndeclared; ///< specifies how the match was performed

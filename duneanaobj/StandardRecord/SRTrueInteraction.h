@@ -35,6 +35,12 @@
 namespace caf
 {
 
+   class SRDialWeights
+   {
+   public:
+     std::vector<float> weights;
+   };
+
    /// \brief True interaction of probe particle with detector.  Usually neutrinos, but occasionally cosmics etc.
    class SRTrueInteraction
    {
@@ -116,6 +122,8 @@ namespace caf
        std::vector<SRTrueParticle> sec;              ///< Secondary particles.  Note that not *all* secondaries are kept, only those used in the reco branches
 
        float                       xsec_cvwgt = NaN; ///<  Central value weight for cross section model
+
+       std::vector<SRDialWeights> syst_dials; ///< Reweights. Outer index = dial, inner index (SRDialWeights) = variation for that dial
 
    };
 
