@@ -174,8 +174,10 @@ namespace caf
           // TMS
           kTMSTrack,
           // SAND
-          kSANDTrack,
-          kSANDShower,
+          kSANDGRAINTrack,
+          kSANDGRAINShower,
+          kSANDTrackerTrack,
+          kSANDTrackerShower,
           kSANDECalCluster,
           // GAr
           kGArTrack,
