@@ -4,6 +4,8 @@
 #include <type_traits>
 
 #include "duneanaobj/StandardRecord/SRTruthBranch.h"
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
+#include "duneanaobj/StandardRecord/StandardRecord.h"
 
 namespace caf
 {
@@ -30,5 +32,9 @@ namespace caf
   const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>, 
                                   SRTrueInteraction, SRTrueInteractionProxy>::type * 
     FindInteraction(const TruthBranchType & truth,  long int id);
+
+  const SRRecoParticle * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id);
+  
+  const SRRecoObjBase *FindRecoObjBase(const StandardRecord &sr, const SRRecoBaseID &id);
 }
 #endif //DUNEANAOBJ_NAVIGATE_H

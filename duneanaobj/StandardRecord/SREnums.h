@@ -123,6 +123,74 @@ namespace caf
       float hypothesis_pe = NaN; ///< hypothesis pe from reconstruction for this interaction
   };
 
+  /// \brief Identifies a reconstructed particle by the interaction it belongs to, 
+  /// which collection of reconstructed particles it belongs to, and its index 
+  /// within that collection.
+  class SRRecoParticleID
+  {
+    public:
+      enum SRRecoParticleCollectionType
+      {
+        kUnknown,
+        kSPINE,
+        kPandora,
+        kPida,
+        kSandreco
+      };
+
+    int ixn = -1;                                                               ///< Index of SRInteraction in the SRInteractionBranch
+    SRRecoParticleCollectionType type = SRRecoParticleCollectionType::kUnknown; ///< Which of the SRRecoParticle collections in SRRecoParticlesBranch this particle lives in
+    int ipart = -1;                                                             ///< Index of SRRecoParticle in the specified SRRecoParticlesBranch collection of the SRInteraction
+
+    inline operator bool() const { return !(type == SRRecoParticleCollectionType::kUnknown || ixn < 0 || ipart < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+  };
+
+  /// \brief Identifies a reconstructed object by the interaction it belongs to,
+  /// which collection of reconstructed objects it belongs to, and its index
+  /// within that collection.
+  class SRRecoBaseID
+  {
+    public:
+      enum SRRecoBaseCollectionType {
+          kUnknown,
+          // FD
+          kFDHDPandoraTrack,
+          KFDHDPandoraShower,
+          KFDHDPandoraPFP,
+          kFDVDPandoraTrack,
+          KFDVDPandoraShower,
+          KFDVDPandoraPFP,
+          kFDPDHDPandoraTrack,
+          KFDPDHDPandoraShower,
+          KFDPDHDPandoraPFP,
+          kFDPDVDPandoraTrack,
+          KFDPDVDPandoraShower,
+          KFDPDVDPandoraPFP,
+          // NDLAr
+          kNDLArDLPTrack,
+          kNDLArDLPShower,
+          kNDLArPandoraTrack,
+          kNDLARPandoraShower,
+          // TMS
+          kTMSTrack,
+          // SAND
+          kSANDGRAINTrack,
+          kSANDGRAINShower,
+          kSANDTrackerTrack,
+          kSANDTrackerShower,
+          kSANDECalCluster,
+          // GAr
+          kGArTrack,
+          kGArEcalCluster
+      };
+
+    int      ixn   = -1;                                                 ///< Index of SRInteraction in the SRInteractionBranch
+    SRRecoBaseCollectionType type = SRRecoBaseCollectionType::kUnknown;  ///< Which of the low-level reco objects collections this object lives in
+    int      irecoobj = -1;                                              ///< Index of SRRecoObjBase in the specified reco objects collection of the SRInteraction 
+
+    inline operator bool() const { return !(type == SRRecoBaseCollectionType::kUnknown || ixn < 0 || irecoobj < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+  };
+
   /// Which reconstruction toolkit was used to reconstruct this FD event?
   enum FD_RECO_STACK
   {

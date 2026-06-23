@@ -4,6 +4,8 @@
 #ifndef DUNEANAOBJ_SRNDTRACKASSN_H
 #define DUNEANAOBJ_SRNDTRACKASSN_H
 
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
+
 #include "duneanaobj/StandardRecord/SRNDLAr.h"
 #include "duneanaobj/StandardRecord/SRTMS.h"
 #include "duneanaobj/StandardRecord/SRMINERvA.h"
@@ -12,7 +14,7 @@
 
 namespace caf
 {
-  class SRNDTrackAssn
+  class SRNDTrackAssn : public SRRecoObjBase
   {
     private:
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();

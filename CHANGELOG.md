@@ -3,6 +3,9 @@
 
 ##### current
 
+##### [v04_00_00] -- 2026-06-22
+* Linkage between low-level and high-level reco objects [#81]
+
 ##### [v03_16_00] -- 2026-06-17
 * Add fields for ProtoDUNE use [#87]
 
