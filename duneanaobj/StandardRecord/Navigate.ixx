@@ -85,12 +85,16 @@ namespace caf
       return &sr.nd.lar.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kTMSTrack)
       return &sr.nd.tms.ixn[id.ixn].tracks[id.irecoobj];
-    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrack)
-      return &sr.nd.sand.ixn[id.ixn].tracks[id.irecoobj];
-    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDShower)
-      return &sr.nd.sand.ixn[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDGRAINTrack)
+      return &sr.nd.sand.ixn[id.ixn].grain.tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDGRAINShower)
+      return &sr.nd.sand.ixn[id.ixn].grain.showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrackerTrack)
+      return &sr.nd.sand.ixn[id.ixn].tracker.tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrackerShower)
+      return &sr.nd.sand.ixn[id.ixn].tracker.showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDECalCluster)
-      return &sr.nd.sand.ixn[id.ixn].ECALClusters[id.irecoobj];
+      return &sr.nd.sand.ixn[id.ixn].ecal.clusters[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArTrack)
       return &sr.nd.gar.ixn[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArEcalCluster)

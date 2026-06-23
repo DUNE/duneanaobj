@@ -64,7 +64,8 @@ namespace caf
     kUnknownMethod,
     kRange,         ///< Amount of material traversed by particle
     kMCS,           ///< Multiple scattering
-    kCalorimetry,   ///< Observed energy deposited in active volume
+    kCalorimetry,   ///< Computed from energy deposited in active volumes, possibly with corrections for invisible energy
+    kVisibleEnergy, ///< Computed from the number of photons collected with an appropriate calibration for the conversion 
   };
 
   /// \brief Neutrino interaction categories.
@@ -173,8 +174,10 @@ namespace caf
           // TMS
           kTMSTrack,
           // SAND
-          kSANDTrack,
-          kSANDShower,
+          kSANDGRAINTrack,
+          kSANDGRAINShower,
+          kSANDTrackerTrack,
+          kSANDTrackerShower,
           kSANDECalCluster,
           // GAr
           kGArTrack,
@@ -222,6 +225,7 @@ namespace caf
     kShower         = 2,  ///< shower
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
   };
+
 
 }
 

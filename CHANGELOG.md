@@ -3,6 +3,19 @@
 
 ##### current
 
+##### [v04_00_00] -- 2026-06-22
+* Linkage between low-level and high-level reco objects [#81]
+
+##### [v03_16_00] -- 2026-06-17
+* Add fields for ProtoDUNE use [#87]
+
+##### [v03_15_00] -- 2026-06-04
+* Some build updates [#75, #82]
+* Added fields for saving xsec reweights [#88]
+* Added variables for use with SAND GRAIN [#84]
+* Minor muon reco angle variable adjustment [#89]
+
+
 ##### [v03_12_00] -- 2025-12-01
 * SAND detector specific fields [#53]
 * Initialize G4 process codes better [#59]
