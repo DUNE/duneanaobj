@@ -24,6 +24,7 @@ namespace caf
 
       std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
       std::size_t nsandreco;
+      double reco_beam_interactingEnergy = -999.; ///< Reco thin-target interacting energy [MeV] (ProtoDUNE beam track calorimetry)
   };
 }
 

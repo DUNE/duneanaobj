@@ -67,6 +67,7 @@ namespace caf
       unsigned int  first_subprocess = 0; ///< GEANT4 subprocess code for this particle's creation or first step (see caveat on first_process).
       unsigned int  end_process      = 0;      ///< G4 process code for the particle's end
       unsigned int  end_subprocess   = 0;   ///< G4 subprocess code for the particle's end
+      double true_beam_interactingEnergy = -999.; ///< True thin-target interacting energy [MeV] (ProtoDUNE beam particle)
       ///@}
   };
 
