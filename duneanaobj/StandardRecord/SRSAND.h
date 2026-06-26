@@ -37,6 +37,7 @@ namespace caf
     public:
         std::vector<SRTrack> tracks;
         std::size_t ntracks = 0;
+        std::vector<int> ncrossedstations; ///< Number of stations crossed by the track
 
         std::vector<SRShower> showers;
         std::size_t nshowers = 0;
@@ -61,10 +62,13 @@ namespace caf
     
         enum class SRIntTarget
         {
-            kGraphite = 0,
-            kC3H6 = 1,
-            kArgon = 2,
-            kOther = 3
+            kGraphiteTarget = 0,
+            kPlasticTarget  = 1,
+            kArgon          = 2,
+            kCaloTarget     = 3,
+            kInternal       = 4, // passive material inside SAND calo
+            kExternal       = 5,
+            kOther          = 6
         };
 
         SRGRAIN grain;      ///< GRAIN reconstruction
