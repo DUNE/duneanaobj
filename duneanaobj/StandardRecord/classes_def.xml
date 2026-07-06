@@ -98,7 +98,8 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="14">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="15">
+   <version ClassVersion="15" checksum="1848688215"/>
    <version ClassVersion="14" checksum="859323796"/>
    <version ClassVersion="13" checksum="1848688215"/>
    <version ClassVersion="12" checksum="3585828423"/>
@@ -106,7 +107,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="16">
+  <class name="caf::SRRecoParticle" ClassVersion="17">
+   <version ClassVersion="17" checksum="1655769828"/>
    <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
@@ -119,11 +121,17 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
-  <class name="caf::SRDLPParticle" ClassVersion="10">
-   <version ClassVersion="10" checksum="1365453781"/>
+  <class name="caf::SREnergyEst" ClassVersion="10" >
+   <version ClassVersion="10" checksum="3596214618"/>
   </class>
-
-  <class name="std::vector<caf::SRDLPParticle>">
+  <class name="caf::SRPIDProbability" ClassVersion="10" >
+   <version ClassVersion="10" checksum="1414723843"/>
+  </class>
+  <class name="caf::SRClusteringInfo" ClassVersion="10" >
+   <version ClassVersion="10" checksum="2214499172"/>
+  </class>
+  <class name="caf::SRDLPInfo" ClassVersion="10" >
+   <version ClassVersion="10" checksum="2033453794"/>
   </class>
 
   <enum name="PartEMethod" ClassVersion="10" />

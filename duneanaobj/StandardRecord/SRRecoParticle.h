@@ -10,6 +10,10 @@
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
+#include "duneanaobj/StandardRecord/SREnergyEst.h"
+#include "duneanaobj/StandardRecord/SRPIDProbability.h"
+#include "duneanaobj/StandardRecord/SRClusteringInfo.h"
+#include "duneanaobj/StandardRecord/SRDLPInfo.h"
 
 namespace caf
 {
@@ -49,6 +53,15 @@ namespace caf
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
+
+      SRVector3D  start_dir;                          ///< Reconstructed direction vector at start
+      SRVector3D  end_dir;                            ///< Reconstructed direction vector at end
+      float       length = NaN;                       ///< Reconstructed path length [cm]
+
+      SREnergyEst      energy_est;                    ///< Advanced energy estimators (CSDA, MCS, Calo)
+      SRPIDProbability pid_prob;                      ///< Detailed PID classification probabilities
+      SRClusteringInfo cluster;                       ///< Hit/Voxel clustering properties
+      SRDLPInfo        dlp;                           ///< Purely DLP-specific tracking variables and metadata
   };
 
 } // caf

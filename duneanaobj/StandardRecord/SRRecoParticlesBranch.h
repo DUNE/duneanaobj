@@ -9,7 +9,6 @@
 #include <vector>
 
 #include "duneanaobj/StandardRecord/SRRecoParticle.h"
-#include "duneanaobj/StandardRecord/SRDLPParticle.h"
 
 namespace caf
 {
@@ -19,9 +18,6 @@ namespace caf
     public:
       int ndlp = 0;  // need these counters for SRProxy
       std::vector<SRRecoParticle> dlp;       ///< Particles reconstructed by DeepLearnPhysics machine learning stack
-
-      int ndlp_detailed = 0;
-      std::vector<SRDLPParticle> dlp_detailed; ///< Detailed SPINE/DLP reconstruction variables
 
       int npandora = 0;
       std::vector<SRRecoParticle> pandora;   ///< Particles reconstructed by Pandora
