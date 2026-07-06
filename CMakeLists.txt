@@ -18,6 +18,7 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 
 find_package(cetmodules REQUIRED)
 project(duneanaobj LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.14.00)
 
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
@@ -39,7 +40,7 @@ if(DEFINED ENV{UPS_DIR})
       WERROR
       NO_UNDEFINED
       ALLOW_DEPRECATIONS
-      EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -Wno-error=cpp -I $ENV{CLANG_FQ_DIR}/include/c++/v1
+      EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -I $ENV{CLANG_FQ_DIR}/include/c++/v1
     )
 
     cet_report_compiler_flags()
