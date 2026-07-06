@@ -154,7 +154,29 @@ namespace caf
     kUnknownRecoObj = -1, ///< default value
     kTrack          = 1,  ///< track
     kShower         = 2,  ///< shower
-    kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
+    kHitCollection  = 3   ///< hit collection (mostly used to garbage collect all remaining hits)
+  };
+
+  enum DLPPid
+  {
+    kDLPPhoton = 0,
+    kDLPElectron = 1,
+    kDLPMuon = 2,
+    kDLPPion = 3,
+    kDLPProton = 4,
+    kDLPKaon = 5,
+    kDLPUnknown = -1
+  };
+
+  enum DLPShape
+  {
+    kDLPShower = 0,
+    kDLPTrack = 1,
+    kDLPMichel = 2,
+    kDLPDelta = 3,
+    kDLPLowEnergy = 4,
+    kDLPGhost = 5,
+    kDLPUndefined = -1
   };
 
 }

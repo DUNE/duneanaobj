@@ -98,7 +98,8 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="13">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="859323796"/>
    <version ClassVersion="13" checksum="1848688215"/>
    <version ClassVersion="12" checksum="3585828423"/>
    <version ClassVersion="11" checksum="3413162475"/>
@@ -118,7 +119,17 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
+  <class name="caf::SRDLPParticle" ClassVersion="11">
+   <version ClassVersion="11" checksum="1365453781"/>
+   <version ClassVersion="10" checksum="2703061249"/>
+  </class>
+
+  <class name="std::vector<caf::SRDLPParticle>">
+  </class>
+
   <enum name="PartEMethod" ClassVersion="10" />
+  <enum name="caf::DLPPid" ClassVersion="10" />
+  <enum name="caf::DLPShape" ClassVersion="10" />
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 

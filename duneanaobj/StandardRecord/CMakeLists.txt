@@ -20,6 +20,9 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     build_dictionary( duneanaobj_StandardRecord
                       DICTIONARY_LIBRARIES duneanaobj_StandardRecord
                     )
+    target_link_libraries( duneanaobj_StandardRecord_dict
+                           PUBLIC ROOT::Core ROOT::Physics
+                         )
 
     install_headers()
     install_source()
