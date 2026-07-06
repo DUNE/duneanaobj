@@ -1,4 +1,4 @@
-FILE(GLOB SR_DEPENDENCIES ../*.h)
+FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
 
 add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    DEPENDS ${SR_DEPENDENCIES}
