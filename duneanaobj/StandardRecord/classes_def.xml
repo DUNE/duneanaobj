@@ -119,9 +119,8 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
-  <class name="caf::SRDLPParticle" ClassVersion="11">
-   <version ClassVersion="11" checksum="1365453781"/>
-   <version ClassVersion="10" checksum="2703061249"/>
+  <class name="caf::SRDLPParticle" ClassVersion="10">
+   <version ClassVersion="10" checksum="1365453781"/>
   </class>
 
   <class name="std::vector<caf::SRDLPParticle>">
