@@ -131,7 +131,7 @@
    <version ClassVersion="10" checksum="2214499172"/>
   </class>
   <class name="caf::SRDLPInfo" ClassVersion="10" >
-   <version ClassVersion="10" checksum="2033453794"/>
+    <version ClassVersion="10" checksum="2121985500"/>
   </class>
 
   <enum name="PartEMethod" ClassVersion="10" />

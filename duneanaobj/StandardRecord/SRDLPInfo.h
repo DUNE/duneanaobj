@@ -35,9 +35,6 @@ namespace caf
       float     cathode_offset = NaN;     ///< Distance to cathode [cm]
       float     vertex_distance = NaN;    ///< Distance to interaction vertex [cm]
 
-      std::vector<int32_t> fragment_ids;  ///< Internal fragment tracking IDs
-      std::vector<int32_t> ppn_ids;       ///< PPN candidate node IDs
-      std::vector<int64_t> module_ids;    ///< Module tracking IDs
   };
 }
 
