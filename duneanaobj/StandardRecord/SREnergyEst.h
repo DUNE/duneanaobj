@@ -30,6 +30,7 @@ namespace caf
 
       std::vector<float> csda_ke_per_pid; ///< CSDA kinetic energy per hypothesis [GeV]
       std::vector<float> mcs_ke_per_pid;  ///< MCS kinetic energy per hypothesis [GeV]
+      std::vector<int>   ke_pdg;          ///< Associated PDG code for each hypothesis in energy vectors
   };
 }
 

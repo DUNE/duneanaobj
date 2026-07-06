@@ -107,7 +107,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="17">
+  <class name="caf::SRRecoParticle" ClassVersion="18">
+   <version ClassVersion="18" checksum="3180140038"/>
    <version ClassVersion="17" checksum="1655769828"/>
    <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
@@ -122,21 +123,21 @@
   </class>
 
   <class name="caf::SREnergyEst" ClassVersion="10" >
-   <version ClassVersion="10" checksum="3596214618"/>
+    <version ClassVersion="10" checksum="2996671440"/>
   </class>
   <class name="caf::SRPIDProbability" ClassVersion="10" >
-   <version ClassVersion="10" checksum="1414723843"/>
+    <version ClassVersion="10" checksum="1068314722"/>
   </class>
   <class name="caf::SRClusteringInfo" ClassVersion="10" >
    <version ClassVersion="10" checksum="2214499172"/>
   </class>
-  <class name="caf::SRDLPInfo" ClassVersion="10" >
-    <version ClassVersion="10" checksum="2121985500"/>
+  <class name="caf::SRLArTPCInfo" ClassVersion="10" >
+   <version ClassVersion="10" checksum="3788056802"/>
   </class>
 
   <enum name="PartEMethod" ClassVersion="10" />
-  <enum name="caf::DLPPid" ClassVersion="10" />
-  <enum name="caf::DLPShape" ClassVersion="10" />
+  <enum name="caf::LArTPCPid" ClassVersion="10" />
+  <enum name="caf::LArTPCShape" ClassVersion="10" />
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 

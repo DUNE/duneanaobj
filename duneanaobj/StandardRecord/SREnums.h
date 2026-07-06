@@ -157,26 +157,26 @@ namespace caf
     kHitCollection  = 3   ///< hit collection (mostly used to garbage collect all remaining hits)
   };
 
-  enum DLPPid
+  enum LArTPCPid
   {
-    kDLPPhoton = 0,
-    kDLPElectron = 1,
-    kDLPMuon = 2,
-    kDLPPion = 3,
-    kDLPProton = 4,
-    kDLPKaon = 5,
-    kDLPUnknown = -1
+    kLArTPCPhoton = 0,
+    kLArTPCElectron = 1,
+    kLArTPCMuon = 2,
+    kLArTPCPion = 3,
+    kLArTPCProton = 4,
+    kLArTPCKaon = 5,
+    kLArTPCUnknown = -1
   };
 
-  enum DLPShape
+  enum LArTPCShape
   {
-    kDLPShower = 0,
-    kDLPTrack = 1,
-    kDLPMichel = 2,
-    kDLPDelta = 3,
-    kDLPLowEnergy = 4,
-    kDLPGhost = 5,
-    kDLPUndefined = -1
+    kLArTPCShower = 0,
+    kLArTPCTrack = 1,
+    kLArTPCMichel = 2,
+    kLArTPCDelta = 3,
+    kLArTPCLowEnergy = 4,
+    kLArTPCGhost = 5,
+    kLArTPCUnknownShape = -1
   };
 
 }

@@ -13,7 +13,7 @@
 #include "duneanaobj/StandardRecord/SREnergyEst.h"
 #include "duneanaobj/StandardRecord/SRPIDProbability.h"
 #include "duneanaobj/StandardRecord/SRClusteringInfo.h"
-#include "duneanaobj/StandardRecord/SRDLPInfo.h"
+#include "duneanaobj/StandardRecord/SRLArTPCInfo.h"
 
 namespace caf
 {
@@ -61,7 +61,7 @@ namespace caf
       SREnergyEst      energy_est;                    ///< Advanced energy estimators (CSDA, MCS, Calo)
       SRPIDProbability pid_prob;                      ///< Detailed PID classification probabilities
       SRClusteringInfo cluster;                       ///< Hit/Voxel clustering properties
-      SRDLPInfo        dlp;                           ///< Purely DLP-specific tracking variables and metadata
+      SRLArTPCInfo     lartpc;                        ///< LArTPC-specific reconstruction details
   };
 
 } // caf

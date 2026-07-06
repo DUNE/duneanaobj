@@ -5,4 +5,4 @@
 #include "duneanaobj/StandardRecord/SREnergyEst.h"
 #include "duneanaobj/StandardRecord/SRPIDProbability.h"
 #include "duneanaobj/StandardRecord/SRClusteringInfo.h"
-#include "duneanaobj/StandardRecord/SRDLPInfo.h"
+#include "duneanaobj/StandardRecord/SRLArTPCInfo.h"

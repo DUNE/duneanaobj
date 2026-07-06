@@ -23,8 +23,8 @@ namespace caf
 
   template class Proxy<TrueParticleID::PartType>;
   template class Proxy<RecoObjType>;
-  template class Proxy<DLPPid>;
-  template class Proxy<DLPShape>;
+  template class Proxy<LArTPCPid>;
+  template class Proxy<LArTPCShape>;
 
   template const SRTrueParticleProxy * FindParticle(const SRTruthBranchProxy & truth, const TrueParticleIDProxy & id);
   template const SRTrueInteractionProxy * FindInteraction(const SRTruthBranchProxy & truth,  long int id);
