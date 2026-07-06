@@ -36,9 +36,10 @@ if(DEFINED ENV{UPS_DIR})
     # Removing that qualifier, we need to supply that information manually,
     # and maintain it too.
     cet_set_compiler_flags(DIAGS CAUTIOUS
+      WERROR
       NO_UNDEFINED
       ALLOW_DEPRECATIONS
-      EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -I $ENV{CLANG_FQ_DIR}/include/c++/v1
+      EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -Wno-error=cpp -I $ENV{CLANG_FQ_DIR}/include/c++/v1
     )
 
     cet_report_compiler_flags()
