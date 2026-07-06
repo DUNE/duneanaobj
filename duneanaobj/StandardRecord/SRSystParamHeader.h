@@ -12,7 +12,7 @@ namespace caf
     SRSystParamHeader();
     ~SRSystParamHeader();
 
-    int nshifts;
+    std::vector<float> vals;
     std::string name;
     int id;
   };

@@ -4,6 +4,8 @@
 #ifndef DUNEANAOBJ_SRNDTRACKASSN_H
 #define DUNEANAOBJ_SRNDTRACKASSN_H
 
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
+
 #include "duneanaobj/StandardRecord/SRNDLAr.h"
 #include "duneanaobj/StandardRecord/SRTMS.h"
 #include "duneanaobj/StandardRecord/SRMINERvA.h"
@@ -12,7 +14,7 @@
 
 namespace caf
 {
-  class SRNDTrackAssn
+  class SRNDTrackAssn : public SRRecoObjBase
   {
     private:
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
@@ -25,7 +27,7 @@ namespace caf
 
 
       float transdispl  = NaN;     ///< perpendicular distance between the two tracks at longitudinal position of matching point
-      float angdispl    = NaN;     ///< angular difference between the two tracks at longitudinal position of matching point
+      float cosangdispl = NaN;     ///< cosine of the angular difference between the two tracks at longitudinal position of matching point
       float matchScore  = NaN;     ///< quantifies how well a LAr and TMS track match each other
 
       NDRecoMatchType matchType = caf::NDRecoMatchType::kUndeclared; ///< specifies how the match was performed

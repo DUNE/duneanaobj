@@ -9,11 +9,11 @@
 #define DUNEANAOBJ_SRGARECAL_H
 
 #include "duneanaobj/StandardRecord/SRVector3D.h"
-#include "duneanaobj/StandardRecord/SRTrueParticle.h"
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 
 namespace caf
 {
-  class SRGArECAL
+  class SRGArECAL : public SRRecoObjBase
   {
     public:
       SRVector3D position;  ///< ECAL cluster 3D position

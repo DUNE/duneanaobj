@@ -16,7 +16,8 @@
    <version ClassVersion="10" checksum="1612203321"/>
   </class>
 
-  <class name="caf::SRSystParamHeader" ClassVersion="10">
+  <class name="caf::SRSystParamHeader" ClassVersion="11">
+   <version ClassVersion="11" checksum="4008846007"/>
    <version ClassVersion="10" checksum="621537544"/>
   </class>
 
@@ -39,7 +40,11 @@
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRDetectorMetaBranch" ClassVersion="10">
+  <class name="caf::SRDetectorMetaBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="175116589"/>
+   <version ClassVersion="13" checksum="1740630901"/>
+   <version ClassVersion="12" checksum="175116589"/>
+   <version ClassVersion="11" checksum="1991127134"/>
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
@@ -65,7 +70,8 @@
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="12">
+  <class name="caf::SRInteraction" ClassVersion="13">
+   <version ClassVersion="13" checksum="2923159878"/>
    <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
    <version ClassVersion="10" checksum="2468658506"/>
@@ -88,7 +94,8 @@
    <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
-  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="16">
+  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="17">
+   <version ClassVersion="17" checksum="3605718211"/>
    <version ClassVersion="16" checksum="3331961107"/>
    <version ClassVersion="15" checksum="3582001491"/>
    <version ClassVersion="14" checksum="3497414748"/>
@@ -98,9 +105,7 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="15">
-   <version ClassVersion="15" checksum="1848688215"/>
-   <version ClassVersion="14" checksum="859323796"/>
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="13">
    <version ClassVersion="13" checksum="1848688215"/>
    <version ClassVersion="12" checksum="3585828423"/>
    <version ClassVersion="11" checksum="3413162475"/>
@@ -108,8 +113,7 @@
   </class>
 
   <class name="caf::SRRecoParticle" ClassVersion="18">
-   <version ClassVersion="18" checksum="3180140038"/>
-   <version ClassVersion="17" checksum="1655769828"/>
+   <version ClassVersion="17" checksum="3627482381"/>
    <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
@@ -141,7 +145,8 @@
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
-  <class name="caf::SRTrack" ClassVersion="20">
+  <class name="caf::SRTrack" ClassVersion="21">
+   <version ClassVersion="21" checksum="3631361424"/>
    <version ClassVersion="20" checksum="2342285040"/>
    <version ClassVersion="19" checksum="3416692108"/>
    <version ClassVersion="18" checksum="2409174386"/>
@@ -158,7 +163,8 @@
   <class name="std::vector<caf::SRTrack>">
   </class>
 
-  <class name="caf::SRShower" ClassVersion="16">
+  <class name="caf::SRShower" ClassVersion="17">
+   <version ClassVersion="17" checksum="3141158752"/>
    <version ClassVersion="16" checksum="2739725490"/>
    <version ClassVersion="15" checksum="1197469375"/>
    <version ClassVersion="14" checksum="772507687"/>
@@ -171,7 +177,8 @@
   <class name="std::vector<caf::SRShower>">
   </class>
 
-<class name="caf::SRECALCluster" ClassVersion="16">
+<class name="caf::SRECALCluster" ClassVersion="17">
+ <version ClassVersion="17" checksum="2003075550"/>
  <version ClassVersion="16" checksum="3312245962"/>
    <version ClassVersion="15" checksum="1197469375"/>
    <version ClassVersion="14" checksum="772507687"/>
@@ -202,7 +209,8 @@
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="10">
+  <class name="caf::SRPFP" ClassVersion="11">
+   <version ClassVersion="11" checksum="3636199025"/>
    <version ClassVersion="10" checksum="3744464743"/>
   </class>
 
@@ -212,7 +220,9 @@
 
     <!-- - - - - - - - - - ND specific - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRNDBranch" ClassVersion="15">
+  <class name="caf::SRNDBranch" ClassVersion="17">
+   <version ClassVersion="17" checksum="726502342"/>
+   <version ClassVersion="16" checksum="3854777445"/>
    <version ClassVersion="15" checksum="726502342"/>
    <version ClassVersion="14" checksum="2431680929"/>
    <version ClassVersion="13" checksum="688841544"/>
@@ -241,12 +251,15 @@
    <version ClassVersion="10" checksum="764455914"/>
   </class>
 
-  <class name="caf::SRNDShowerAssn" ClassVersion="11">
+  <class name="caf::SRNDShowerAssn" ClassVersion="12">
+   <version ClassVersion="12" checksum="3759476703"/>
    <version ClassVersion="11" checksum="2148903847"/>
    <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="15">
+  <class name="caf::SRNDTrackAssn" ClassVersion="17">
+   <version ClassVersion="17" checksum="2425424940"/>
+   <version ClassVersion="16" checksum="1266506394"/>
    <version ClassVersion="15" checksum="2460195191"/>
    <version ClassVersion="14" checksum="2659631828"/>
    <version ClassVersion="13" checksum="744508541"/>
@@ -280,7 +293,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="16">
+    <class name="caf::SRGArTrack" ClassVersion="17">
+     <version ClassVersion="17" checksum="3841055326"/>
      <version ClassVersion="16" checksum="1020294526"/>
      <version ClassVersion="15" checksum="4066948530"/>
    <version ClassVersion="14" checksum="2591374164"/>
@@ -293,7 +307,8 @@
   <class name="std::vector<caf::SRGArTrack>">
   </class>
 
-  <class name="caf::SRGArECAL" ClassVersion="12">
+  <class name="caf::SRGArECAL" ClassVersion="13">
+   <version ClassVersion="13" checksum="594495245"/>
    <version ClassVersion="12" checksum="3509084697"/>
    <version ClassVersion="11" checksum="2202249478"/>
    <version ClassVersion="10" checksum="4277816864"/>
@@ -311,15 +326,30 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-    <class name="caf::SRSAND" ClassVersion="14">
-     <version ClassVersion="14" checksum="3811644425"/>
+  <class name="caf::SRSAND" ClassVersion="17">
+   <version ClassVersion="17" checksum="3811644425"/>
+   <version ClassVersion="16" checksum="1866131598"/>
+   <version ClassVersion="15" checksum="911217381"/>
+   <version ClassVersion="14" checksum="3811644425"/>
    <version ClassVersion="13" checksum="1270542721"/>
    <version ClassVersion="12" checksum="1233697569"/>
    <version ClassVersion="11" checksum="3795335384"/>
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-<class name="caf::SRSANDInt" ClassVersion="12">
+<class name="caf::SRSANDInt" ClassVersion="24">
+ <version ClassVersion="24" checksum="858502929"/>
+ <version ClassVersion="23" checksum="3190481744"/>
+ <version ClassVersion="22" checksum="858502929"/>
+ <version ClassVersion="21" checksum="2703820925"/>
+ <version ClassVersion="20" checksum="858502929"/>
+ <version ClassVersion="19" checksum="294321243"/>
+ <version ClassVersion="18" checksum="858502929"/>
+ <version ClassVersion="17" checksum="294321243"/>
+ <version ClassVersion="16" checksum="256951120"/>
+ <version ClassVersion="15" checksum="1933940020"/>
+ <version ClassVersion="14" checksum="3038143830"/>
+ <version ClassVersion="13" checksum="1933940020"/>
  <version ClassVersion="12" checksum="3038143830"/>
  <version ClassVersion="11" checksum="515563825"/>
    <version ClassVersion="10" checksum="87138233"/>
@@ -336,14 +366,15 @@
   <class name="caf::SRMINERvAID"  ClassVersion="10">
    <version ClassVersion="10" checksum="4040824592"/>
   </class>
-
+  
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
    <version ClassVersion="10" checksum="2608785459"/>
   </class>
 
-  <class name="caf::SRTrueInteraction" ClassVersion="17">
+  <class name="caf::SRTrueInteraction" ClassVersion="18">
+   <version ClassVersion="18" checksum="1807033241"/>
    <version ClassVersion="17" checksum="1565545093"/>
    <version ClassVersion="16" checksum="358248003"/>
    <version ClassVersion="15" checksum="880834593"/>
@@ -358,7 +389,8 @@
    <version ClassVersion="10" checksum="2662412328"/>
   </class>
 
-  <class name="caf::SRTrueParticle" ClassVersion="16">
+  <class name="caf::SRTrueParticle" ClassVersion="17">
+   <version ClassVersion="17" checksum="1858967982"/>
    <version ClassVersion="16" checksum="399263066"/>
    <version ClassVersion="15" checksum="1980366129"/>
    <version ClassVersion="14" checksum="1907525372"/>
@@ -366,6 +398,9 @@
    <version ClassVersion="12" checksum="941873740"/>
    <version ClassVersion="11" checksum="4112437168"/>
     <version ClassVersion="10" checksum="3381095522"/>
+  </class>
+  <class name="caf::SRDialWeights" ClassVersion="10">
+   <version ClassVersion="10" checksum="2304707688"/>
   </class>
 
   <enum name="caf::Generator" ClassVersion="10" />

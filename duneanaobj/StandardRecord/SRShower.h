@@ -8,12 +8,12 @@
 #ifndef DUNEANAOBJ_SRSHOWER_H
 #define DUNEANAOBJ_SRSHOWER_H
 
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
-#include "duneanaobj/StandardRecord/SRTrueParticle.h"
 
 namespace caf
 {
-  class SRShower
+  class SRShower : public SRRecoObjBase
   {
     public:
       // less typing further below

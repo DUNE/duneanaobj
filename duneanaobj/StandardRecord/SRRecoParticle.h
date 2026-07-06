@@ -17,6 +17,8 @@
 
 namespace caf
 {
+  class SRRecoObjBase;
+
   /// \brief Reconstructed particle candidate
   class SRRecoParticle
   {
@@ -53,7 +55,6 @@ namespace caf
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
-
       SRVector3D  start_dir;                          ///< Reconstructed direction vector at start
       SRVector3D  end_dir;                            ///< Reconstructed direction vector at end
       float       length = NaN;                       ///< Reconstructed path length [cm]
@@ -62,6 +63,8 @@ namespace caf
       SRPIDProbability pid_prob;                      ///< Detailed PID classification probabilities
       SRClusteringInfo cluster;                       ///< Hit/Voxel clustering properties
       SRLArTPCInfo     lartpc;                        ///< LArTPC-specific reconstruction details
+
+      SRRecoBaseID     recoobj;                       ///< Id of the reconstructed object this particle is built on
   };
 
 } // caf
