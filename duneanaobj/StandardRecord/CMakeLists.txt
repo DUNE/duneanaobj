@@ -8,10 +8,10 @@ FILE( GLOB src_files *.cxx )
 # For this directory only, pedantic option to catch uninitialized SR fields
 # add_compile_options(-Weffc++)
 
-if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     add_subdirectory(Proxy)
     add_subdirectory(Flat)
 
+if(NOT SKIP_CET)
     cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
                       SOURCE       ${src_files}
                       LIBRARIES    ROOT::Core ROOT::Physics
@@ -23,7 +23,7 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
 
     install_headers()
     install_source()
-elseif(SKIP_CET)
+else()
     # n.b.: missing Proxy, Plain and the dictionary!
 
     include(GNUInstallDirs)
@@ -68,11 +68,4 @@ elseif(SKIP_CET)
              "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
              DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/duneanaobj"
            )
-else()
-    add_library(duneanaobj_StandardRecord
-                ${src_files})
-    target_link_libraries(duneanaobj_StandardRecord
-                     ROOT::Core ROOT::Physics )
-
-    # n.b.: missing the dictionary and installation!
 endif()
