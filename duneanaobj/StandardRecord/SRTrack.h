@@ -8,8 +8,8 @@
 #define DUNEANAOBJ_SRTRACK_H
 
 #include "duneanaobj/StandardRecord/SREnums.h"
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
-#include "duneanaobj/StandardRecord/SRTrueParticle.h"
 
 namespace caf
 {
@@ -29,7 +29,7 @@ namespace caf
     kVoxelInput    = 2
   };
   
-  class SRTrack
+  class SRTrack : public SRRecoObjBase
   {
     public:
       // less typing further below
