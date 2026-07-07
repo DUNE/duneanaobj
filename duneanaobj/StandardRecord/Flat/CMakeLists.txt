@@ -8,6 +8,7 @@ add_custom_command(# Rebuild if anything in StandardRecord/ changes
 
 
 include_directories($ENV{SRPROXY_INC})
+
 if(NOT SKIP_CET)
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordFlat
                      SOURCE       FlatRecord.cxx
@@ -15,9 +16,10 @@ if(NOT SKIP_CET)
                      )
 
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
+        message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
         set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
     else()
-      if(DEFINED ENV{SPACK_ENV} AND NOT "$ENV{SPACK_ENV}" STREQUAL "")
+      if(DEFINED ENV{SPACK_ENV})
         message(STATUS "SPACK_ENV = $ENV{SPACK_ENV}")
         include_directories($ENV{SPACK_ENV}/.spack-env/view/include)
         set(builddir $ENV{SPACK_ENV}/../build/duneanaobj/)
