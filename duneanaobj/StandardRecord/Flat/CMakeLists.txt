@@ -10,30 +10,28 @@ add_custom_command(# Rebuild if anything in StandardRecord/ changes
 include_directories($ENV{SRPROXY_INC})
 
 if(NOT SKIP_CET)
+    message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordFlat
                      SOURCE       FlatRecord.cxx
-                     LIBRARIES    ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer
+                     LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer
                      )
 
+    set(builddir ${CMAKE_BINARY_DIR})
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
         message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
         set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
-    else()
-        set(builddir ${CMAKE_BINARY_DIR})
     endif()
-    if(DEFINED ENV{SPACK_ENV})
-        message(STATUS "SPACK_ENV = $ENV{SPACK_ENV}")
-        include_directories($ENV{SPACK_ENV}/.spack-env/view/include)
-        set(builddir $ENV{SPACK_ENV}/../build/duneanaobj/)
+    if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view)
+        message(STATUS "env view dir  ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view")
+        include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
+        set(builddir ${PROJECT_SOURCE_DIR}/../../build/duneanaobj/)
         include_directories($ENV{ROOT_INCLUDE_PATH})
-    else()
-        set(builddir ${CMAKE_BINARY_DIR})
     endif()
     install_headers(EXTRAS ${builddir}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${builddir}/duneanaobj/StandardRecord/Flat/FwdDeclare.h)
 else()
     add_library(duneanaobj_StandardRecordFlat
                 FlatRecord.cxx)
-    target_link_libraries(duneanaobj_StandardRecordFlat ${ROOT_BASIC_LIB_LIST} ROOT::TreePlayer)
+    target_link_libraries(duneanaobj_StandardRecordFlat ROOT::Core ROOT::Physics ROOT::TreePlayer)
 
     install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
