@@ -11,7 +11,6 @@
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
 #include "duneanaobj/StandardRecord/SRPIDProbability.h"
-#include "duneanaobj/StandardRecord/SRSpineInfo.h"
 
 namespace caf
 {
@@ -69,7 +68,6 @@ namespace caf
 
       // Modular structures
       SRPIDProbability pid_prob;                      ///< Detailed PID classification probabilities and hypothesis energy estimates
-      SRSpineInfo      spine;                         ///< SPINE-specific reconstruction details
 
       SRRecoBaseID     recoobj;                       ///< Id of the reconstructed object this particle is built on
   };

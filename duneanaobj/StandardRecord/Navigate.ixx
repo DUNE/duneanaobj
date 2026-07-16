@@ -56,25 +56,25 @@ namespace caf
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDHDPandoraShower)
       return &sr.fd.hd.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDHDPandoraPFP)
-      return &sr.fd.hd.pandora[id.ixn].pfps[id.irecoobj];
+      return &sr.fd.hd.pandora[id.ixn].lar_particles[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDVDPandoraTrack)
       return &sr.fd.vd.pandora[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDVDPandoraShower)
       return &sr.fd.vd.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDVDPandoraPFP)
-      return &sr.fd.vd.pandora[id.ixn].pfps[id.irecoobj];
+      return &sr.fd.vd.pandora[id.ixn].lar_particles[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDPDHDPandoraTrack)
       return &sr.fd.pd_hd.pandora[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDHDPandoraShower)
       return &sr.fd.pd_hd.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDHDPandoraPFP)
-      return &sr.fd.pd_hd.pandora[id.ixn].pfps[id.irecoobj];
+      return &sr.fd.pd_hd.pandora[id.ixn].lar_particles[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kFDPDVDPandoraTrack)
       return &sr.fd.pd_vd.pandora[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDVDPandoraShower)
       return &sr.fd.pd_vd.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDVDPandoraPFP)
-      return &sr.fd.pd_vd.pandora[id.ixn].pfps[id.irecoobj];
+      return &sr.fd.pd_vd.pandora[id.ixn].lar_particles[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArSPINETrack)
       return &sr.nd.lar.spine[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArSPINEShower)

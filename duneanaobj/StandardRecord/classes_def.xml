@@ -109,7 +109,8 @@
 
 
 
-  <class name="caf::SRRecoParticle" ClassVersion="19">
+  <class name="caf::SRRecoParticle" ClassVersion="20">
+   <version ClassVersion="20" checksum="3779552311"/>
    <version ClassVersion="19" checksum="708178646"/>
    <version ClassVersion="18" checksum="2068019532"/>
    <version ClassVersion="17" checksum="3627482381"/>
@@ -125,9 +126,7 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
-  <class name="caf::SRSpineInfo" ClassVersion="10" >
-   <version ClassVersion="10" checksum="2633082736"/>
-  </class>
+
   <class name="caf::SREnergy" ClassVersion="10" >
    <version ClassVersion="10" checksum="4127193270"/>
   </class>
@@ -204,19 +203,17 @@
    <version ClassVersion="13" checksum="958085"/>
   </class>
 
-  <class name="caf::SRFDInt" ClassVersion="11">
+  <class name="caf::SRFDInt" ClassVersion="12">
+   <version ClassVersion="12" checksum="2552949892"/>
    <version ClassVersion="11" checksum="1124287626"/>
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="13">
-   <version ClassVersion="13" checksum="1678098583"/>
-   <version ClassVersion="12" checksum="482095794"/>
-   <version ClassVersion="11" checksum="3636199025"/>
-   <version ClassVersion="10" checksum="3744464743"/>
+  <class name="caf::SRLArRecoParticle" ClassVersion="10" >
+   <version ClassVersion="10" checksum="247650019"/>
   </class>
 
-  <class name="std::vector<caf::SRPFP>">
+  <class name="std::vector<caf::SRLArRecoParticle>">
   </class>
 
 

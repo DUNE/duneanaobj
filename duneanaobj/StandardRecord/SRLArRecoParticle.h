@@ -1,23 +1,28 @@
 ////////////////////////////////////////////////////////////////////////
-/// \file    SRPFP.h
-/// \brief   Reconstructed particle flow particle (PFP) metadata
+/// \file    SRLArRecoParticle.h
+/// \brief   Reconstructed LAr-specific particle metadata (combines traditional and ML reconstruction variables)
 /// \author  P. Granger <pgranger@fnal.gov>
+/// \date    July 2026
 ////////////////////////////////////////////////////////////////////////
 
-#ifndef DUNEANAOBJ_SRPFP_H
-#define DUNEANAOBJ_SRPFP_H
+#ifndef DUNEANAOBJ_SRLARRECOPARTICLE_H
+#define DUNEANAOBJ_SRLARRECOPARTICLE_H
 
 #include <limits>
+#include <cstdint>
 #include "duneanaobj/StandardRecord/SRVector3D.h"
 #include "duneanaobj/StandardRecord/SRRecoObjBase.h"
 
 namespace caf
 {
-  /// \brief Reconstructed Particle Flow Particle (PFP) in the Far Detector
-  class SRPFP : public SRRecoObjBase
+  /// \brief Reconstructed LAr-specific particle metadata in the Far Detector
+  class SRLArRecoParticle : public SRRecoObjBase
   {
     public:
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
+
+      SRLArRecoParticle() = default;
+      virtual ~SRLArRecoParticle() = default;
 
       // Hit counts per view
       int nhits_U = 0;                    ///< Number of hits in the U wire plane
@@ -60,8 +65,14 @@ namespace caf
       // Clustering and fragment details (Merged from SRClusteringInfo)
       int64_t size = -1;                  ///< Number of hits/voxels/points in the cluster
       int64_t num_fragments = -1;         ///< Number of sub-clusters or fragments
+
+      // SPINE-specific reconstruction details (Merged from SRSpineInfo)
+      bool  is_valid = false;             ///< Is the SPINE reconstruction valid for this particle
+      float start_straightness = NaN;     ///< Straightness of the track near start
+      float axial_spread = NaN;           ///< Axial voxel spread
+      float directional_spread = NaN;     ///< Directional voxel spread
   };
 
 } // caf
 
-#endif // DUNEANAOBJ_SRPFP_H
+#endif // DUNEANAOBJ_SRLARRECOPARTICLE_H
