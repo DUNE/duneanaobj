@@ -4,7 +4,7 @@ namespace caf
 {
     bool SRInteraction::contained() const
     {
-        for (const auto& p : part.recopart) {
+        for (const auto& p : part) {
             if (!p.contained) {
                 return false;
             }

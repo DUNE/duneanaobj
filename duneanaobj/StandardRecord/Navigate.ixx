@@ -36,13 +36,13 @@ namespace caf
     if (!id)
       return nullptr;
     if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSPINE)
-      return &sr.common.ixn.spine[id.ixn].part.recopart[id.ipart];
+      return &sr.common.ixn.spine[id.ixn].part[id.ipart];
     else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPandora)
-      return &sr.common.ixn.pandora[id.ixn].part.recopart[id.ipart];
+      return &sr.common.ixn.pandora[id.ixn].part[id.ipart];
     else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPida)
       throw std::domain_error("Not implemented: " + std::to_string(id.type));
     else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSandreco)
-      return &sr.common.ixn.sandreco[id.ixn].part.recopart[id.ipart];
+      return &sr.common.ixn.sandreco[id.ixn].part[id.ipart];
     else
       throw std::domain_error("Unknown SRRecoParticleCollectionType: " + std::to_string(id.type));
   }
