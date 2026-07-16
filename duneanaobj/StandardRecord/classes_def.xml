@@ -109,10 +109,8 @@
 
 
 
-  <class name="caf::SRRecoParticle" ClassVersion="20">
-   <version ClassVersion="20" checksum="3779552311"/>
-   <version ClassVersion="19" checksum="708178646"/>
-   <version ClassVersion="18" checksum="2068019532"/>
+  <class name="caf::SRRecoParticle" ClassVersion="18">
+   <version ClassVersion="18" checksum="3779552311"/>
    <version ClassVersion="17" checksum="3627482381"/>
    <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
