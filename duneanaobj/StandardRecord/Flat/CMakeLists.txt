@@ -22,9 +22,9 @@ if(NOT SKIP_CET)
         set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
     endif()
     if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view)
-        message(STATUS "env view dir  ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view")
+        message(STATUS "env view dir ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view")
         include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
-        set(builddir ${PROJECT_SOURCE_DIR}/../../build/duneanaobj/)
+        set(builddir ${PROJECT_BINARY_DIR})
         include_directories($ENV{ROOT_INCLUDE_PATH})
     endif()
     install_headers(EXTRAS ${builddir}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${builddir}/duneanaobj/StandardRecord/Flat/FwdDeclare.h)
@@ -33,7 +33,7 @@ else()
                 FlatRecord.cxx)
     target_link_libraries(duneanaobj_StandardRecordFlat ROOT::Core ROOT::Physics ROOT::TreePlayer)
 
-    install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
+    install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 
 endif()

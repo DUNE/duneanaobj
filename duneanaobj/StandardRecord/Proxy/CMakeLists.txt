@@ -25,7 +25,7 @@ if(NOT SKIP_CET)
     if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view)
         message(STATUS "env view dir  ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view")
         include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
-        set(builddir ${PROJECT_SOURCE_DIR}/../../build/duneanaobj/)
+        set(builddir ${PROJECT_BINARY_DIR})
         include_directories($ENV{ROOT_INCLUDE_PATH})
     endif()
     install_headers(EXTRAS ${builddir}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${builddir}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
@@ -34,7 +34,7 @@ else()
                 SRProxy.cxx Instantiations.cxx)
     target_link_libraries(duneanaobj_StandardRecordProxy ROOT::Core ROOT::Physics ROOT::TreePlayer)
 
-    install(FILES ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${CMAKE_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
+    install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
 endif()
 
