@@ -65,7 +65,8 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="11">
+  <class name="caf::SRInteractionBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="2003437438"/>
    <version ClassVersion="11" checksum="3254538684"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
@@ -105,14 +106,16 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="13">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="4079594869"/>
    <version ClassVersion="13" checksum="1848688215"/>
    <version ClassVersion="12" checksum="3585828423"/>
    <version ClassVersion="11" checksum="3413162475"/>
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="18">
+  <class name="caf::SRRecoParticle" ClassVersion="19">
+   <version ClassVersion="19" checksum="708178646"/>
    <version ClassVersion="18" checksum="2068019532"/>
    <version ClassVersion="17" checksum="3627482381"/>
    <version ClassVersion="16" checksum="4230274279"/>
@@ -127,17 +130,18 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
-  <class name="caf::SREnergyEst" ClassVersion="10" >
-    <version ClassVersion="10" checksum="2996671440"/>
+  <class name="caf::SRSpineInfo" ClassVersion="10" >
+   <version ClassVersion="10" checksum="2633082736"/>
   </class>
+  <class name="caf::SREnergy" ClassVersion="10" >
+   <version ClassVersion="10" checksum="4127193270"/>
+  </class>
+  <class name="caf::SRPIDHypothesis" ClassVersion="10" >
+   <version ClassVersion="10" checksum="222214747"/>
+  </class>
+  <class name="std::vector<caf::SRPIDHypothesis>" />
   <class name="caf::SRPIDProbability" ClassVersion="10" >
-    <version ClassVersion="10" checksum="1068314722"/>
-  </class>
-  <class name="caf::SRClusteringInfo" ClassVersion="10" >
-   <version ClassVersion="10" checksum="2214499172"/>
-  </class>
-  <class name="caf::SRLArTPCInfo" ClassVersion="10" >
-   <version ClassVersion="10" checksum="3788056802"/>
+   <version ClassVersion="10" checksum="791447454"/>
   </class>
 
   <enum name="PartEMethod" ClassVersion="10" />
@@ -210,7 +214,8 @@
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
 
-  <class name="caf::SRPFP" ClassVersion="11">
+  <class name="caf::SRPFP" ClassVersion="12">
+   <version ClassVersion="12" checksum="482095794"/>
    <version ClassVersion="11" checksum="3636199025"/>
    <version ClassVersion="10" checksum="3744464743"/>
   </class>
@@ -271,7 +276,8 @@
   <class name="std::vector<caf::SRNDTrackAssn>">
   </class>
 
-  <class name="caf::SRNDLAr" ClassVersion="12">
+  <class name="caf::SRNDLAr" ClassVersion="13">
+   <version ClassVersion="13" checksum="3569233609"/>
    <version ClassVersion="12" checksum="620685221"/>
    <version ClassVersion="11" checksum="1183768120"/>
    <version ClassVersion="10" checksum="3845592869"/>

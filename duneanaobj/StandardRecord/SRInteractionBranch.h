@@ -16,8 +16,8 @@ namespace caf
   {
     public:
 
-      std::vector<SRInteraction> dlp;       ///< Interactions from Deep Learn Physics machine learning reconstruction
-      std::size_t ndlp;
+      std::vector<SRInteraction> spine;       ///< Interactions from SPINE machine learning reconstruction
+      std::size_t nspine;
 
       std::vector<SRInteraction> pandora;   ///< Interactions from Pandora reconstruction
       std::size_t npandora;

@@ -10,7 +10,7 @@ namespace caf
 
     const std::vector<SRNDLArInt> * ints = nullptr;
     if (id.reco == kDeepLearnPhys)
-      ints = &dlp;
+      ints = &spine;
     else if (id.reco == kPandoraNDLAr)
       ints = &pandora;
     else

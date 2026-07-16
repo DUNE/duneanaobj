@@ -167,8 +167,8 @@ namespace caf
           KFDPDVDPandoraShower,
           KFDPDVDPandoraPFP,
           // NDLAr
-          kNDLArDLPTrack,
-          kNDLArDLPShower,
+          kNDLArSPINETrack,
+          kNDLArSPINEShower,
           kNDLArPandoraTrack,
           kNDLARPandoraShower,
           // TMS
