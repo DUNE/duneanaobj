@@ -67,10 +67,12 @@ namespace caf
       int64_t num_fragments = -1;         ///< Number of sub-clusters or fragments
 
       // SPINE-specific reconstruction details (Merged from SRSpineInfo)
-      bool  is_valid = false;             ///< Is the SPINE reconstruction valid for this particle
-      float start_straightness = NaN;     ///< Straightness of the track near start
-      float axial_spread = NaN;           ///< Axial voxel spread
-      float directional_spread = NaN;     ///< Directional voxel spread
+      bool        is_valid = false;             ///< Is the SPINE reconstruction valid for this particle
+      LArTPCPid   pid = kLArTPCUnknown;         ///< SPINE particle species classification
+      LArTPCShape shape = kLArTPCUnknownShape;  ///< SPINE particle shape classification
+      float       start_straightness = NaN;     ///< Straightness of the track near start
+      float       axial_spread = NaN;           ///< Axial voxel spread
+      float       directional_spread = NaN;     ///< Directional voxel spread
   };
 
 } // caf

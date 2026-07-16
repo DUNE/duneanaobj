@@ -208,7 +208,7 @@
    </class>
 
   <class name="caf::SRLArRecoParticle" ClassVersion="10" >
-   <version ClassVersion="10" checksum="247650019"/>
+   <version ClassVersion="10" checksum="1803630273"/>
   </class>
 
   <class name="std::vector<caf::SRLArRecoParticle>">
