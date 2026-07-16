@@ -56,6 +56,10 @@ namespace caf
       bool  is_cathode_crosser = false;   ///< Does the particle cross the cathode plane?
       bool  is_time_contained = false;    ///< Is the particle time-contained within the drift window?
       float cathode_offset = NaN;         ///< Distance/offset to the cathode [cm]
+
+      // Clustering and fragment details (Merged from SRClusteringInfo)
+      int64_t size = -1;                  ///< Number of hits/voxels/points in the cluster
+      int64_t num_fragments = -1;         ///< Number of sub-clusters or fragments
   };
 
 } // caf
