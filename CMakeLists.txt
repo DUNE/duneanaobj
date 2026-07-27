@@ -31,6 +31,10 @@ message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ===========
 option(SKIP_CET "Build without CET/cetmodules dependencies" OFF)
 
 if(DEFINED ENV{UPS_DIR})
+   set(SKIP_CET false)
+endif()
+
+if(NOT SKIP_CET)
     find_package(cetmodules REQUIRED)
     # cetbuildtools contains our cmake modules
 
