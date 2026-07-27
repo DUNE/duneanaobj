@@ -20,5 +20,6 @@ var searchData=
   ['kundeclared_17',['kUndeclared',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8ab5269d80fad2884c426bd99f89ed927b',1,'caf']]],
   ['kuniquenotime_18',['kUniqueNoTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8a7af77a425203a66c2fa61afff37be3e4',1,'caf']]],
   ['kuniquewithtime_19',['kUniqueWithTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8abb957aced2345e4131fdc5317268a40b',1,'caf']]],
-  ['kunknownrecoobj_20',['kUnknownRecoObj',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a0cc74bb782298e6e1c65f456040fda09',1,'caf']]]
+  ['kunknownrecoobj_20',['kUnknownRecoObj',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a0cc74bb782298e6e1c65f456040fda09',1,'caf']]],
+  ['kvisibleenergy_21',['kVisibleEnergy',['../namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13a6b8f9308b82bd66d4db4e44111f54b17',1,'caf']]]
 ];
