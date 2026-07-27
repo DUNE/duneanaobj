@@ -2,22 +2,30 @@
 
 ## Background
 
+### What's a CAF?
+
 End-user analysis files for the DUNE experiment are maintained in CAF ("Common Analysis File") format.
 CAFs are ROOT format files that contain trees based on a custom `StandardRecord` object.
 
-A `StandardRecord` is meant to be a sufficient summary of a neutrino event for high-level analysis.
-As such they reflect properties of higher-level reconstructed objects (like tracks or showers) 
-as well as summary truth information, but do not include charge, hit, or low-level timing information.
-They are designed for fast iteration in analysis workflows.
+CAFs contain one `StandardRecord` (the format defined in this package) per `TTree` entry.
 
-CAFs are intended to have a low barrier-to-entry and be easy to use.
-The only requirements for reading them are ROOT and the format description,
-i.e., the `StandardRecord` object contained in this package.
-
-If you're just looking for documentation on what's in a `StandardRecord`, 
-have a look at the [Doxygen documentation pages](https://dune.github.io/duneanaobj/classcaf_1_1StandardRecord.html)
-automatically generated from this repository.
+If you want to know exactly what's in a `StandardRecord`, have a look at the [Doxygen documentation pages](https://dune.github.io/duneanaobj/classcaf_1_1StandardRecord.html) automatically generated from this repository.
 (They are automatically updated whenever the `main` branch is using a GitHub Actions workflow.)
+
+### Why CAFs?
+
+CAFs are intended to simplify the life of the analyzer doing physics analysis.
+
+* **CAFs are designed for fast iteration**.  
+What you want in an analysis is supposed to be here, but not everything is:   
+Higher-level reconstructed objects (like tracks or showers)
+  and summary truth information live here.  Charge, hit, or low-level timing information don't.
+* **CAFs are designed for easy use**.  
+  The only requirements for reading them are ROOT and the `StandardRecord` object description.
+* **CAFs are designed for one-stop shopping**.
+  A CAF bundles together information from many upstream sources and cross-links them: truth from GENIE \& GEANT, reconstruction from multiple toolkits, etc.  
+
+
 
 ## Setting up `duneanaobj` for use 
 
