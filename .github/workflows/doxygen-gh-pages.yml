@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: DenverCoder1/doxygen-github-pages-action@a30f9538f8ef1305aeceb563018f452c7a62d200
         with:
