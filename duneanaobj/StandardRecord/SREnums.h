@@ -202,7 +202,7 @@ namespace caf
   enum NDLAR_RECO_STACK
   {
     kUnknownNDLArReco,
-    kDeepLearnPhys,
+    kSPINE,
     kPandoraNDLAr
   };
 
