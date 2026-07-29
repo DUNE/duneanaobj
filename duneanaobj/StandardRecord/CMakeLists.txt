@@ -45,6 +45,8 @@ else()
     file( GLOB headers_files *.h )
     set_target_properties(StandardRecord PROPERTIES PUBLIC_HEADER "${headers_files}")
 
+    install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION include/)
+#    install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
 
     install( TARGETS StandardRecord EXPORT duneanaobjTargets DESTINATION ${CMAKE_INSTALL_LIBDIR} )
     install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
