@@ -36,9 +36,15 @@ else()
     target_link_libraries( StandardRecord
                            ROOT::Core ROOT::Physics
                          )
-
+    target_include_directories(StandardRecord INTERFACE
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+            $<INSTALL_INTERFACE:include>
+            ${ROOT_INCLUDE_DIRS}
+    )
     # Setup installation
     file( GLOB headers_files *.h )
+    set_target_properties(StandardRecord PROPERTIES PUBLIC_HEADER "${headers_files}")
+
 
     install( TARGETS StandardRecord EXPORT duneanaobjTargets DESTINATION ${CMAKE_INSTALL_LIBDIR} )
     install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
