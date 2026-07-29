@@ -48,8 +48,39 @@ else()
     install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION include/)
 #    install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
 
-    install( TARGETS StandardRecord EXPORT duneanaobjTargets DESTINATION ${CMAKE_INSTALL_LIBDIR} )
-    install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
+    # ROOT I/O dictionary. The CET path gets this from cet's build_dictionary;
+    # here we drive rootcling directly via ROOT's root_generate_dictionary,
+    # fed the same classes.h / classes_def.xml selection file. The result is a
+    # standalone StandardRecord_dict library (exported as
+    # duneanaobj::StandardRecord_dict) plus the .rootmap and _rdict.pcm that
+    # ROOT needs for autoloading at runtime.
+    root_generate_dictionary( G__StandardRecord
+                              ${CMAKE_CURRENT_SOURCE_DIR}/classes.h
+                              MODULE StandardRecord_dict
+                              LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/classes_def.xml
+                            )
+
+    add_library( StandardRecord_dict SHARED G__StandardRecord.cxx )
+    target_link_libraries( StandardRecord_dict
+                           PUBLIC StandardRecord ROOT::Core ROOT::Physics ROOT::TreePlayer
+                         )
+    target_include_directories( StandardRecord_dict INTERFACE
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+            $<INSTALL_INTERFACE:include>
+    )
+
+    install( TARGETS StandardRecord_dict
+             EXPORT duneanaobjTargets
+             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+           )
+
+    # rootcling emits these next to the build tree; ROOT looks for them beside
+    # the installed library, so install them into the same libdir.
+    install( FILES
+             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_dict_rdict.pcm"
+             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_dict.rootmap"
+             DESTINATION ${CMAKE_INSTALL_LIBDIR}
+           )
 
     # Setup CMake find_package related files
     install( EXPORT duneanaobjTargets
