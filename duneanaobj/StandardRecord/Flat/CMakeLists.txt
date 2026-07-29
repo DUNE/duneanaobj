@@ -33,9 +33,20 @@ if(NOT SKIP_CET)
     endif()
     install_headers(EXTRAS ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h)
 else()
+    # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
+    # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
+    include(GNUInstallDirs)
+
     add_library(duneanaobj_StandardRecordFlat
                 FlatRecord.cxx)
     target_link_libraries(duneanaobj_StandardRecordFlat ROOT::Core ROOT::Physics ROOT::TreePlayer)
+    target_include_directories(duneanaobj_StandardRecordFlat INTERFACE
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+            $<INSTALL_INTERFACE:include>)
+
+    install(TARGETS duneanaobj_StandardRecordFlat
+            EXPORT duneanaobjTargets
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
     install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
