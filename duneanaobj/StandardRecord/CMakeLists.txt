@@ -8,8 +8,33 @@ FILE( GLOB src_files *.cxx )
 # For this directory only, pedantic option to catch uninitialized SR fields
 # add_compile_options(-Weffc++)
 
+# Locate the SRProxy code generator and runtime headers once, here, so both the
+# Proxy/ and Flat/ subdirectories share the result. Prefer a find_package()'able
+# SRProxy (which exports the SRProxy::SRProxy target carrying its headers), and
+# cascade back to the older $SRPROXY_INC / $SRPROXY_DIR layout otherwise.
+find_package(SRProxy QUIET CONFIG)
+if(SRProxy_FOUND)
+    message(STATUS "Found SRProxy CMake package at ${SRProxy_DIR}")
+    # SRProxy exports its headers but not the gen_srproxy executable,
+    # so look for it under the package's install prefix (then fall back to $SRPROXY_DIR/bin).
+    get_filename_component(SRPROXY_PREFIX "${SRProxy_DIR}/../../.." ABSOLUTE)
+    find_program(GEN_SRPROXY gen_srproxy HINTS "${SRPROXY_PREFIX}/bin" $ENV{SRPROXY_DIR}/bin)
+    get_target_property(SRPROXY_INCLUDE_DIRS SRProxy::SRProxy INTERFACE_INCLUDE_DIRECTORIES)
+    include_directories(${SRPROXY_INCLUDE_DIRS})
+else()
+    message(STATUS "SRProxy CMake package not found; using $SRPROXY_INC / $SRPROXY_DIR")
+    find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
+    include_directories($ENV{SRPROXY_INC})
+endif()
+
+# Proxy/ and Flat/ generate their sources with gen_srproxy, so only descend into
+# them when it was found.
+if(GEN_SRPROXY)
     add_subdirectory(Proxy)
     add_subdirectory(Flat)
+else()
+    message(WARNING "Could not find gen_srproxy; skipping the Proxy and Flat subdirectories")
+endif()
 
 if(NOT SKIP_CET)
     cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord

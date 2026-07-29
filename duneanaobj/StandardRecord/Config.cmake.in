@@ -6,4 +6,12 @@
 include ( CMakeFindDependencyMacro )
 find_dependency ( ROOT )
 
+# When duneanaobj was built against a find_package()'able SRProxy, the exported
+# Proxy/Flat targets link SRProxy::SRProxy, so consumers need it too. (Built
+# against the legacy $SRPROXY_INC layout, @SRProxy_FOUND@ is false and this is
+# skipped.)
+if ( @SRProxy_FOUND@ )
+    find_dependency ( SRProxy CONFIG )
+endif()
+
 include ( "${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake" )
