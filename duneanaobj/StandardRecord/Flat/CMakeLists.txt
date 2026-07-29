@@ -1,9 +1,16 @@
 FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
 
+# Locate the SRProxy generator. Fall back to $SRPROXY_DIR/bin if it isn't on the PATH.
+find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
+if(NOT GEN_SRPROXY)
+    message(WARNING "Could not find gen_srproxy; skipping FlatRecord generation and library build")
+    return()
+endif()
+
 add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    DEPENDS ${SR_DEPENDENCIES}
                    OUTPUT FlatRecord.cxx FlatRecord.h FwdDeclare.h
-                   COMMAND gen_srproxy --flat -i duneanaobj/StandardRecord/StandardRecord.h -o FlatRecord --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Flat/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
+                   COMMAND ${GEN_SRPROXY} --flat -i duneanaobj/StandardRecord/StandardRecord.h -o FlatRecord --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Flat/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
   )
 
 
