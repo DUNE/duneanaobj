@@ -37,8 +37,16 @@ endif()
 # StandardRecord, so this only affects how the system headers parse, not the
 # generated proxies. (Shared by both Proxy/ and Flat/ via inheritance.)
 # -Wno-macro-redefined silences the expected warnings from the _FloatN redefines.
-set(SRPROXY_CASTXML_CFLAGS "-D__clang__=1 -D_Float16=short -D_Float32=int -D_Float64=long -D_Float128=__int128 -D_Float32x=char -D_Float64x=wchar_t -D_Float128x=char16_t -fsized-deallocation -Wno-macro-redefined")
-
+#  Only gcc >= 13 pulls in the <cmath>/<bits> constructs that need the remaps here.
+#  On older gcc, the _FloatN remaps instead clash with the _real_ `typedef float _Float32;`,
+#  so we keep a more minimal set of flags in that case.
+#  fixme: maybe we can drop this block someday if we can guarantee everybody's using new enough castxml to parse the gcc headers correctly..........
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND
+    CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "13.0")
+  set(SRPROXY_CASTXML_CFLAGS "-D__clang__=1 -D_Float16=short -D_Float32=int -D_Float64=long -D_Float128=__int128 -D_Float32x=char -D_Float64x=wchar_t -D_Float128x=char16_t -fsized-deallocation -Wno-macro-redefined")
+else()
+  set(SRPROXY_CASTXML_CFLAGS "-D_Float16=short -fsized-deallocation")
+endif()
 # Proxy/ and Flat/ generate their sources with gen_srproxy, so only descend into
 # them when it was found.
 if(GEN_SRPROXY)
