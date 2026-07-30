@@ -1,12 +1,13 @@
 FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
 
+# GEN_SRPROXY and the SRProxy include path are set up by the parent
+# StandardRecord/CMakeLists.txt, which only descends here when the generator
+# was found.
 add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    DEPENDS ${SR_DEPENDENCIES}
                    OUTPUT SRProxy.cxx SRProxy.h FwdDeclare.h
-                   COMMAND gen_srproxy -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Proxy/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags ' -D_Float16=short -fsized-deallocation'
+                   COMMAND ${GEN_SRPROXY} -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Proxy/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags "${SRPROXY_CASTXML_CFLAGS}"
   )
-
-include_directories($ENV{SRPROXY_INC})
 
 # This is a very picky error buried inside template instantiations
 #add_definitions(-Wno-int-in-bool-context)
@@ -27,11 +28,27 @@ if(NOT SKIP_CET)
     endif()
     install_headers(EXTRAS ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
 else()
+    # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
+    # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
+    include(GNUInstallDirs)
+
     add_library(duneanaobj_StandardRecordProxy
                 SRProxy.cxx Instantiations.cxx)
     target_link_libraries(duneanaobj_StandardRecordProxy ROOT::Core ROOT::Physics ROOT::TreePlayer)
+    if(SRProxy_FOUND)
+        # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
+        # re-finds it via find_dependency(SRProxy).
+        target_link_libraries(duneanaobj_StandardRecordProxy SRProxy::SRProxy)
+    endif()
+    target_include_directories(duneanaobj_StandardRecordProxy INTERFACE
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+            $<INSTALL_INTERFACE:include>)
+
+    install(TARGETS duneanaobj_StandardRecordProxy
+            EXPORT duneanaobjTargets
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
     install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
+            DESTINATION include/duneanaobj/StandardRecord/Proxy)
 endif()
 

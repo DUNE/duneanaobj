@@ -67,7 +67,10 @@ if(NOT SKIP_CET)
 
 else()
     find_package(ROOT)
-    include_directories(.)
+    # Source root for the hand-written "duneanaobj/StandardRecord/*.h" includes,
+    # and the build root for the generated Proxy/Flat headers
+    # (SRProxy.h, FlatRecord.h, FwdDeclare.h), which land under ${PROJECT_BINARY_DIR}/duneanaobj/.
+    include_directories(. ${PROJECT_BINARY_DIR})
 endif()
 
 add_subdirectory(duneanaobj)
