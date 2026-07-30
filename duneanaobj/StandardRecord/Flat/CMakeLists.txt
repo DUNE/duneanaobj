@@ -47,6 +47,6 @@ else()
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
     install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
+            DESTINATION include/duneanaobj/StandardRecord/Flat)
 
 endif()

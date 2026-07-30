@@ -66,12 +66,14 @@ else()
             $<INSTALL_INTERFACE:include>
             ${ROOT_INCLUDE_DIRS}
     )
-    # Setup installation
+    # Setup installation. Install the headers under include/duneanaobj/StandardRecord/
+    # so the "duneanaobj/StandardRecord/..." include paths used throughout the
+    # sources resolve against the exported include/ interface. (PUBLIC_HEADER would
+    # flatten them straight into include/, which does not match those paths.)
     file( GLOB headers_files *.h )
-    set_target_properties(StandardRecord PROPERTIES PUBLIC_HEADER "${headers_files}")
 
-    install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION include/)
-#    install( FILES ${headers_files} DESTINATION "include/duneanaobj/StandardRecord" )
+    install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install( FILES ${headers_files} DESTINATION include/duneanaobj/StandardRecord )
 
     # ROOT I/O dictionary. The CET path gets this from cet's build_dictionary;
     # here we drive rootcling directly via ROOT's root_generate_dictionary,

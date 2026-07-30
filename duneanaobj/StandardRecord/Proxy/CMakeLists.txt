@@ -49,6 +49,6 @@ else()
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
     install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/duneanaobj)
+            DESTINATION include/duneanaobj/StandardRecord/Proxy)
 endif()
 
