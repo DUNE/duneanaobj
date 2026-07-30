@@ -27,6 +27,18 @@ else()
     include_directories($ENV{SRPROXY_INC})
 endif()
 
+# gen_srproxy drives castxml to parse the StandardRecord headers. castxml 0.6.x
+# (clang-based, emulating gcc) can't parse gcc-13's libstdc++/glibc as-is: it
+# represents the _FloatN types as non-convertible structs, which breaks <cmath>'s
+# __iseqsig overloads, and its clang trips over the __assume__ statement attribute
+# in <bits/stl_bvector.h>. Presenting as clang (-D__clang__=1) makes libstdc++
+# skip the __assume__ path, and remapping each _FloatN to a distinct convertible
+# builtin sidesteps the __iseqsig failures. None of these types appear in
+# StandardRecord, so this only affects how the system headers parse, not the
+# generated proxies. (Shared by both Proxy/ and Flat/ via inheritance.)
+# -Wno-macro-redefined silences the expected warnings from the _FloatN redefines.
+set(SRPROXY_CASTXML_CFLAGS "-D__clang__=1 -D_Float16=short -D_Float32=int -D_Float64=long -D_Float128=__int128 -D_Float32x=char -D_Float64x=wchar_t -D_Float128x=char16_t -fsized-deallocation -Wno-macro-redefined")
+
 # Proxy/ and Flat/ generate their sources with gen_srproxy, so only descend into
 # them when it was found.
 if(GEN_SRPROXY)
