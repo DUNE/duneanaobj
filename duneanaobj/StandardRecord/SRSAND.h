@@ -15,6 +15,14 @@
 
 namespace caf
 {
+    /// The information needed to uniquely identify a SAND subdetector o object
+    class SRSANDObjID
+    {
+        public:
+            SRSANDSubdetID subdet = kUnknownSubDet;
+            int            ixn    = -1;            ///< interaction ID
+            int            idx    = -1;            ///< index in container
+    };
 
     // ==================================================
     // GRAIN reconstruction

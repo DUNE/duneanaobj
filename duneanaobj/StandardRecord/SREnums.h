@@ -226,6 +226,15 @@ namespace caf
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
   };
 
+  /// \brief Which of SAND's subdetectors does a reconstructed object hail from?
+  /// Used primarily to link them together in SRSANDAssn
+  enum SRSANDSubdetID
+  {
+    kUnknownSubDet = -1,
+    kGRAIN = 1,
+    kTracker = 2,
+    kECAL = 3,
+  };
 
 }
 
