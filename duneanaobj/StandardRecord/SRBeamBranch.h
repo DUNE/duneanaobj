@@ -69,7 +69,7 @@ namespace caf
       std::vector<double>  multiwireInfo;                   ///< horizontal and vertical readout voltages measured by E:MTGTDS device (216 values) [a.u.]
 
       bool isFHC() const  { return hornI > 0; };             ///< Checks #hornI to see if the polarity is positive --> this is FHC
-      bool is_neutrino_mode() const  { return is_FHC(); };   ///< Checks #hornI to see if the polarity is positive --> this is FHC/neutrino_mode
+      bool is_neutrino_mode() const  { return isFHC(); };   ///< Checks #hornI to see if the polarity is positive --> this is FHC/neutrino_mode
       bool is0HC() const  { return std::abs(hornI) < 1; };   ///< Checks #hornI to see if the polarity is zero
       bool isRHC() const  { return hornI < 0; }              ///< Checks #hornI to see if the polarity is negative --> this is RHC
       bool is_antineutrino_mode() const  { return isRHC(); } ///< Checks #hornI to see if the polarity is negative --> this is RHC/antineutrino_mode
