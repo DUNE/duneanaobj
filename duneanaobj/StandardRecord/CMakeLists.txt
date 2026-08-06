@@ -73,28 +73,6 @@ else()
 
     include(GNUInstallDirs)
 
-    # Create and configure library target
-    add_library( StandardRecord SHARED
-                 ${src_files}
-               )
-
-    target_link_libraries( StandardRecord
-                           ROOT::Core ROOT::Physics
-                         )
-    target_include_directories(StandardRecord INTERFACE
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-            $<INSTALL_INTERFACE:include>
-            ${ROOT_INCLUDE_DIRS}
-    )
-    # Setup installation. Install the headers under include/duneanaobj/StandardRecord/
-    # so the "duneanaobj/StandardRecord/..." include paths used throughout the
-    # sources resolve against the exported include/ interface. (PUBLIC_HEADER would
-    # flatten them straight into include/, which does not match those paths.)
-    file( GLOB headers_files *.h )
-
-    install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-    install( FILES ${headers_files} DESTINATION include/duneanaobj/StandardRecord )
-
     # ROOT I/O dictionary. The CET path gets this from cet's build_dictionary;
     # here we drive rootcling directly via ROOT's root_generate_dictionary,
     # fed the same classes.h / classes_def.xml selection file. The result is a
@@ -109,18 +87,32 @@ else()
 
     add_library( StandardRecord_dict SHARED G__StandardRecord.cxx )
     target_link_libraries( StandardRecord_dict
-                           PUBLIC StandardRecord ROOT::Core ROOT::Physics ROOT::TreePlayer
+                           PUBLIC ROOT::Physics ROOT::TreePlayer ROOT::Core
                          )
     target_include_directories( StandardRecord_dict INTERFACE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
             $<INSTALL_INTERFACE:include>
     )
 
-    install( TARGETS StandardRecord_dict
-             EXPORT duneanaobjTargets
-             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-           )
+    # Create and configure library target
+    add_library( StandardRecord SHARED
+                 ${src_files}
+               )
 
+    target_link_libraries( StandardRecord
+                           PUBLIC StandardRecord_dict
+                         )
+    target_include_directories(StandardRecord INTERFACE
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+            $<INSTALL_INTERFACE:include>
+    )
+
+    # useful for dependencies using FetchContent_MakeAvailable to pull this
+    # package in at configure time and link using the same name as if it had
+    # been exported/imported
+    add_library(duneanaobj::StandardRecord ALIAS StandardRecord)
+
+    install( TARGETS StandardRecord StandardRecord_dict EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
     # rootcling emits these next to the build tree; ROOT looks for them beside
     # the installed library, so install them into the same libdir.
     install( FILES
@@ -128,6 +120,13 @@ else()
              "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_dict.rootmap"
              DESTINATION ${CMAKE_INSTALL_LIBDIR}
            )
+
+    # Setup installation. Install the headers under include/duneanaobj/StandardRecord/
+    # so the "duneanaobj/StandardRecord/..." include paths used throughout the
+    # sources resolve against the exported include/ interface. (PUBLIC_HEADER would
+    # flatten them straight into include/, which does not match those paths.)
+    file( GLOB headers_files *.h )
+    install( FILES ${headers_files} DESTINATION include/duneanaobj/StandardRecord )
 
     # Setup CMake find_package related files
     install( EXPORT duneanaobjTargets
