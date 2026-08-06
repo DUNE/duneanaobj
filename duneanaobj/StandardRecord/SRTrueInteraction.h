@@ -52,7 +52,7 @@ namespace caf
        /// Interaction ID == 'vertexID' from edep-sim (ND) or GENIE record id (FD).
        /// In the ND case, the packing of the VertexID is described in https://github.com/DUNE/2x2_sim/wiki/Production-changes-and-validation-finding
        long int  id       = -1;
-       
+
        /// Index of interaction in GENIE tree.
        /// Note: for ND, check `id` to determine whether
        /// it's the tree for contained nus (<1e9) or rock/hall nus (>1e9)
@@ -123,7 +123,8 @@ namespace caf
 
        float                       xsec_cvwgt = NaN; ///<  Central value weight for cross section model
 
-       std::vector<SRDialWeights> syst_dials; ///< Reweights. Outer index = dial, inner index (SRDialWeights) = variation for that dial
+       std::vector<SRDialWeights> xsec_systs; ///< Xsec variations. Outer index = dial, inner index (SRDialWeights) = variation for that dial. see SRWeightGlobal::xsec_params for name <-> index map and corresponding variation <-> parameter values
+       std::vector<SRDialWeights> flux_systs; ///< Flux variations. Outer index = dial, inner index (SRDialWeights) = variation for that dial. see SRWeightGlobal::flux_params for name <-> index map and corresponding variation <-> parameter values
 
    };
 
