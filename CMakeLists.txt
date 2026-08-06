@@ -46,8 +46,6 @@ if(NOT SKIP_CET)
     include(CetCMakeEnv)
     cet_cmake_env()
 
-    set_install_root()
-
     # The specification of the C++ standard is required because CET macros
     # set it to C++98 by default, and then override it depending on the
     # compiler version, as determined by the compiler qualifier.
