@@ -91,11 +91,8 @@ static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>NaN
 <tr><td class="ititle" colspan="2"><p>Quantities used to characterize the spill-by-spill beam quality.</p>
 <p>These variables store measurements from multiple devices placed along the beam line.</p>
 <ul>
-<li><b>POT (Protons on Target):</b> Measured by the toroids E:TRTGDT, E:TOR101, and E:TR101D. <br  />
- The POT value is given per pulse and includes a normalization factor of 1e12 so that users do not need to apply any additional scaling.</li>
-<li><b>Horn Current:</b> Determined as a linear combination of four strip-line measurements (NSLINA, NSLINB, NSLINC, and NSLIND). <br  />
- The calculation follows the method described in <br  />
- <a href="https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685">https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685</a>.</li>
+<li><b>POT (Protons on Target):</b> Measured by the toroids E:TRTGDT, E:TOR101, and E:TR101D. The POT value is given per pulse and includes a normalization factor of 1e12 so that users do not need to apply any additional scaling.</li>
+<li><b>Horn Current:</b> Determined as a linear combination of four strip-line measurements (NSLINA, NSLINB, NSLINC, and NSLIND). The calculation follows the method described in <a href="https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685">https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685</a>.</li>
 <li><b>Beam Position (Pre-target):</b> Measured by the monitors “121” and “TGT”, which provide the horizontal and vertical position of the beam, as well as its intensity, in the pre-target region for each of the six batches.</li>
 <li><b>Beam Position (On target):</b> Computed as an intensity-weighted average of the measurements from the 121 and TGT monitors.</li>
 <li><b>Beam Width (TGT location):</b> the MTGTDS device contains the readout voltages of horizontal and vertical wires (206 values, 48 horizontal + 48 vertical + additional values). The horizontal and vertical spread of the beam is obtained from a gaussian fit of the voltages as function of the wire postion </li>
@@ -188,13 +185,21 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 <tr class="memitem:af3cb89822063cc980fa7033f345e6067"><td class="memItemLeft" align="right" valign="top"><a id="af3cb89822063cc980fa7033f345e6067" name="af3cb89822063cc980fa7033f345e6067"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFHC</b> () const</td></tr>
 <tr class="separator:af3cb89822063cc980fa7033f345e6067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c28738640e57b7a6641835c2d22d84"><td class="memItemLeft" align="right" valign="top"><a id="aa4c28738640e57b7a6641835c2d22d84" name="aa4c28738640e57b7a6641835c2d22d84"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_neutrino_mode</b> () const</td></tr>
+<tr class="memdesc:aa4c28738640e57b7a6641835c2d22d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is positive --&gt; this is FHC. <br /></td></tr>
+<tr class="separator:aa4c28738640e57b7a6641835c2d22d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memItemLeft" align="right" valign="top"><a id="a25f05e02bbe3b6a580fa605b84bda7b8" name="a25f05e02bbe3b6a580fa605b84bda7b8"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is0HC</b> () const</td></tr>
-<tr class="memdesc:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is positive --&gt; this is FHC. <br /></td></tr>
+<tr class="memdesc:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is positive --&gt; this is FHC/neutrino_mode. <br /></td></tr>
 <tr class="separator:a25f05e02bbe3b6a580fa605b84bda7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9076399a66a68cafaa59ef9837fa8bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcaf_1_1SRBeamBranch.html#ae9076399a66a68cafaa59ef9837fa8bd">isRHC</a> () const</td></tr>
 <tr class="memdesc:ae9076399a66a68cafaa59ef9837fa8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is zero.  <br /></td></tr>
 <tr class="separator:ae9076399a66a68cafaa59ef9837fa8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bc51c7ec8d49f1b62fbb745a235abb"><td class="memItemLeft" align="right" valign="top"><a id="a33bc51c7ec8d49f1b62fbb745a235abb" name="a33bc51c7ec8d49f1b62fbb745a235abb"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_antineutrino_mode</b> () const</td></tr>
+<tr class="memdesc:a33bc51c7ec8d49f1b62fbb745a235abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="classcaf_1_1SRBeamBranch.html#a2a9680137fd3755fc92d14e7658ce4bf" title="Horn current [kA].">hornI</a> to see if the polarity is negative --&gt; this is RHC/antineutrino_mode. <br /></td></tr>
+<tr class="separator:a33bc51c7ec8d49f1b62fbb745a235abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae9076399a66a68cafaa59ef9837fa8bd" name="ae9076399a66a68cafaa59ef9837fa8bd"></a>
