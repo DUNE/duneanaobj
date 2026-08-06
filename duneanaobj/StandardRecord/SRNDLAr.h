@@ -40,8 +40,8 @@ namespace caf
   class SRNDLAr
   {
     public:
-      std::vector<SRNDLArInt> dlp;       ///< Reconstructed interactions from Deep Learn Physics machine-learning reco
-      std::size_t ndlp = 0;
+      std::vector<SRNDLArInt> spine;       ///< Reconstructed interactions from SPINE machine-learning reco
+      std::size_t nspine = 0;
       std::vector<SRNDLArInt> pandora;   ///< Reconstructed interactions from Pandora
       std::size_t npandora = 0;
       std::vector<SROpticalFlash> flashes;      ///< Collection of flashes

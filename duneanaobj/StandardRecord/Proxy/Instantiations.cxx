@@ -23,6 +23,8 @@ namespace caf
 
   template class Proxy<TrueParticleID::PartType>;
   template class Proxy<RecoObjType>;
+  template class Proxy<LArTPCPid>;
+  template class Proxy<LArTPCShape>;
   template class Proxy<SRRecoParticleID::SRRecoParticleCollectionType>;
   template class Proxy<SRRecoBaseID::SRRecoBaseCollectionType>;
 

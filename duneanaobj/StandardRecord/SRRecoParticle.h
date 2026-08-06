@@ -2,7 +2,7 @@
 /// \file    SRRecoParticle.h
 /// \brief   A general reconstructed particle container
 /// \author  J. Wolcott <jwolcott@fnal.gov>
-
+////////////////////////////////////////////////////////////////////////
 
 #ifndef DUNEANAOBJ_SRRECOPARTICLE_H
 #define DUNEANAOBJ_SRRECOPARTICLE_H
@@ -10,6 +10,7 @@
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
+#include "duneanaobj/StandardRecord/SRPIDProbability.h"
 
 namespace caf
 {
@@ -51,8 +52,24 @@ namespace caf
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
-      
-      SRRecoBaseID recoobj;                           ///< Id of the reconstructed object this particle is built on
+
+      SRVector3D  start_dir;                          ///< Reconstructed direction vector at start
+      SRVector3D  end_dir;                            ///< Reconstructed direction vector at end
+      float       length = NaN;                       ///< Reconstructed path length [cm]
+
+      // Measured energy quantities (independent of particle species hypothesis)
+      float       depositions = NaN;                  ///< Total raw energy deposition [GeV]
+      float       start_dedx = NaN;                   ///< dE/dx near the start of the path [MeV/cm]
+
+      // Energy estimates under the assigned (best) hypothesis
+      float       calo_ke = NaN;                      ///< Assigned calorimetric kinetic energy [GeV]
+      float       csda_ke = NaN;                      ///< Assigned CSDA range-based kinetic energy [GeV]
+      float       mcs_ke = NaN;                       ///< Assigned MCS deflection-based kinetic energy [GeV]
+
+      // Modular structures
+      SRPIDProbability pid_prob;                      ///< Detailed PID classification probabilities and hypothesis energy estimates
+
+      SRRecoBaseID     recoobj;                       ///< Id of the reconstructed object this particle is built on
   };
 
 } // caf

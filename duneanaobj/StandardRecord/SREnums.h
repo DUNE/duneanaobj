@@ -167,8 +167,8 @@ namespace caf
           KFDPDVDPandoraShower,
           KFDPDVDPandoraPFP,
           // NDLAr
-          kNDLArDLPTrack,
-          kNDLArDLPShower,
+          kNDLArSPINETrack,
+          kNDLArSPINEShower,
           kNDLArPandoraTrack,
           kNDLARPandoraShower,
           // TMS
@@ -202,7 +202,7 @@ namespace caf
   enum NDLAR_RECO_STACK
   {
     kUnknownNDLArReco,
-    kDeepLearnPhys,
+    kSPINE,
     kPandoraNDLAr
   };
 
@@ -223,7 +223,29 @@ namespace caf
     kUnknownRecoObj = -1, ///< default value
     kTrack          = 1,  ///< track
     kShower         = 2,  ///< shower
-    kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
+    kHitCollection  = 3   ///< hit collection (mostly used to garbage collect all remaining hits)
+  };
+
+  enum LArTPCPid
+  {
+    kLArTPCPhoton = 0,
+    kLArTPCElectron = 1,
+    kLArTPCMuon = 2,
+    kLArTPCPion = 3,
+    kLArTPCProton = 4,
+    kLArTPCKaon = 5,
+    kLArTPCUnknown = -1
+  };
+
+  enum LArTPCShape
+  {
+    kLArTPCShower = 0,
+    kLArTPCTrack = 1,
+    kLArTPCMichel = 2,
+    kLArTPCDelta = 3,
+    kLArTPCLowEnergy = 4,
+    kLArTPCGhost = 5,
+    kLArTPCUnknownShape = -1
   };
 
 

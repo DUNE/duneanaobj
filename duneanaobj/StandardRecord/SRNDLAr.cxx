@@ -9,8 +9,8 @@ namespace caf
                   "Reco() only knows about SRTrack and SRShower!");
 
     const std::vector<SRNDLArInt> * ints = nullptr;
-    if (id.reco == kDeepLearnPhys)
-      ints = &dlp;
+    if (id.reco == kSPINE)
+      ints = &spine;
     else if (id.reco == kPandoraNDLAr)
       ints = &pandora;
     else

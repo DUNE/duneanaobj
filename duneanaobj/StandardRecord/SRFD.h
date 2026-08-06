@@ -10,7 +10,7 @@
 
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRTrack.h"
-#include "duneanaobj/StandardRecord/SRPFP.h"
+#include "duneanaobj/StandardRecord/SRLArRecoParticle.h"
 
 namespace caf
 {
@@ -26,8 +26,8 @@ namespace caf
       std::vector<SRShower> showers;
       std::size_t           nshowers = 0;
 
-      std::vector<SRPFP> pfps;
-      std::size_t        npfps = 0;
+      std::vector<SRLArRecoParticle> lar_particles;
+      std::size_t                    nlar_particles = 0;
   };
 
   /// The information needed to uniquely identify a FD reco object
