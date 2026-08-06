@@ -13,6 +13,7 @@
   </class>
 
   <class name="caf::SRWeightGlobal" ClassVersion="11">
+   <version ClassVersion="11" checksum="2703517162"/>
    <version ClassVersion="10" checksum="1612203321"/>
   </class>
 
@@ -381,6 +382,7 @@
   </class>
 
   <class name="caf::SRTrueInteraction" ClassVersion="19">
+   <version ClassVersion="19" checksum="3426266507"/>
    <version ClassVersion="18" checksum="1807033241"/>
    <version ClassVersion="17" checksum="1565545093"/>
    <version ClassVersion="16" checksum="358248003"/>
