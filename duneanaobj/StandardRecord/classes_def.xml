@@ -59,8 +59,12 @@
 
   <!-- - - - - - - - - Common reco - - - - - - - - - - - - - - - - -->
 
-  <class name="caf::SRRecoObjBase" ClassVersion="10" />
-  <class name="caf::SRRecoBaseID" ClassVersion="10" />
+  <class name="caf::SRRecoObjBase" ClassVersion="10" >
+    <version ClassVersion="10" checksum="1269770226"/>
+  </class>
+  <class name="caf::SRRecoBaseID" ClassVersion="10" >
+    <version ClassVersion="10" checksum="1023895248"/>
+  </class>
 
   <class name="caf::SRCommonRecoBranch" ClassVersion="12">
    <version ClassVersion="12" checksum="2257468413"/>
@@ -131,7 +135,9 @@
 
   <enum name="caf::PartEMethod" ClassVersion="10" />
 
-  <class name="caf::SRRecoParticleID" ClassVersion="10" />
+  <class name="caf::SRRecoParticleID" ClassVersion="10">
+    <version ClassVersion="10" checksum="171091538"/>
+  </class>
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
@@ -153,7 +159,9 @@
   <class name="std::vector<caf::SRTrack>">
   </class>
 
-  <class name="caf::SRTracker" ClassVersion="10" />
+  <class name="caf::SRTracker" ClassVersion="10">
+    <version ClassVersion="10" checksum="3408431684"/>
+  </class>
 
   <class name="caf::SRShower" ClassVersion="17">
    <version ClassVersion="17" checksum="3141158752"/>
@@ -169,7 +177,9 @@
   <class name="std::vector<caf::SRShower>">
   </class>
 
-  <class name="caf::SREcal" ClassVersion="10" />
+  <class name="caf::SREcal" ClassVersion="10">
+    <version ClassVersion="10" checksum="1731417340"/>
+  </class>
 
   <class name="caf::SRECALCluster" ClassVersion="17">
    <version ClassVersion="17" checksum="2003075550"/>
@@ -185,7 +195,9 @@
   <class name="std::vector<caf::SRECALCluster>">
   </class>
 
-  <class name="caf::SRGRAIN" ClassVersion="10" />
+  <class name="caf::SRGRAIN" ClassVersion="10">
+    <version ClassVersion="10" checksum="295884993"/>
+  </class>
 
   <!-- - - - - - - - - - FD specific - - - - - - - - - - - - - - - -->
 
