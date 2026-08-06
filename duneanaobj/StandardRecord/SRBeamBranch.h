@@ -24,13 +24,13 @@ namespace caf
       ///
       /// These variables store measurements from multiple devices placed along the beam line.
       ///
-      /// - **POT (Protons on Target):** Measured by the toroids E:TRTGDT, E:TOR101, and E:TR101D.  
+      /// - **POT (Protons on Target):** Measured by the toroids E:TRTGDT, E:TOR101, and E:TR101D.
       ///   The POT value is given per pulse and includes a normalization factor of 1e12 so that
       ///   users do not need to apply any additional scaling.
       ///
       /// - **Horn Current:** Determined as a linear combination of four strip-line measurements
-      ///   (NSLINA, NSLINB, NSLINC, and NSLIND).  
-      ///   The calculation follows the method described in  
+      ///   (NSLINA, NSLINB, NSLINC, and NSLIND).
+      ///   The calculation follows the method described in
       ///   <https://cdcvs.fnal.gov/redmine/projects/novaart/repository/svn/entry/trunk/IFDBSpillInfo/IFDBSpillInfo_module.cc#L685>.
       ///
       /// - **Beam Position (Pre-target):** Measured by the monitors “121” and “TGT”, which provide
@@ -41,7 +41,7 @@ namespace caf
       ///   measurements from the 121 and TGT monitors.
       ///
       /// - **Beam Width (TGT location):** the MTGTDS device contains the readout voltages of
-      ///   horizontal and vertical wires (206 values, 48 horizontal + 48 vertical + additional values). 
+      ///   horizontal and vertical wires (206 values, 48 horizontal + 48 vertical + additional values).
       ///   The horizontal and vertical spread of the beam is obtained from a gaussian fit of the voltages
       ///   as function of the wire postion
       ///@{
@@ -68,10 +68,12 @@ namespace caf
       std::vector<double>  verticalpos121;                  ///< vertical beam position as measured by E:VP121 device (7 values = 6 batches + 1 mean value) [mm]
       std::vector<double>  multiwireInfo;                   ///< horizontal and vertical readout voltages measured by E:MTGTDS device (216 values) [a.u.]
 
-      bool isFHC() const  { return hornI > 0; };                                 ///< Checks #hornI to see if the polarity is positive --> this is FHC
-      bool is0HC() const  { return std::abs(hornI) < 1; };                       ///< Checks #hornI to see if the polarity is zero
-      bool isRHC() const  { return hornI < 0; }                                  ///< Checks #hornI to see if the polarity is negative --> this is RHC
-      ///@}                                                                                 
+      bool isFHC() const  { return hornI > 0; };             ///< Checks #hornI to see if the polarity is positive --> this is FHC
+      bool is_neutrino_mode() const  { return isFHC(); };   ///< Checks #hornI to see if the polarity is positive --> this is FHC/neutrino_mode
+      bool is0HC() const  { return std::abs(hornI) < 1; };   ///< Checks #hornI to see if the polarity is zero
+      bool isRHC() const  { return hornI < 0; }              ///< Checks #hornI to see if the polarity is negative --> this is RHC
+      bool is_antineutrino_mode() const  { return isRHC(); } ///< Checks #hornI to see if the polarity is negative --> this is RHC/antineutrino_mode
+      ///@}
 
   };
 }
