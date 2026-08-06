@@ -59,6 +59,9 @@
 
   <!-- - - - - - - - - Common reco - - - - - - - - - - - - - - - - -->
 
+  <class name="caf::SRRecoObjBase" ClassVersion="10" />
+  <class name="caf::SRRecoBaseID" ClassVersion="10" />
+
   <class name="caf::SRCommonRecoBranch" ClassVersion="12">
    <version ClassVersion="12" checksum="2257468413"/>
    <version ClassVersion="11" checksum="2300096704"/>
@@ -126,7 +129,9 @@
   <class name="std::vector<caf::SRRecoParticle>">
   </class>
 
-  <enum name="PartEMethod" ClassVersion="10" />
+  <enum name="caf::PartEMethod" ClassVersion="10" />
+
+  <class name="caf::SRRecoParticleID" ClassVersion="10" />
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
@@ -148,6 +153,8 @@
   <class name="std::vector<caf::SRTrack>">
   </class>
 
+  <class name="caf::SRTracker" ClassVersion="10" />
+
   <class name="caf::SRShower" ClassVersion="17">
    <version ClassVersion="17" checksum="3141158752"/>
    <version ClassVersion="16" checksum="2739725490"/>
@@ -162,9 +169,11 @@
   <class name="std::vector<caf::SRShower>">
   </class>
 
-<class name="caf::SRECALCluster" ClassVersion="17">
- <version ClassVersion="17" checksum="2003075550"/>
- <version ClassVersion="16" checksum="3312245962"/>
+  <class name="caf::SREcal" ClassVersion="10" />
+
+  <class name="caf::SRECALCluster" ClassVersion="17">
+   <version ClassVersion="17" checksum="2003075550"/>
+   <version ClassVersion="16" checksum="3312245962"/>
    <version ClassVersion="15" checksum="1197469375"/>
    <version ClassVersion="14" checksum="772507687"/>
    <version ClassVersion="13" checksum="749498947"/>
@@ -176,6 +185,7 @@
   <class name="std::vector<caf::SRECALCluster>">
   </class>
 
+  <class name="caf::SRGRAIN" ClassVersion="10" />
 
   <!-- - - - - - - - - - FD specific - - - - - - - - - - - - - - - -->
 
@@ -351,7 +361,7 @@
   <class name="caf::SRMINERvAID"  ClassVersion="10">
    <version ClassVersion="10" checksum="4040824592"/>
   </class>
-  
+
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
