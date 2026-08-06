@@ -10,7 +10,6 @@
 #include "duneanaobj/StandardRecord/SREnums.h"
 #include "duneanaobj/StandardRecord/SRLorentzVector.h"
 #include "duneanaobj/StandardRecord/SRVector3D.h"
-#include <vector>
 
 namespace caf
 {
@@ -25,7 +24,7 @@ namespace caf
 
     public:
       static constexpr int kPdgHadronicBlob = 2000000002;   ///< Special PDG code used for a "hadronic blob" (usu. calorimetrically reconstructed), borrowed from GENIE
-
+      
       bool        primary  = false;                   ///< Is this reco particle a "primary" one (i.e. emanates directly from the reconstructed vertex)?
 
       int         pdg      = 0;                       ///< PDG code inferred for this particle.
@@ -33,7 +32,7 @@ namespace caf
 
       float       score    = NaN;                     ///< PID score for this particle, if relevant
 
-      float       E        = NaN;                     ///< Reconstructed energy for this particle [GeV] **n.b.: total energy including mass**
+      float       E        = NaN;                     ///< Reconstructed energy for this particle [GeV] **n.b.: total energy including mass** 
       PartEMethod E_method = PartEMethod::kUnknownMethod;   ///< Method used to determine energy for the particle
       SRVector3D  p;                                  ///< Reconstructed momentum for this particle
 
@@ -52,8 +51,8 @@ namespace caf
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle
-
-      std::vector<SRRecoBaseID> recoobj;                           ///< Id of the reconstructed object this particle is built on
+      
+      SRRecoBaseID recoobj;                           ///< Id of the reconstructed object this particle is built on
   };
 
 } // caf
