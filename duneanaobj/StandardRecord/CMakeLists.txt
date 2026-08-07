@@ -56,11 +56,29 @@ else()
     message(WARNING "Could not find gen_srproxy; skipping the Proxy and Flat subdirectories")
 endif()
 
+execute_process(COMMAND git rev-parse --short=8 HEAD
+  WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../..
+  OUTPUT_VARIABLE duneanaobj_GITSHORTHASH8
+  RESULT_VARIABLE GIT_CMD_SUCCESS
+  OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+if(NOT GIT_CMD_SUCCESS EQUAL 0)
+  message(FATAL_ERROR "Failed to run git rev-parse --short=8 HEAD in ${CMAKE_CURRENT_SOURCE_DIR}/../..")
+endif()
+
 if(NOT SKIP_CET)
     cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
                       SOURCE       ${src_files}
                       LIBRARIES    ROOT::Core ROOT::Physics
                     )
+
+    target_compile_definitions(duneanaobj_StandardRecord
+      PRIVATE
+        DUNEANAOBJ_GIT_SHORTHASH="\"${duneanaobj_GITSHORTHASH8}\""
+        DUNEANAOBJ_VERSION_MAJOR=${duneanaobj_VERSION_MAJOR}
+        DUNEANAOBJ_VERSION_MINOR=${duneanaobj_VERSION_MINOR}
+        DUNEANAOBJ_VERSION_PATCH=${duneanaobj_VERSION_PATCH}
+    )
 
     build_dictionary( duneanaobj_StandardRecord
                       DICTIONARY_LIBRARIES duneanaobj_StandardRecord
@@ -105,6 +123,14 @@ else()
     target_include_directories(StandardRecord INTERFACE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
             $<INSTALL_INTERFACE:include>
+    )
+
+    target_compile_definitions(StandardRecord
+      PRIVATE
+        DUNEANAOBJ_GIT_SHORTHASH="${duneanaobj_GITSHORTHASH8}"
+        DUNEANAOBJ_VERSION_MAJOR=${duneanaobj_VERSION_MAJOR}
+        DUNEANAOBJ_VERSION_MINOR=${duneanaobj_VERSION_MINOR}
+        DUNEANAOBJ_VERSION_PATCH=${duneanaobj_VERSION_PATCH}
     )
 
     # useful for dependencies using FetchContent_MakeAvailable to pull this
