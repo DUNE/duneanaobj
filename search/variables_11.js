@@ -6,6 +6,5 @@ var searchData=
   ['sec_3',['sec',['../classcaf_1_1SRTrueInteraction.html#accc719ba478776a47473ccd92a573c85',1,'caf::SRTrueInteraction']]],
   ['shw_4',['shw',['../classcaf_1_1SRNDShowerAssn.html#ad11c0caa41fc98b2af6575ecca873012',1,'caf::SRNDShowerAssn']]],
   ['start_5',['start',['../classcaf_1_1SRECALCluster.html#a172eb61faa64d5fc9805efdccc46e6b8',1,'caf::SRECALCluster::start()'],['../classcaf_1_1SRRecoParticle.html#ab5422318b77c6aba40d337c70695ab38',1,'caf::SRRecoParticle::start()'],['../classcaf_1_1SRShower.html#a999974afa3f05edc974a5ccacba6ec3b',1,'caf::SRShower::start()'],['../classcaf_1_1SRTrack.html#aa6e585a8e41a883c6e36f4bddd17c228',1,'caf::SRTrack::start()']]],
-  ['start_5fpos_6',['start_pos',['../classcaf_1_1SRTrueParticle.html#aa790b03b422c53e6f903199b77e2650d',1,'caf::SRTrueParticle']]],
-  ['syst_5fdials_7',['syst_dials',['../classcaf_1_1SRTrueInteraction.html#a5edfc700b904e166586b2fbf1ce1e341',1,'caf::SRTrueInteraction']]]
+  ['start_5fpos_6',['start_pos',['../classcaf_1_1SRTrueParticle.html#aa790b03b422c53e6f903199b77e2650d',1,'caf::SRTrueParticle']]]
 ];
