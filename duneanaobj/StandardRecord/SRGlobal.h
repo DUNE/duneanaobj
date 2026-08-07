@@ -15,8 +15,12 @@ namespace caf
     ~SRGlobal();
 
     SRWeightGlobal wgts;
-    std::string git_shorthash;
-    std::array<int,3> version;
+    std::string first_git_shorthash;
+    std::string first_version;
+    std::string latest_git_shorthash;
+    std::string latest_version;
+
+    void UpdateVersionInformation();
   };
 
 } // end namespace

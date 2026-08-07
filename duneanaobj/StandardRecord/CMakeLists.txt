@@ -74,10 +74,8 @@ if(NOT SKIP_CET)
 
     target_compile_definitions(duneanaobj_StandardRecord
       PRIVATE
-        DUNEANAOBJ_GIT_SHORTHASH="\"${duneanaobj_GITSHORTHASH8}\""
-        DUNEANAOBJ_VERSION_MAJOR=${duneanaobj_VERSION_MAJOR}
-        DUNEANAOBJ_VERSION_MINOR=${duneanaobj_VERSION_MINOR}
-        DUNEANAOBJ_VERSION_PATCH=${duneanaobj_VERSION_PATCH}
+        DUNEANAOBJ_GIT_SHORTHASH="${duneanaobj_GITSHORTHASH8}"
+        DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
     build_dictionary( duneanaobj_StandardRecord
@@ -111,6 +109,11 @@ else()
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
             $<INSTALL_INTERFACE:include>
     )
+    target_compile_definitions(StandardRecord_dict
+      PRIVATE
+        DUNEANAOBJ_GIT_SHORTHASH="${duneanaobj_GITSHORTHASH8}"
+        DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
+    )
 
     # Create and configure library target
     add_library( StandardRecord SHARED
@@ -128,9 +131,7 @@ else()
     target_compile_definitions(StandardRecord
       PRIVATE
         DUNEANAOBJ_GIT_SHORTHASH="${duneanaobj_GITSHORTHASH8}"
-        DUNEANAOBJ_VERSION_MAJOR=${duneanaobj_VERSION_MAJOR}
-        DUNEANAOBJ_VERSION_MINOR=${duneanaobj_VERSION_MINOR}
-        DUNEANAOBJ_VERSION_PATCH=${duneanaobj_VERSION_PATCH}
+        DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
     # useful for dependencies using FetchContent_MakeAvailable to pull this
