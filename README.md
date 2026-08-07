@@ -16,18 +16,18 @@ If you want to know exactly what's in a `StandardRecord`, have a look at the [Do
 
 CAFs are intended to simplify the life of the analyzer doing physics analysis.
 
-* **CAFs are designed for fast iteration**.  
-What you want in an analysis is supposed to be here, but not everything is:   
+* **CAFs are designed for fast iteration**.
+What you want in an analysis is supposed to be here, but not everything is:
 Higher-level reconstructed objects (like tracks or showers)
   and summary truth information live here.  Charge, hit, or low-level timing information don't.
-* **CAFs are designed for easy use**.  
+* **CAFs are designed for easy use**.
   The only requirements for reading them are ROOT and the `StandardRecord` object description.
 * **CAFs are designed for one-stop shopping**.
-  A CAF bundles together information from many upstream sources and cross-links them: truth from GENIE \& GEANT, reconstruction from multiple toolkits, etc.  
+  A CAF bundles together information from many upstream sources and cross-links them: truth from GENIE \& GEANT, reconstruction from multiple toolkits, etc.
 
 
 
-## Setting up `duneanaobj` for use 
+## Setting up `duneanaobj` for use
 
 In order to work with CAFs, you'll need to have the libraries from this package accessible to the software you want to read the CAFs with.
 Depending on how you intend to read them, you may also need the development headers.
@@ -46,6 +46,37 @@ You'll then need to pass the relevant directories to your compiler and linker.
 For example, for the `gcc` suite, this means `-I/path/to/StandardRecord/dir`
 for the headers when compiling, and `-L/path/to/StandardRecord/libs -lStandardRecord`
 for the libraries when linking.
+
+### Getting CMake to build it for you
+
+The below CMake snippet will attempt to find a binary distribution of duneanaobj
+via standard CMake search methods (e.g. `ENV{duneanaobj_ROOT}`` pointing to an
+existing install prefix). If that cannot be found, then it will pull down and
+including the referenced branch and include it in your packages build:
+
+```cmake
+if(NOT DEFINED DUNE_ANAOBJ_BRANCH OR "${DUNE_ANAOBJ_BRANCH}x" STREQUAL "x")
+  set(DUNE_ANAOBJ_BRANCH v04_00_00)
+endif()
+
+find_package(duneanaobj QUIET)
+if(NOT TARGET duneanaobj::StandardRecord) # need to fetch it
+  include(FetchContent)
+  FetchContent_Declare(
+      duneanaobj
+      GIT_REPOSITORY https://github.com/DUNE/duneanaobj.git
+      GIT_TAG        ${DUNE_ANAOBJ_BRANCH}
+    )
+  set(SKIP_CET ON)
+  FetchContent_MakeAvailable(duneanaobj)
+endif()
+
+# ...
+
+add_executable(myexe myexe.cxx)
+target_link_libraries(myexe PUBLIC
+  duneanaobj::StandardRecord all::my Other::Dependencies )
+```
 
 ### Using Fermilab UPS
 
@@ -176,7 +207,7 @@ The simplest way to satisfy this dependency is again using Fermilab UPS.
 Be sure to set UPS up (see above if unsure how to do that).
 
 * You'll need to change the version that the `_CMAKE_PROJECT_VERSION_STRING` value points to
-  in the `CMakeLists.txt` file in the root of the source code directory. 
+  in the `CMakeLists.txt` file in the root of the source code directory.
   For testing, I often use `testing` as the version name, but you can pick anything that doesn't overlap with an already-existing version.
   It generally pays to make it obvious because you'll be trying to find it in a list in a minute.
 
@@ -194,7 +225,7 @@ cd $BUILD_AREA
 . $DUNEANAOBJ_SOURCE/ups/setup_for_development -d
 ```
 
-Choose `-p` for an optimized build and `-d` for a debug build. 
+Choose `-p` for an optimized build and `-d` for a debug build.
 Be sure the check the output for errors.
 
 * Assuming no errors, you can follow the directions from the output of `setup_for_development`
