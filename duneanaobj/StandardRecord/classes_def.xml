@@ -8,7 +8,8 @@
    <version ClassVersion="10" checksum="2482425987"/>
   </class>
 
-  <class name="caf::SRGlobal" ClassVersion="10" >
+  <class name="caf::SRGlobal" ClassVersion="11" >
+   <version ClassVersion="11" checksum="574941839"/>
    <version ClassVersion="10" checksum="3775256529"/>
   </class>
 

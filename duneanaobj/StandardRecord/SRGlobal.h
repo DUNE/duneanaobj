@@ -3,6 +3,9 @@
 
 #include "duneanaobj/StandardRecord/SRWeightGlobal.h"
 
+#include <array>
+#include <string>
+
 namespace caf
 {
   class SRGlobal
@@ -12,6 +15,12 @@ namespace caf
     ~SRGlobal();
 
     SRWeightGlobal wgts;
+    std::string first_git_shorthash;
+    std::string first_version;
+    std::string latest_git_shorthash;
+    std::string latest_version;
+
+    void UpdateVersionInformation();
   };
 
 } // end namespace

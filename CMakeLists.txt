@@ -26,6 +26,11 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 project(duneanaobj VERSION 04.00.00 LANGUAGES CXX)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 04.00.00)
 
+string(REPLACE "." ";" VERSION_LIST ${PROJECT_VERSION})
+list(GET VERSION_LIST 0 duneanaobj_VERSION_MAJOR)
+list(GET VERSION_LIST 1 duneanaobj_VERSION_MINOR)
+list(GET VERSION_LIST 2 duneanaobj_VERSION_PATCH)
+
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
 option(SKIP_CET "Build without CET/cetmodules dependencies" OFF)
