@@ -145,6 +145,7 @@ else()
     # package in at configure time and link using the same name as if it had
     # been exported/imported
     add_library(duneanaobj::StandardRecord ALIAS StandardRecord)
+    add_library(duneanaobj::StandardRecord_dict ALIAS StandardRecord_dict)
 
     install( TARGETS StandardRecord StandardRecord_dict EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
     # rootcling emits these next to the build tree; ROOT looks for them beside
