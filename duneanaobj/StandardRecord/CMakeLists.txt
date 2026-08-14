@@ -89,22 +89,37 @@ else()
 
     include(GNUInstallDirs)
 
+    # Create and configure library target
+    add_library( StandardRecord SHARED ${src_files})
+
+    target_link_libraries(StandardRecord
+      PUBLIC ROOT::Core ROOT::Physics
+    )
+
     # ROOT I/O dictionary. The CET path gets this from cet's build_dictionary;
     # here we drive rootcling directly via ROOT's root_generate_dictionary,
     # fed the same classes.h / classes_def.xml selection file. The result is a
     # standalone StandardRecord_dict library (exported as
     # duneanaobj::StandardRecord_dict) plus the .rootmap and _rdict.pcm that
     # ROOT needs for autoloading at runtime.
-    root_generate_dictionary( G__StandardRecord
-                              ${CMAKE_CURRENT_SOURCE_DIR}/classes.h
-                              MODULE StandardRecord_dict
-                              LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/classes_def.xml
-                            )
+    root_generate_dictionary(
+      G__StandardRecord
+      ${CMAKE_CURRENT_SOURCE_DIR}/classes.h
+      MODULE StandardRecord_dict
+      LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/classes_def.xml
+    )
 
-    add_library( StandardRecord_dict SHARED G__StandardRecord.cxx )
-    target_link_libraries( StandardRecord_dict
-                           PUBLIC ROOT::Physics ROOT::TreePlayer ROOT::Core
-                         )
+    
+    add_library(StandardRecord_dict SHARED G__StandardRecord.cxx)
+
+    target_link_libraries(StandardRecord_dict
+        PRIVATE
+            StandardRecord
+            ROOT::Physics
+            ROOT::TreePlayer
+            ROOT::Core
+    )
+                         
     target_include_directories( StandardRecord_dict INTERFACE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
             $<INSTALL_INTERFACE:include>
@@ -115,14 +130,6 @@ else()
         DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
-    # Create and configure library target
-    add_library( StandardRecord SHARED
-                 ${src_files}
-               )
-
-    target_link_libraries( StandardRecord
-                           PUBLIC StandardRecord_dict
-                         )
     target_include_directories(StandardRecord INTERFACE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
             $<INSTALL_INTERFACE:include>
