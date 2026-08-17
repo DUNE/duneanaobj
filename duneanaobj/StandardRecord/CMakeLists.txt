@@ -93,7 +93,7 @@ else()
     add_library( StandardRecord SHARED ${src_files})
 
     target_link_libraries(StandardRecord
-      PUBLIC ROOT::Core ROOT::Physics
+      PUBLIC ROOT::Core ROOT::Physics ROOT::TreePlayer
     )
 
     # ROOT I/O dictionary. The CET path gets this from cet's build_dictionary;
@@ -105,29 +105,8 @@ else()
     root_generate_dictionary(
       G__StandardRecord
       ${CMAKE_CURRENT_SOURCE_DIR}/classes.h
-      MODULE StandardRecord_dict
+      MODULE StandardRecord
       LINKDEF ${CMAKE_CURRENT_SOURCE_DIR}/classes_def.xml
-    )
-
-    
-    add_library(StandardRecord_dict SHARED G__StandardRecord.cxx)
-
-    target_link_libraries(StandardRecord_dict
-        PRIVATE
-            StandardRecord
-            ROOT::Physics
-            ROOT::TreePlayer
-            ROOT::Core
-    )
-                         
-    target_include_directories( StandardRecord_dict INTERFACE
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-            $<INSTALL_INTERFACE:include>
-    )
-    target_compile_definitions(StandardRecord_dict
-      PRIVATE
-        DUNEANAOBJ_GIT_SHORTHASH="${duneanaobj_GITSHORTHASH8}"
-        DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
     target_include_directories(StandardRecord INTERFACE
@@ -145,14 +124,12 @@ else()
     # package in at configure time and link using the same name as if it had
     # been exported/imported
     add_library(duneanaobj::StandardRecord ALIAS StandardRecord)
-    add_library(duneanaobj::StandardRecord_dict ALIAS StandardRecord_dict)
-
-    install( TARGETS StandardRecord StandardRecord_dict EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install( TARGETS StandardRecord EXPORT duneanaobjTargets LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
     # rootcling emits these next to the build tree; ROOT looks for them beside
     # the installed library, so install them into the same libdir.
     install( FILES
-             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_dict_rdict.pcm"
-             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_dict.rootmap"
+             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord_rdict.pcm"
+             "${CMAKE_CURRENT_BINARY_DIR}/libStandardRecord.rootmap"
              DESTINATION ${CMAKE_INSTALL_LIBDIR}
            )
 
