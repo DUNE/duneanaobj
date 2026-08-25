@@ -13,6 +13,38 @@
 
 namespace caf
 {
+  struct SRSTEMScore
+  {
+    SRSTEMScore(){};
+    SRSTEMScore(float tscore, float sscore, float escore, float mscore, bool weighted, int plane)
+    : track_score(tscore), shower_score(sscore), empty_score(escore), michel_score(mscore),
+      charge_weighted(weighted), plane_ID(plane) {};
+
+    float track_score{0};
+    float shower_score{0};
+    float empty_score{0};
+    float michel_score{0};
+    bool charge_weighted{false};
+    int plane_ID{-1};
+
+    public:
+      SRSTEMScore& operator/=(double scalar) {
+        track_score /= scalar;
+        shower_score /= scalar;
+        empty_score /= scalar;
+        michel_score /= scalar;
+        return *this;
+      }
+
+      SRSTEMScore operator/(double scalar) {
+        track_score /= scalar;
+        shower_score /= scalar;
+        empty_score /= scalar;
+        michel_score /= scalar;
+        return SRSTEMScore(track_score, shower_score, empty_score, michel_score, charge_weighted, plane_ID);
+      }
+  };
+
   class SRPFP
   {
     public:
@@ -50,6 +82,9 @@ namespace caf
 
       //Track/Shower BDT score
       float track_score = NaN;
+
+      // EM/Track/Michel ID Scores -- see https://doi.org/10.1140/epjc/s10052-022-10791-2
+      SRSTEMScore cnn_stem_scores;
 
   };
 
