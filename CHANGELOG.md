@@ -3,6 +3,9 @@
 
 ##### current
 
+##### [v04_01_01] -- 2026-08-26
+* Only store the git short hash when available, otherwise use a placeholder [#107]
+
 ##### [v04_01_00] -- 2026-08-10
 * Propagation of `duneanaobj` git short hash and package version number to the SRGlobal constructor [#103]
 * Update SRTrueInteraction for Xsec and flux systematic dials clarity [#100]
