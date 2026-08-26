@@ -64,7 +64,7 @@ execute_process(COMMAND git rev-parse --short=8 HEAD
 
 if(NOT GIT_CMD_SUCCESS EQUAL 0)
   message(STATUS "Failed to run git rev-parse --short=8 HEAD in ${CMAKE_CURRENT_SOURCE_DIR}/../..")
-  SET(duneanaobj_GITSHORTHASH8 "none -- release build")
+  SET(duneanaobj_GITSHORTHASH8 "none -- release build?")
 endif()
 
 if(NOT SKIP_CET)
