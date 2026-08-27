@@ -11,7 +11,8 @@
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRECALCluster.h"
-#include "duneanaobj/StandardRecord/SREnums.h" 
+#include "duneanaobj/StandardRecord/SRSANDAssn.h"
+#include "duneanaobj/StandardRecord/SREnums.h"
 
 namespace caf
 {
@@ -60,6 +61,9 @@ namespace caf
         SRGRAIN grain;      ///< GRAIN reconstruction
         SRTracker tracker;  ///< Tracker reconstruction
         SREcal ecal;        ///< ECAL reconstruction
+
+        std::size_t ntrkmatch = 0;
+        std::vector<SRSANDAssn> trkmatch;  ///< Cross-subdetector associations among this interaction's objects
     };
 
     // ==================================================
@@ -69,8 +73,7 @@ namespace caf
     {
     public:
         std::size_t nixn = 0;
-        std::vector<SRSANDInt> ixn; ///< Reconstructed interactions
-
+        std::vector<SRSANDInt> ixn;  ///< Reconstructed interactions
     };
 
 } // namespace caf

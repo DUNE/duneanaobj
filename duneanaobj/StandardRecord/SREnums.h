@@ -183,6 +183,7 @@ namespace caf
           kSANDTrackerTrack    = 20,
           kSANDTrackerShower   = 21,
           kSANDECalCluster     = 22,
+          kSANDAssn            = 25,  ///< cross-subdetector association; see SRSANDAssn
           // GAr
           kGArTrack            = 23,
           kGArEcalCluster      = 24

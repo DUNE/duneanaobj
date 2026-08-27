@@ -1,27 +1,35 @@
 /// \author  J. Wolcott <jwolcott@fnal.gov> & S. Lanzi <samuele.lanzi@cnaf.infn.it>
 /// \date    Aug. 2026
 
-#ifndef DUNEANAOBJ_SRNDTRACKASSN_H
-#define DUNEANAOBJ_SRNDTRACKASSN_H
+#ifndef DUNEANAOBJ_SRSANDASSN_H
+#define DUNEANAOBJ_SRSANDASSN_H
 
-#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
-#include "duneanaobj/StandardRecord/SRSAND.h"
+#include <vector>
+
 #include "duneanaobj/StandardRecord/SREnums.h"
+#include "duneanaobj/StandardRecord/SRRecoObjBase.h"
+#include "duneanaobj/StandardRecord/SRTrack.h"
 
 namespace caf
 {
+  /// \brief A group of SAND subdetector reco objects reconstructed to go together
+  ///
+  /// Lives inside the SRSANDInt whose objects it associates,
+  /// so all of its constituents belong to that same SAND reco interaction.
   class SRSANDAssn : public SRRecoObjBase
   {
-    private:
-      static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
-
     public:
-      // idea: we want a sequence of subdetector elements.
-      // fill them in the order of reconstructed direction...
+      /// \brief The subdetector objects making up this association.
+      /// Filled in beginning-to-end order, i.e. following the reconstructed direction.
       std::vector<SRSANDObjID> constituents;
 
-      SRTrack trk;                   ///< new track object generated from synthesis of matched parts
+      /// \brief New track object generated from synthesis of the matched constituents.
+      ///
+      /// Its `start` --> the start point of the first constituent, and its `end` --> the endpoint of the last one.
+      /// `len_gcm2` includes range in any dead material between them.
+      /// `end` is left at its default (NaN) when the last constituent has no endpoint to derive one from, e.g. an SRECALCluster.
+      SRTrack trk;
   };
 }
 
-#endif //DUNEANAOBJ_SRNDTRACKASSN_H
+#endif //DUNEANAOBJ_SRSANDASSN_H

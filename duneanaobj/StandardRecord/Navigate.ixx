@@ -95,6 +95,8 @@ namespace caf
       return &sr.nd.sand.ixn[id.ixn].tracker.showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDECalCluster)
       return &sr.nd.sand.ixn[id.ixn].ecal.clusters[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDAssn)
+      return &sr.nd.sand.ixn[id.ixn].trkmatch[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArTrack)
       return &sr.nd.gar.ixn[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArEcalCluster)
