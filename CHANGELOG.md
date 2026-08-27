@@ -3,6 +3,16 @@
 
 ##### current
 
+##### [v04_01_01] -- 2026-08-26
+* Only store the git short hash when available, otherwise use a placeholder [#107]
+
+##### [v04_01_00] -- 2026-08-10
+* Propagation of `duneanaobj` git short hash and package version number to the SRGlobal constructor [#103]
+* Update SRTrueInteraction for Xsec and flux systematic dials clarity [#100]
+* FHC -> neutrino_mode [#98]
+* `SKIP_CET` pathway [#93]
+* Changes required for spack mpd build [#92, #97] 
+
 ##### [v04_00_00] -- 2026-06-22
 * Linkage between low-level and high-level reco objects [#81]
 

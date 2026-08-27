@@ -14,7 +14,8 @@ namespace caf
     SRWeightGlobal();
     ~SRWeightGlobal();
 
-    std::vector<SRSystParamHeader> params;
+    std::vector<SRSystParamHeader> xsec_params;
+    std::vector<SRSystParamHeader> flux_params;
   };
 
 } // end namespace
