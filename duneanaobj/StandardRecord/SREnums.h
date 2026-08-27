@@ -151,37 +151,41 @@ namespace caf
   class SRRecoBaseID
   {
     public:
+      /// \brief Which collection of low-level reco objects an object lives in.
+      /// NB: these values are serialized into CAFs, so they are written out explicitly.
+      /// A new entry takes the next unused number regardless of where it sits in this list:
+      /// keep it in the block it belongs to, and never renumber an existing one.
       enum SRRecoBaseCollectionType {
-          kUnknown,
+          kUnknown             = 0,
           // FD
-          kFDHDPandoraTrack,
-          KFDHDPandoraShower,
-          KFDHDPandoraPFP,
-          kFDVDPandoraTrack,
-          KFDVDPandoraShower,
-          KFDVDPandoraPFP,
-          kFDPDHDPandoraTrack,
-          KFDPDHDPandoraShower,
-          KFDPDHDPandoraPFP,
-          kFDPDVDPandoraTrack,
-          KFDPDVDPandoraShower,
-          KFDPDVDPandoraPFP,
+          kFDHDPandoraTrack    = 1,
+          KFDHDPandoraShower   = 2,
+          KFDHDPandoraPFP      = 3,
+          kFDVDPandoraTrack    = 4,
+          KFDVDPandoraShower   = 5,
+          KFDVDPandoraPFP      = 6,
+          kFDPDHDPandoraTrack  = 7,
+          KFDPDHDPandoraShower = 8,
+          KFDPDHDPandoraPFP    = 9,
+          kFDPDVDPandoraTrack  = 10,
+          KFDPDVDPandoraShower = 11,
+          KFDPDVDPandoraPFP    = 12,
           // NDLAr
-          kNDLArDLPTrack,
-          kNDLArDLPShower,
-          kNDLArPandoraTrack,
-          kNDLARPandoraShower,
+          kNDLArDLPTrack       = 13,
+          kNDLArDLPShower      = 14,
+          kNDLArPandoraTrack   = 15,
+          kNDLARPandoraShower  = 16,
           // TMS
-          kTMSTrack,
+          kTMSTrack            = 17,
           // SAND
-          kSANDGRAINTrack,
-          kSANDGRAINShower,
-          kSANDTrackerTrack,
-          kSANDTrackerShower,
-          kSANDECalCluster,
+          kSANDGRAINTrack      = 18,
+          kSANDGRAINShower     = 19,
+          kSANDTrackerTrack    = 20,
+          kSANDTrackerShower   = 21,
+          kSANDECalCluster     = 22,
           // GAr
-          kGArTrack,
-          kGArEcalCluster
+          kGArTrack            = 23,
+          kGArEcalCluster      = 24
       };
 
     int      ixn   = -1;                                                 ///< Index of SRInteraction in the SRInteractionBranch
