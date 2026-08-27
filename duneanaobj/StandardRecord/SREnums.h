@@ -195,6 +195,36 @@ namespace caf
     inline operator bool() const { return !(type == SRRecoBaseCollectionType::kUnknown || ixn < 0 || irecoobj < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
   };
 
+  /// \brief Identifies one of SAND's subdetector reco objects 
+  /// by which collection within its SRSANDInt it lives in and its index within that collection.
+  /// Used primarily to link them together in SRSANDAssn.
+  ///
+  /// NB: there is deliberately no interaction index here.
+  /// SRSANDAssns live inside the SRSANDInt whose objects they associate,
+  /// so a constituent is always in the same interaction as the association that refers to it.
+  class SRSANDObjID
+  {
+    public:
+      /// \brief Which collection within an SRSANDInt an object lives in.
+      /// Note this names a *collection*, not a subdetector:
+      /// GRAIN and the tracker each store both tracks and showers,
+      /// so the subdetector alone would not be enough to say which container `idx` indexes into.
+      enum SubcollectionType
+      {
+        kUnknown       = -1,
+        kGRAINTrack    = 1,
+        kGRAINShower   = 2,
+        kTrackerTrack  = 3,
+        kTrackerShower = 4,
+        kECALCluster   = 5,
+      };
+
+      SubcollectionType type = kUnknown;  ///< Which collection within the SRSANDInt this object lives in
+      int               idx  = -1;        ///< Index of the object in the collection named by `type`
+
+      inline operator bool() const { return !(type == kUnknown || idx < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+  };
+
   /// Which reconstruction toolkit was used to reconstruct this FD event?
   enum FD_RECO_STACK
   {
@@ -228,16 +258,6 @@ namespace caf
     kTrack          = 1,  ///< track
     kShower         = 2,  ///< shower
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
-  };
-
-  /// \brief Which of SAND's subdetectors does a reconstructed object hail from?
-  /// Used primarily to link them together in SRSANDAssn
-  enum SRSANDSubdetID
-  {
-    kUnknownSubDet = -1,
-    kGRAIN = 1,
-    kTracker = 2,
-    kECAL = 3,
   };
 
 }
