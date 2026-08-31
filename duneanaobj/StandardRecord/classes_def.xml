@@ -74,7 +74,8 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="11">
+  <class name="caf::SRInteractionBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="2003437438"/>
    <version ClassVersion="11" checksum="3254538684"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
@@ -114,7 +115,8 @@
    <version ClassVersion="10" checksum="1372801074"/>
   </class>
 
-  <class name="caf::SRRecoParticlesBranch" ClassVersion="13">
+  <class name="caf::SRRecoParticlesBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="1286372949"/>
    <version ClassVersion="13" checksum="1848688215"/>
    <version ClassVersion="12" checksum="3585828423"/>
    <version ClassVersion="11" checksum="3413162475"/>
@@ -285,7 +287,8 @@
   <class name="std::vector<caf::SRNDTrackAssn>">
   </class>
 
-  <class name="caf::SRNDLAr" ClassVersion="12">
+  <class name="caf::SRNDLAr" ClassVersion="13">
+   <version ClassVersion="13" checksum="3569233609"/>
    <version ClassVersion="12" checksum="620685221"/>
    <version ClassVersion="11" checksum="1183768120"/>
    <version ClassVersion="10" checksum="3845592869"/>
