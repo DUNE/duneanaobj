@@ -16,7 +16,7 @@ namespace caf
     public:
       SRCVNScoreBranch cvn;
 
-      // other reconstructions can go here: Pandora, DeepLearnPhysics, etc. once we have stuff to fill for them
+      // other reconstructions can go here: Pandora, SPINE, etc. once we have stuff to fill for them
   };
 
 } // caf

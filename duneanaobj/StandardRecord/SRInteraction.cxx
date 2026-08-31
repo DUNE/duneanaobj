@@ -4,7 +4,7 @@ namespace caf
 {
     bool SRInteraction::contained() const
     {
-        for (const auto& p : part.dlp) {
+        for (const auto& p : part.spine) {
             if (!p.contained) {
                 return false;
             }

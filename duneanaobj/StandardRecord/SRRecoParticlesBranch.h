@@ -16,8 +16,8 @@ namespace caf
   class SRRecoParticlesBranch
   {
     public:
-      int ndlp = 0;  // need these counters for SRProxy
-      std::vector<SRRecoParticle> dlp;       ///< Particles reconstructed by DeepLearnPhysics machine learning stack
+      int nspine = 0;  // need these counters for SRProxy
+      std::vector<SRRecoParticle> spine;       ///< Particles reconstructed by SPINE machine learning stack
 
       int npandora = 0;
       std::vector<SRRecoParticle> pandora;   ///< Particles reconstructed by Pandora

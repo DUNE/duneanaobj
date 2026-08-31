@@ -167,8 +167,8 @@ namespace caf
           KFDPDVDPandoraShower,
           KFDPDVDPandoraPFP,
           // NDLAr
-          kNDLArDLPTrack,
-          kNDLArDLPShower,
+          kNDLArSPINETrack,
+          kNDLArSPINEShower,
           kNDLArPandoraTrack,
           kNDLARPandoraShower,
           // TMS
@@ -202,7 +202,7 @@ namespace caf
   enum NDLAR_RECO_STACK
   {
     kUnknownNDLArReco,
-    kDeepLearnPhys,
+    kSPINE,
     kPandoraNDLAr
   };
 

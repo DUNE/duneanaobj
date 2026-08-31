@@ -36,7 +36,7 @@ namespace caf
     if (!id)
       return nullptr;
     if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kSPINE)
-      return &sr.common.ixn.dlp[id.ixn].part.dlp[id.ipart];
+      return &sr.common.ixn.spine[id.ixn].part.spine[id.ipart];
     else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPandora)
       return &sr.common.ixn.pandora[id.ixn].part.pandora[id.ipart];
     else if (id.type == SRRecoParticleID::SRRecoParticleCollectionType::kPida)
@@ -75,10 +75,10 @@ namespace caf
       return &sr.fd.pd_vd.pandora[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::KFDPDVDPandoraPFP)
       return &sr.fd.pd_vd.pandora[id.ixn].pfps[id.irecoobj];
-    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArDLPTrack)
-      return &sr.nd.lar.dlp[id.ixn].tracks[id.irecoobj];
-    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArDLPShower)
-      return &sr.nd.lar.dlp[id.ixn].showers[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArSPINETrack)
+      return &sr.nd.lar.spine[id.ixn].tracks[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArSPINEShower)
+      return &sr.nd.lar.spine[id.ixn].showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLArPandoraTrack)
       return &sr.nd.lar.pandora[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kNDLARPandoraShower)
