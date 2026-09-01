@@ -34,6 +34,7 @@ namespace caf
       TrueParticleID  ancestor_id;      ///< The primary particle this particle descended from, if relevant
 
       SRLorentzVector p;                ///< Momentum at generation point [GeV/c]
+      SRLorentzVector end_p;            ///< Momentum just before particle stops/decays/interacts [GeV/c]
       SRVector3D      start_pos;        ///< Particle generation position [cm]
       SRVector3D      end_pos;          ///< Particle end position (decay, interaction, stop) [cm]
 
