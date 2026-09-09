@@ -36,6 +36,8 @@ namespace caf
       SRLorentzVector p;                ///< Momentum at generation point [GeV/c]
       SRVector3D      start_pos;        ///< Particle generation position [cm]
       SRVector3D      end_pos;          ///< Particle end position (decay, interaction, stop) [cm]
+      SRVector3D      first_ndlar_hit_pos;  ///< First true hit in ND-LAr (position) [cm]
+      SRVector3D      last_ndlar_hit_pos;   ///< Last true hit in ND-LAr (position) [cm]
 
       int parent               = -1;       ///< GEANT4 trackID of parent particle from this particle
       std::vector<unsigned int> daughters; ///< GEANT4 trackIDs of daughter particles from this particle
