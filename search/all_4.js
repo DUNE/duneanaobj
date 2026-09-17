@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['daughters_0',['daughters',['../classcaf_1_1SRRecoParticle.html#aa57423f1cb76ea5a49c10aa0900a961a',1,'caf::SRRecoParticle::daughters()'],['../classcaf_1_1SRTrueParticle.html#ac1c1f126439168bb2ee0d00c39982d53',1,'caf::SRTrueParticle::daughters()']]],
+  ['daughters_0',['daughters',['../classcaf_1_1SRTrueParticle.html#ac1c1f126439168bb2ee0d00c39982d53',1,'caf::SRTrueParticle::daughters()'],['../classcaf_1_1SRRecoParticle.html#aa57423f1cb76ea5a49c10aa0900a961a',1,'caf::SRRecoParticle::daughters()']]],
   ['daughtersid_1',['daughtersID',['../classcaf_1_1SRTrueParticle.html#af69fbb30afc60784199d799bfce39a7f',1,'caf::SRTrueParticle']]],
   ['dedx_5fbkwd_2',['dEdx_bkwd',['../classcaf_1_1SRGArTrack.html#a2909d55c21a16a99918f9d7e275dab31',1,'caf::SRGArTrack']]],
   ['dedx_5ffwd_3',['dEdx_fwd',['../classcaf_1_1SRGArTrack.html#a3204aa577b17a104730387a08afbaabe',1,'caf::SRGArTrack']]],
   ['deltapulsetimensec_4',['deltapulsetimensec',['../classcaf_1_1SRBeamBranch.html#a0e7b64a64d9f2776766e2c31d6b3a4c8',1,'caf::SRBeamBranch']]],
-  ['detector_5',['Detector',['../namespacecaf.html#ac307c92506e04d6e6977b014081d7da6',1,'caf']]],
-  ['dir_6',['dir',['../classcaf_1_1SRInteraction.html#adfcf0ed5a9dfb92e8574d3cd29e72b1d',1,'caf::SRInteraction::dir()'],['../classcaf_1_1SRTrack.html#a12f608836cc04b3eb2beb1c5bce3150e',1,'caf::SRTrack::dir()']]],
-  ['direction_7',['direction',['../classcaf_1_1SRECALCluster.html#a590475bbea98c4c96da2d823f5f78063',1,'caf::SRECALCluster::direction()'],['../classcaf_1_1SRShower.html#a89ddab4fcc588959ef1893d26cd25a38',1,'caf::SRShower::direction()']]],
-  ['dlp_8',['dlp',['../classcaf_1_1SRInteractionBranch.html#a4e0c42d728fc7ce34fd111b79694dbfc',1,'caf::SRInteractionBranch::dlp()'],['../classcaf_1_1SRNDLAr.html#a6b944622ddf68ca52e3b7743e4647b23',1,'caf::SRNDLAr::dlp()'],['../classcaf_1_1SRRecoParticlesBranch.html#a38796803e1d902a21886b8cfae44ebd7',1,'caf::SRRecoParticlesBranch::dlp()']]]
+  ['deltat_5',['deltaT',['../classcaf_1_1SRNDTrackAssn.html#ad81e93386c84404e86df8201a4df0703',1,'caf::SRNDTrackAssn']]],
+  ['deltathetax_6',['deltaThetaX',['../classcaf_1_1SRNDTrackAssn.html#a75f60d91ce34bacd52090ad7d767313c',1,'caf::SRNDTrackAssn']]],
+  ['deltathetay_7',['deltaThetaY',['../classcaf_1_1SRNDTrackAssn.html#a7568ac82796f7126fdeb58128bde3efe',1,'caf::SRNDTrackAssn']]],
+  ['deltax_8',['deltaX',['../classcaf_1_1SRNDTrackAssn.html#aaa6b8bff55ef0a1a2e30ac306091e796',1,'caf::SRNDTrackAssn']]],
+  ['deltay_9',['deltaY',['../classcaf_1_1SRNDTrackAssn.html#a7f3472538afd4c0b57e7195f4ca9b8dc',1,'caf::SRNDTrackAssn']]],
+  ['detector_10',['Detector',['../namespacecaf.html#ac307c92506e04d6e6977b014081d7da6',1,'caf']]],
+  ['dir_11',['dir',['../classcaf_1_1SRInteraction.html#adfcf0ed5a9dfb92e8574d3cd29e72b1d',1,'caf::SRInteraction::dir()'],['../classcaf_1_1SRTrack.html#a12f608836cc04b3eb2beb1c5bce3150e',1,'caf::SRTrack::dir()']]],
+  ['direction_12',['direction',['../classcaf_1_1SRECALCluster.html#a590475bbea98c4c96da2d823f5f78063',1,'caf::SRECALCluster::direction()'],['../classcaf_1_1SRShower.html#a89ddab4fcc588959ef1893d26cd25a38',1,'caf::SRShower::direction()']]],
+  ['dlp_13',['dlp',['../classcaf_1_1SRInteractionBranch.html#a4e0c42d728fc7ce34fd111b79694dbfc',1,'caf::SRInteractionBranch::dlp()'],['../classcaf_1_1SRNDLAr.html#a6b944622ddf68ca52e3b7743e4647b23',1,'caf::SRNDLAr::dlp()'],['../classcaf_1_1SRRecoParticlesBranch.html#a38796803e1d902a21886b8cfae44ebd7',1,'caf::SRRecoParticlesBranch::dlp()']]]
 ];
