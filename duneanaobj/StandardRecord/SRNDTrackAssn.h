@@ -31,6 +31,13 @@ namespace caf
       float matchScore  = NaN;     ///< quantifies how well a LAr and TMS track match each other
       bool trueMatch = false;      ///< whether the LAr and TMS track have the same truth ID or not
 
+      double deltaX = NaN;        ///< how far apart in x the projected end point of the LAr track is to the start point of the TMS track
+      double deltaY = NaN;        ///< how far apart in y the projected end point of the LAr track is to the start point of the TMS track
+      double deltaThetaX = NaN;   ///< how far apart in x angle the projected end point of the LAr track is to the start point of the TMS track
+      double deltaThetaY = NaN;   ///< how far apart in y angle the projected end point of the LAr track is to the start point of the TMS track
+      double deltaT = NaN;        ///< time difference between the LAr track and the TMS track
+      // The above five quantities are components of the matchScore. I anticipate it will be helpful for troubleshooting to save them
+
       NDRecoMatchType matchType = caf::NDRecoMatchType::kUndeclared; ///< specifies how the match was performed
 
       SRTrack trk;                   ///< new track object generated from synthesis of matched parts
