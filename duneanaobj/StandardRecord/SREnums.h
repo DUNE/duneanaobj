@@ -151,37 +151,42 @@ namespace caf
   class SRRecoBaseID
   {
     public:
+      /// \brief Which collection of low-level reco objects an object lives in.
+      /// NB: these values are serialized into CAFs, so they are written out explicitly.
+      /// A new entry takes the next unused number regardless of where it sits in this list:
+      /// keep it in the block it belongs to, and never renumber an existing one.
       enum SRRecoBaseCollectionType {
-          kUnknown,
+          kUnknown             = 0,
           // FD
-          kFDHDPandoraTrack,
-          KFDHDPandoraShower,
-          KFDHDPandoraPFP,
-          kFDVDPandoraTrack,
-          KFDVDPandoraShower,
-          KFDVDPandoraPFP,
-          kFDPDHDPandoraTrack,
-          KFDPDHDPandoraShower,
-          KFDPDHDPandoraPFP,
-          kFDPDVDPandoraTrack,
-          KFDPDVDPandoraShower,
-          KFDPDVDPandoraPFP,
+          kFDHDPandoraTrack    = 1,
+          KFDHDPandoraShower   = 2,
+          KFDHDPandoraPFP      = 3,
+          kFDVDPandoraTrack    = 4,
+          KFDVDPandoraShower   = 5,
+          KFDVDPandoraPFP      = 6,
+          kFDPDHDPandoraTrack  = 7,
+          KFDPDHDPandoraShower = 8,
+          KFDPDHDPandoraPFP    = 9,
+          kFDPDVDPandoraTrack  = 10,
+          KFDPDVDPandoraShower = 11,
+          KFDPDVDPandoraPFP    = 12,
           // NDLAr
-          kNDLArDLPTrack,
-          kNDLArDLPShower,
-          kNDLArPandoraTrack,
-          kNDLARPandoraShower,
+          kNDLArDLPTrack       = 13,
+          kNDLArDLPShower      = 14,
+          kNDLArPandoraTrack   = 15,
+          kNDLARPandoraShower  = 16,
           // TMS
-          kTMSTrack,
+          kTMSTrack            = 17,
           // SAND
-          kSANDGRAINTrack,
-          kSANDGRAINShower,
-          kSANDTrackerTrack,
-          kSANDTrackerShower,
-          kSANDECalCluster,
+          kSANDGRAINTrack      = 18,
+          kSANDGRAINShower     = 19,
+          kSANDTrackerTrack    = 20,
+          kSANDTrackerShower   = 21,
+          kSANDECalCluster     = 22,
+          kSANDAssn            = 25,  ///< cross-subdetector association; see SRSANDAssn
           // GAr
-          kGArTrack,
-          kGArEcalCluster
+          kGArTrack            = 23,
+          kGArEcalCluster      = 24
       };
 
     int      ixn   = -1;                                                 ///< Index of SRInteraction in the SRInteractionBranch
@@ -189,6 +194,36 @@ namespace caf
     int      irecoobj = -1;                                              ///< Index of SRRecoObjBase in the specified reco objects collection of the SRInteraction 
 
     inline operator bool() const { return !(type == SRRecoBaseCollectionType::kUnknown || ixn < 0 || irecoobj < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+  };
+
+  /// \brief Identifies one of SAND's subdetector reco objects 
+  /// by which collection within its SRSANDInt it lives in and its index within that collection.
+  /// Used primarily to link them together in SRSANDAssn.
+  ///
+  /// NB: there is deliberately no interaction index here.
+  /// SRSANDAssns live inside the SRSANDInt whose objects they associate,
+  /// so a constituent is always in the same interaction as the association that refers to it.
+  class SRSANDObjID
+  {
+    public:
+      /// \brief Which collection within an SRSANDInt an object lives in.
+      /// Note this names a *collection*, not a subdetector:
+      /// GRAIN and the tracker each store both tracks and showers,
+      /// so the subdetector alone would not be enough to say which container `idx` indexes into.
+      enum SubcollectionType
+      {
+        kUnknown       = -1,
+        kGRAINTrack    = 1,
+        kGRAINShower   = 2,
+        kTrackerTrack  = 3,
+        kTrackerShower = 4,
+        kECALCluster   = 5,
+      };
+
+      SubcollectionType type = kUnknown;  ///< Which collection within the SRSANDInt this object lives in
+      int               idx  = -1;        ///< Index of the object in the collection named by `type`
+
+      inline operator bool() const { return !(type == kUnknown || idx < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
   };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
@@ -225,7 +260,6 @@ namespace caf
     kShower         = 2,  ///< shower
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
   };
-
 
 }
 
