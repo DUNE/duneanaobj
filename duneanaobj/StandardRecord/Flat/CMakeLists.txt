@@ -26,9 +26,6 @@ if(NOT SKIP_CET)
     endif()
     install_headers(EXTRAS ${CMAKE_CURRENT_BINARY_DIR}/FlatRecord.h ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h)
 else()
-    # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
-    # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
-    include(GNUInstallDirs)
 
     add_library(duneanaobj_StandardRecordFlat SHARED FlatRecord.cxx)
     target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC StandardRecord)
