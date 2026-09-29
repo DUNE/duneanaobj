@@ -26,29 +26,36 @@ if(NOT SKIP_CET)
         include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
         include_directories($ENV{ROOT_INCLUDE_PATH})
     endif()
-    install_headers(EXTRAS ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
+    install_headers(EXTRAS ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h
+                           ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h)
 else()
     # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
     # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
     include(GNUInstallDirs)
 
-    add_library(duneanaobj_StandardRecordProxy
-                SRProxy.cxx Instantiations.cxx)
-    target_link_libraries(duneanaobj_StandardRecordProxy ROOT::Core ROOT::Physics ROOT::TreePlayer)
-    if(SRProxy_FOUND)
+    add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx Instantiations.cxx)
+    target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC StandardRecord)
+
+    # required to find the generated header at build time
+    target_include_directories(duneanaobj_StandardRecordProxy PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../../..)
+    if(TARGET SRProxy::SRProxy)
         # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
         # re-finds it via find_dependency(SRProxy).
-        target_link_libraries(duneanaobj_StandardRecordProxy SRProxy::SRProxy)
+        target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy::SRProxy)
     endif()
-    target_include_directories(duneanaobj_StandardRecordProxy INTERFACE
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-            $<INSTALL_INTERFACE:include>)
+
+    # If we are using the python version of SRProxy, then there are no basic
+    #   types precompiled
+    if(NOT TARGET SRProxy::BasicTypes)
+      target_compile_definitions(duneanaobj_StandardRecordProxy PRIVATE NO_PRECOMPILED_SRBASICTYPES)
+    endif()
 
     install(TARGETS duneanaobj_StandardRecordProxy
             EXPORT duneanaobjTargets
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-    install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h
+                  ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
             DESTINATION include/duneanaobj/StandardRecord/Proxy)
 endif()
 

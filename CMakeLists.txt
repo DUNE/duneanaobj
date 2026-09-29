@@ -71,15 +71,68 @@ if(NOT SKIP_CET)
 
 
 else()
-    find_package(ROOT)
-    # Source root for the hand-written "duneanaobj/StandardRecord/*.h" includes,
-    # and the build root for the generated Proxy/Flat headers
-    # (SRProxy.h, FlatRecord.h, FwdDeclare.h), which land under ${PROJECT_BINARY_DIR}/duneanaobj/.
-    include_directories(. ${PROJECT_BINARY_DIR})
+    find_package(ROOT 6.20 REQUIRED)
+endif()
+
+# package up the root dependencies into an interface target
+add_library(duneanaobj_rootlibs INTERFACE)
+set_target_properties(duneanaobj_rootlibs PROPERTIES EXPORT_NAME rootlibs)
+target_link_libraries(duneanaobj_rootlibs INTERFACE ROOT::Core ROOT::Physics ROOT::TreePlayer)
+install(TARGETS duneanaobj_rootlibs EXPORT duneanaobjTargets)
+add_library(duneanaobj::rootlibs ALIAS duneanaobj_rootlibs)
+
+# Locate the SRProxy code generator. Prefer a find_package()'able
+# SRProxy (which exports the SRProxy::SRProxy target carrying its headers), and
+# cascade back to the older $SRPROXY_INC / $SRPROXY_DIR layout otherwise.
+find_package(SRProxy QUIET CONFIG)
+if(SRProxy_FOUND)
+    message(STATUS "Found SRProxy CMake package at ${SRProxy_DIR}")
+    # SRProxy exports its headers but not the gen_srproxy executable,
+    # so look for it under the package's install prefix (then fall back to $SRPROXY_DIR/bin).
+    get_filename_component(SRPROXY_PREFIX "${SRProxy_DIR}/../../.." ABSOLUTE)
+    find_program(GEN_SRPROXY gen_srproxy HINTS "${SRPROXY_PREFIX}/bin" $ENV{SRPROXY_DIR}/bin)
+else()
+    message(STATUS "SRProxy CMake package not found; using $SRPROXY_INC / $SRPROXY_DIR")
+    find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
+    add_library(SRProxy::SRProxy IMPORTED)
+    target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
 endif()
 
 add_subdirectory(duneanaobj)
 
 if (NOT SKIP_CET)
     cet_cmake_config()
+else()
+    # Setup installation. Install the headers under include/duneanaobj/StandardRecord/
+    # so the "duneanaobj/StandardRecord/..." include paths used throughout the
+    # sources resolve against the exported include/ interface. (PUBLIC_HEADER would
+    # flatten them straight into include/, which does not match those paths.)
+    file( GLOB headers_files *.h )
+    install( FILES ${headers_files} DESTINATION include/duneanaobj/StandardRecord )
+
+    # Setup CMake find_package related files
+    install( EXPORT duneanaobjTargets
+             DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/duneanaobj"
+             NAMESPACE duneanaobj::
+             FILE duneanaobjTargets.cmake
+           )
+
+    include(CMakePackageConfigHelpers)
+    configure_package_config_file( ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Templates/Config.cmake.in
+                                   "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake"
+                                   INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/duneanaobj"
+                                   PATH_VARS CMAKE_INSTALL_LIBDIR
+                                 )
+
+    write_basic_package_version_file( "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
+                                      VERSION ${PROJECT_VERSION}
+                                      COMPATIBILITY SameMajorVersion
+                                    )
+
+    # Install these files too
+    install( FILES
+             "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfig.cmake"
+             "${CMAKE_CURRENT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
+             DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/duneanaobj"
+           )
 endif()
