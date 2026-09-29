@@ -34,6 +34,7 @@ list(GET VERSION_LIST 2 duneanaobj_VERSION_PATCH)
 message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
 
 option(SKIP_CET "Build without CET/cetmodules dependencies" OFF)
+option(GEN_PYSRPROXY "If using cling SRProxy, build python bindings" OFF)
 
 if(DEFINED ENV{UPS_DIR})
    set(SKIP_CET false)
