@@ -1,9 +1,7 @@
-////////////////////////////////////////////////////////////////////////
-// \file    SRSAND.h
-// \brief   SAND reconstruction output 
-// \author  S. Repetto
-// \date    Feb. 2026
-////////////////////////////////////////////////////////////////////////
+/// \file    SRSAND.h
+/// \brief   SAND reconstruction output
+/// \author  S. Repetto, S. Lanzi <samuele.lanzi@cnaf.infn.it>
+/// \date    Feb. 2026
 
 #ifndef DUNEANAOBJ_SRSAND_H
 #define DUNEANAOBJ_SRSAND_H
@@ -12,70 +10,70 @@
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRECALCluster.h"
 #include "duneanaobj/StandardRecord/SRSANDAssn.h"
-#include "duneanaobj/StandardRecord/SREnums.h"
 
 namespace caf
 {
-    // ==================================================
-    // GRAIN reconstruction
-    // ==================================================
-    class SRGRAIN
-    {
+  /// \brief An interaction reconstructed by GRAIN on its own
+  class SRGRAIN
+  {
     public:
-        std::vector<SRTrack> tracks;
-        std::size_t ntracks = 0;
+      std::vector<caf::SRTrack> tracks;
+      std::size_t               ntracks{};
 
-        std::vector<SRShower> showers;
-        std::size_t nshowers = 0;
-    };
+      std::vector<caf::SRShower> showers;
+      std::size_t                nshowers{};
+  };
 
-    // ==================================================
-    // Tracker reconstruction
-    // ==================================================
-    class SRTracker
-    {
+  /// \brief An interaction reconstructed by the tracker on its own
+  class SRTracker
+  {
     public:
-        std::vector<SRTrack> tracks;
-        std::size_t ntracks = 0;
+      std::vector<caf::SRTrack> tracks;
+      std::size_t               ntracks{};
 
-        std::vector<SRShower> showers;
-        std::size_t nshowers = 0;
-    };
+      std::vector<caf::SRShower> showers;
+      std::size_t                nshowers{};
+  };
 
-    // ==================================================
-    // ECAL reconstruction
-    // ==================================================
-    class SREcal
-    {
+  /// \brief An interaction (group of clusters) reconstructed by the ECAL on its own
+  class SREcal
+  {
     public:
-        std::vector<SRECALCluster> clusters;
-        std::size_t nclusters = 0;
-    };
+      std::vector<caf::SRECALCluster> clusters;
+      std::size_t                     nclusters{};
+  };
 
-    // ==================================================
-    // A SAND reconstructed neutrino interaction
-    // ==================================================
-    class SRSANDInt
-    {
+  /// \brief A SAND reconstructed neutrino interaction, built by matching objects across the subdetectors
+  ///
+  /// Index-aligned with the SAND reco interactions in the common branch,
+  /// so SRRecoBaseID{ixn, kSANDAssn, irecoobj} resolves to SRSAND::ixn[ixn].trkmatch[irecoobj].
+  class SRSANDInt
+  {
     public:
-        SRGRAIN grain;      ///< GRAIN reconstruction
-        SRTracker tracker;  ///< Tracker reconstruction
-        SREcal ecal;        ///< ECAL reconstruction
+      std::vector<caf::SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetector interactions
+      std::size_t                  ntrkmatch{};
+  };
 
-        std::size_t ntrkmatch = 0;
-        std::vector<SRSANDAssn> trkmatch;  ///< Cross-subdetector associations among this interaction's objects
-    };
-
-    // ==================================================
-    // SAND reconstruction container
-    // ==================================================
-    class SRSAND
-    {
+  /// \brief SAND reconstruction output
+  ///
+  /// GRAIN, tracker and ECAL are reconstructed independently, each into its own list of interactions;
+  /// a later matching step combines their objects into the SAND interactions in `ixn`.
+  class SRSAND
+  {
     public:
-        std::size_t nixn = 0;
-        std::vector<SRSANDInt> ixn;  ///< Reconstructed interactions
-    };
+      std::vector<SRGRAIN> grain; ///< Interactions reconstructed by GRAIN
+      std::size_t          ngrain{};
 
-} // namespace caf
+      std::vector<SRTracker> tracker; ///< Interactions reconstructed by the tracker
+      std::size_t            ntracker{};
 
-#endif // DUNEANAOBJ_SRSAND_H
+      std::vector<SREcal> ecal; ///< Interactions reconstructed by the ECAL
+      std::size_t         necal{};
+
+      std::vector<SRSANDInt> ixn; ///< SAND interactions from the cross-subdetector matching
+      std::size_t            nixn{};
+  };
+
+}
+
+#endif //DUNEANAOBJ_SRSAND_H

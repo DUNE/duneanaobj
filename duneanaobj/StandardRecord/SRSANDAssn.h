@@ -14,8 +14,9 @@ namespace caf
 {
   /// \brief A group of SAND subdetector reco objects reconstructed to go together
   ///
-  /// Lives inside the SRSANDInt whose objects it associates,
-  /// so all of its constituents belong to that same SAND reco interaction.
+  /// Lives inside the SRSANDInt::trkmatch.
+  /// Its constituents may come from different interactions of different subdetectors;
+  /// each one can be located using its `SRSANDObjID` in `SRSAND::grain|tracker|ecal`.
   class SRSANDAssn : public SRRecoObjBase
   {
     public:
