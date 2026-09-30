@@ -17,30 +17,30 @@ namespace caf
   class SRGRAIN
   {
     public:
-      std::vector<caf::SRTrack> tracks;
-      std::size_t               ntracks{};
+      std::vector<SRTrack> tracks;
+      std::size_t          ntracks{};
 
-      std::vector<caf::SRShower> showers;
-      std::size_t                nshowers{};
+      std::vector<SRShower> showers;
+      std::size_t           nshowers{};
   };
 
   /// \brief An interaction reconstructed by the tracker on its own
   class SRTracker
   {
     public:
-      std::vector<caf::SRTrack> tracks;
-      std::size_t               ntracks{};
+      std::vector<SRTrack> tracks;
+      std::size_t          ntracks{};
 
-      std::vector<caf::SRShower> showers;
-      std::size_t                nshowers{};
+      std::vector<SRShower> showers;
+      std::size_t           nshowers{};
   };
 
   /// \brief An interaction (group of clusters) reconstructed by the ECAL on its own
   class SREcal
   {
     public:
-      std::vector<caf::SRECALCluster> clusters;
-      std::size_t                     nclusters{};
+      std::vector<SRECALCluster> clusters;
+      std::size_t                nclusters{};
   };
 
   /// \brief A SAND reconstructed neutrino interaction, built by matching objects across the subdetectors
@@ -50,8 +50,8 @@ namespace caf
   class SRSANDInt
   {
     public:
-      std::vector<caf::SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetector interactions
-      std::size_t                  ntrkmatch{};
+      std::vector<SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetector interactions
+      std::size_t             ntrkmatch{};
   };
 
   /// \brief SAND reconstruction output
