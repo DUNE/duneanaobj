@@ -56,7 +56,7 @@ including the referenced branch and include it in your packages build:
 
 ```cmake
 if(NOT DEFINED DUNE_ANAOBJ_BRANCH OR "${DUNE_ANAOBJ_BRANCH}x" STREQUAL "x")
-  set(DUNE_ANAOBJ_BRANCH v04_00_00)
+  set(DUNE_ANAOBJ_BRANCH v04_01_00)
 endif()
 
 find_package(duneanaobj QUIET)
