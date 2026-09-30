@@ -344,7 +344,8 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-  <class name="caf::SRSAND" ClassVersion="17">
+  <class name="caf::SRSAND" ClassVersion="18">
+   <version ClassVersion="18" checksum="2872674834"/>
    <version ClassVersion="17" checksum="3811644425"/>
    <version ClassVersion="16" checksum="1866131598"/>
    <version ClassVersion="15" checksum="911217381"/>
@@ -355,7 +356,8 @@
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-  <class name="caf::SRSANDInt" ClassVersion="25">
+  <class name="caf::SRSANDInt" ClassVersion="26">
+    <version ClassVersion="26" checksum="3720771872"/>
     <version ClassVersion="25" checksum="4079714457"/>
     <version ClassVersion="24" checksum="858502929"/>
     <version ClassVersion="23" checksum="3190481744"/>
@@ -374,7 +376,8 @@
     <version ClassVersion="10" checksum="87138233"/>
   </class>
 
-  <class name="caf::SRSANDObjID" ClassVersion="10">
+  <class name="caf::SRSANDObjID" ClassVersion="11">
+    <version ClassVersion="11" checksum="25369695"/>
     <version ClassVersion="10" checksum="3175599067"/>
   </class>
 
