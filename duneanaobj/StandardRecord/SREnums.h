@@ -196,17 +196,16 @@ namespace caf
     inline operator bool() const { return !(type == SRRecoBaseCollectionType::kUnknown || ixn < 0 || irecoobj < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
   };
 
-  /// \brief Identifies one of SAND's subdetector reco objects 
-  /// by which collection within its SRSANDInt it lives in and its index within that collection.
+  /// \brief Identifies one of SAND's subdetector reco objects
+  /// by which collection it lives in, which interaction of that subdetector it belongs to, and its index within that collection.
   /// Used primarily to link them together in SRSANDAssn.
   ///
-  /// NB: there is deliberately no interaction index here.
-  /// SRSANDAssns live inside the SRSANDInt whose objects they associate,
-  /// so a constituent is always in the same interaction as the association that refers to it.
+  /// GRAIN, tracker and ECAL build their interactions independently,
+  /// so the constituents of one SRSANDAssn may come from different interactions of different subdetectors.
   class SRSANDObjID
   {
     public:
-      /// \brief Which collection within an SRSANDInt an object lives in.
+      /// \brief Which collection within a subdetector interaction (SRGRAIN / SRTracker / SREcal) an object lives in.
       /// Note this names a *collection*, not a subdetector:
       /// GRAIN and the tracker each store both tracks and showers,
       /// so the subdetector alone would not be enough to say which container `idx` indexes into.
@@ -220,10 +219,11 @@ namespace caf
         kECALCluster   = 5,
       };
 
-      SubcollectionType type = kUnknown;  ///< Which collection within the SRSANDInt this object lives in
+      SubcollectionType type = kUnknown;  ///< Which collection within its subdetector interaction this object lives in
+      int               ixn  = -1;        ///< Index of the interaction in the SRSAND subdetector list (grain / tracker / ecal) implied by `type`
       int               idx  = -1;        ///< Index of the object in the collection named by `type`
 
-      inline operator bool() const { return !(type == kUnknown || idx < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+      inline operator bool() const { return !(type == kUnknown || ixn < 0 || idx < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
   };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
