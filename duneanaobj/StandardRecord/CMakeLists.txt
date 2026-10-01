@@ -113,7 +113,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND
     CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "13.0")
   set(SRPROXY_CASTXML_CFLAGS "-D__clang__=1 -D_Float16=short -D_Float32=int -D_Float64=long -D_Float128=__int128 -D_Float32x=char -D_Float64x=wchar_t -D_Float128x=char16_t -fsized-deallocation -Wno-macro-redefined")
 else()
-  set(SRPROXY_CASTXML_CFLAGS "-D_Float16=short")
+  set(SRPROXY_CASTXML_CFLAGS "-D_Float16=short -fsized-deallocation")
 endif()
 
 # Proxy/ and Flat/ generate their sources with gen_srproxy, so only descend into
