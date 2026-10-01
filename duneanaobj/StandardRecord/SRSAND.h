@@ -13,7 +13,7 @@
 
 namespace caf
 {
-  /// \brief An interaction reconstructed by GRAIN on its own
+  /// \brief All objects reconstructed by GRAIN in a spill
   class SRGRAIN
   {
     public:
@@ -24,7 +24,7 @@ namespace caf
       std::size_t           nshowers{};
   };
 
-  /// \brief An interaction reconstructed by the tracker on its own
+  /// \brief All objects reconstructed by the tracker in a spill
   class SRTracker
   {
     public:
@@ -35,7 +35,7 @@ namespace caf
       std::size_t           nshowers{};
   };
 
-  /// \brief An interaction (group of clusters) reconstructed by the ECAL on its own
+  /// \brief All clusters reconstructed by the ECAL in a spill
   class SREcal
   {
     public:
@@ -50,25 +50,20 @@ namespace caf
   class SRSANDInt
   {
     public:
-      std::vector<SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetector interactions
+      std::vector<SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetectors
       std::size_t             ntrkmatch{};
   };
 
   /// \brief SAND reconstruction output
   ///
-  /// GRAIN, tracker and ECAL are reconstructed independently, each into its own list of interactions;
+  /// GRAIN, tracker and ECAL are reconstructed independently, each into its own list of objects for the whole spill;
   /// a later matching step combines their objects into the SAND interactions in `ixn`.
   class SRSAND
   {
     public:
-      std::vector<SRGRAIN> grain; ///< Interactions reconstructed by GRAIN
-      std::size_t          ngrain{};
-
-      std::vector<SRTracker> tracker; ///< Interactions reconstructed by the tracker
-      std::size_t            ntracker{};
-
-      std::vector<SREcal> ecal; ///< Interactions reconstructed by the ECAL
-      std::size_t         necal{};
+      SRGRAIN   grain;   ///< All objects reconstructed by GRAIN in this spill
+      SRTracker tracker; ///< All objects reconstructed by the tracker in this spill
+      SREcal    ecal;    ///< All clusters reconstructed by the ECAL in this spill
 
       std::vector<SRSANDInt> ixn; ///< SAND interactions from the cross-subdetector matching
       std::size_t            nixn{};
