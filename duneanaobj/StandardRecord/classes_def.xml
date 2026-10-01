@@ -344,7 +344,8 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-  <class name="caf::SRSAND" ClassVersion="18">
+  <class name="caf::SRSAND" ClassVersion="19">
+   <version ClassVersion="19" checksum="2081379096"/>
    <version ClassVersion="18" checksum="2872674834"/>
    <version ClassVersion="17" checksum="3811644425"/>
    <version ClassVersion="16" checksum="1866131598"/>
@@ -376,7 +377,8 @@
     <version ClassVersion="10" checksum="87138233"/>
   </class>
 
-  <class name="caf::SRSANDObjID" ClassVersion="11">
+  <class name="caf::SRSANDObjID" ClassVersion="12">
+    <version ClassVersion="12" checksum="3175599067"/>
     <version ClassVersion="11" checksum="25369695"/>
     <version ClassVersion="10" checksum="3175599067"/>
   </class>
