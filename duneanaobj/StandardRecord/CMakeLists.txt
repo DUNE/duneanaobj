@@ -18,7 +18,7 @@ endif()
 if(NOT SKIP_CET)
     cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
                       SOURCE       ${src_files}
-                      LIBRARIES    ROOT::Core ROOT::Physics
+                      LIBRARIES    SRProxy::SRProxy ROOT::Core ROOT::Physics
                     )
 
     target_compile_definitions(duneanaobj_StandardRecord
@@ -27,7 +27,7 @@ if(NOT SKIP_CET)
         DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
-    target_link_libraries(duneanaobj_StandardRecord INTERFACE
+    target_include_directories(duneanaobj_StandardRecord INTERFACE
       # for include "duneanaobj/" style includes at build time
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> # for classes_def.xml!!
