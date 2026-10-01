@@ -1,19 +1,12 @@
 FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
 
-SET(PYBIND_ARG)
-SET(PYBIND_SRC)
-if(GEN_PYSRPROXY)
-  SET(PYBIND_ARG "--emit-python-bindings")
-  SET(PYBIND_SRC "SRProxy.pybind.cxx")
-endif()
-
 # GEN_SRPROXY and the SRProxy include path are set up by the parent
 # StandardRecord/CMakeLists.txt, which only descends here when the generator
 # was found.
 add_custom_command(# Rebuild if anything in StandardRecord/ changes
                    DEPENDS ${SR_DEPENDENCIES}
-                   OUTPUT SRProxy.cxx SRProxy.h FwdDeclare.h ${PYBIND_SRC}
-                   COMMAND ${GEN_SRPROXY} -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Proxy/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags "${SRPROXY_CASTXML_CFLAGS}" ${PYBIND_ARG}
+                   OUTPUT SRProxy.cxx SRProxy.h FwdDeclare.h
+                   COMMAND ${GEN_SRPROXY} -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Proxy/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags "${SRPROXY_CASTXML_CFLAGS}"
   )
 
 # This is a very picky error buried inside template instantiations
@@ -62,37 +55,4 @@ else()
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h
                   ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
             DESTINATION include/duneanaobj/StandardRecord/Proxy)
-endif()
-
-if(GEN_PYSRPROXY)
-  find_package(Python3 REQUIRED COMPONENTS Development Interpreter)
-
-  # PYTHON PATHS
-  set(SRProxy_PYTHONPATH "python/${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}")
-
-  include(FetchContent)
-
-  FetchContent_Declare(
-    pybind11
-    GIT_REPOSITORY https://github.com/pybind/pybind11.git
-    GIT_TAG        f5fbe86 # release-3.0.1
-  )
-
-  FetchContent_MakeAvailable(pybind11)
-
-  pybind11_add_module(pySRProxy SHARED SRProxy.pybind.cxx)
-
-  target_include_directories(pySRProxy
-    PRIVATE
-      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-      $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
-      )
-
-  target_link_libraries(pySRProxy
-    PRIVATE
-      duneanaobj::StandardRecordProxy)
-  target_include_directories(pySRProxy PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../../..)
-
-  install(TARGETS pySRProxy
-      LIBRARY DESTINATION ${SRProxy_PYTHONPATH})
 endif()
