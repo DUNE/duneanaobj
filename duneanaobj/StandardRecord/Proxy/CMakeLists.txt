@@ -41,12 +41,6 @@ else()
         target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy::SRProxy)
     endif()
 
-    # If we are using the python version of SRProxy, then there are no basic
-    #   types precompiled
-    if(NOT TARGET SRProxy::BasicTypes)
-      target_compile_definitions(duneanaobj_StandardRecordProxy PRIVATE NO_PRECOMPILED_SRBASICTYPES)
-    endif()
-
     install(TARGETS duneanaobj_StandardRecordProxy
             EXPORT duneanaobjTargets
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
@@ -55,4 +49,10 @@ else()
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h
                   ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
             DESTINATION include/duneanaobj/StandardRecord/Proxy)
+endif()
+
+# If we are using the python version of SRProxy, then there are no basic
+#   types precompiled
+if(NOT TARGET SRProxy::BasicTypes)
+  target_compile_definitions(duneanaobj_StandardRecordProxy PRIVATE NO_PRECOMPILED_SRBASICTYPES)
 endif()
