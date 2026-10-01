@@ -11,7 +11,7 @@ find_dependency ( ROOT )
 # against the legacy $SRPROXY_INC layout, @SRProxy_FOUND@ is false and this is
 # skipped.)
 if ( @GENERATED_PROXIES@ )
-    find_dependency ( SRProxy CONFIG )
+    find_package ( SRProxy QUIET CONFIG )
     if(NOT TARGET SRProxy::SRProxy) # have to reconstruct target containing
                                     # include directories
       if (DEFINED ENV{SRPROXY_INC})
@@ -22,3 +22,5 @@ if ( @GENERATED_PROXIES@ )
       endif()
     endif()
 endif()
+
+include ( "${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake" )
