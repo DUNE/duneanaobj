@@ -18,7 +18,7 @@ endif()
 if(NOT SKIP_CET)
     cet_make_library( LIBRARY_NAME duneanaobj_StandardRecord
                       SOURCE       ${src_files}
-                      LIBRARIES    SRProxy::SRProxy ROOT::Core ROOT::Physics
+                      LIBRARIES    ROOT::Core ROOT::Physics
                     )
 
     target_compile_definitions(duneanaobj_StandardRecord
