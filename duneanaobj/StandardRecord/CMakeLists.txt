@@ -27,7 +27,7 @@ if(NOT SKIP_CET)
         DUNEANAOBJ_VERSION="${PROJECT_VERSION}"
     )
 
-    target_include_directories(duneanaobj_StandardRecord INTERFACE
+    target_include_directories(duneanaobj_StandardRecord PUBLIC
       # for include "duneanaobj/" style includes at build time
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> # for classes_def.xml!!
