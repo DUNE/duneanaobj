@@ -10,6 +10,8 @@
 #include <limits>
 #include <vector>
 
+#include "duneanaobj/StandardRecord/SRBeamInstrumentation.h"
+
 namespace caf
 {
   class SRBeamBranch
@@ -71,7 +73,12 @@ namespace caf
       bool isFHC() const  { return hornI > 0; };                                 ///< Checks #hornI to see if the polarity is positive --> this is FHC
       bool is0HC() const  { return std::abs(hornI) < 1; };                       ///< Checks #hornI to see if the polarity is zero
       bool isRHC() const  { return hornI < 0; }                                  ///< Checks #hornI to see if the polarity is negative --> this is RHC
-      ///@}                                                                                 
+      ///@}
+
+      /// \brief Test-beam line instrumentation (H4-VLE at ProtoDUNE-SP).
+      ///
+      /// Unfilled for neutrino-beam samples; the fields above are unfilled for test beam.
+      SRBeamInstrumentation inst;
 
   };
 }

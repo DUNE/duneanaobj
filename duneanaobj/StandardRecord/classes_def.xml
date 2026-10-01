@@ -33,9 +33,15 @@
 
   <!-- - - - - - - - - - - Beam-related - - - - - - - - - - - - - -->
 
-  <class name="caf::SRBeamBranch" ClassVersion="11">
+  <class name="caf::SRBeamBranch" ClassVersion="12">
+   <version ClassVersion="12" checksum="148577967"/>
    <version ClassVersion="11" checksum="2626321545"/>
    <version ClassVersion="10" checksum="3825039376"/>
+  </class>
+
+  <class name="caf::SRBeamInstrumentation" ClassVersion="11">
+   <version ClassVersion="11" checksum="3558172801"/>
+   <version ClassVersion="10" checksum="1579151305"/>
   </class>
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
@@ -65,13 +71,23 @@
    <version ClassVersion="10" checksum="2681983110"/>
   </class>
 
-  <class name="caf::SRInteractionBranch" ClassVersion="12">
+  <class name="caf::SRHitCategory" ClassVersion="10">
+   <version ClassVersion="10" checksum="4039098195"/>
+  </class>
+
+  <class name="caf::SRHitSummary" ClassVersion="10">
+   <version ClassVersion="10" checksum="4120227779"/>
+  </class>
+
+  <class name="caf::SRInteractionBranch" ClassVersion="13">
+   <version ClassVersion="13" checksum="1085540529"/>
    <version ClassVersion="12" checksum="4170906889"/>
    <version ClassVersion="11" checksum="3254538684"/>
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="13">
+  <class name="caf::SRInteraction" ClassVersion="14">
+   <version ClassVersion="14" checksum="3888030366"/>
    <version ClassVersion="13" checksum="2923159878"/>
    <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>

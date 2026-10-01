@@ -7,6 +7,7 @@
 #define DUNEANAOBJ_SRINTERACTION_H
 
 #include "duneanaobj/StandardRecord/SRDirectionBranch.h"
+#include "duneanaobj/StandardRecord/SRHitSummary.h"
 #include "duneanaobj/StandardRecord/SRNeutrinoEnergyBranch.h"
 #include "duneanaobj/StandardRecord/SRNeutrinoHypothesisBranch.h"
 #include "duneanaobj/StandardRecord/SRRecoParticlesBranch.h"
@@ -18,10 +19,13 @@ namespace caf
   class SRInteraction
   {
     public:
-      long int id = -1;
+      long int id = -1;   ///< For Pandora interactions, the key of the recob::Slice this was built from
 
       /// Reconstructed vertex location (if any)
       SRVector3D vtx;
+
+      /// Hit-level truth composition of the Pandora slice this interaction was built from
+      SRHitSummary hits;
 
       /// Hypotheses for this interaction's parent particle direction
       SRDirectionBranch dir;
