@@ -95,7 +95,7 @@ if(SRProxy_FOUND)
 else()
     message(STATUS "SRProxy CMake package not found; using $SRPROXY_INC / $SRPROXY_DIR")
     find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
-    add_library(SRProxy::SRProxy IMPORTED)
+    add_library(SRProxy::SRProxy IMPORTED INTERFACE)
     target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
 endif()
 
