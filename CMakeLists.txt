@@ -84,6 +84,7 @@ add_library(duneanaobj::rootlibs ALIAS duneanaobj_rootlibs)
 # Locate the SRProxy code generator. Prefer a find_package()'able
 # SRProxy (which exports the SRProxy::SRProxy target carrying its headers), and
 # cascade back to the older $SRPROXY_INC / $SRPROXY_DIR layout otherwise.
+SET(GENERATE_PROXIES FALSE)
 find_package(SRProxy QUIET CONFIG)
 if(SRProxy_FOUND)
     message(STATUS "Found SRProxy CMake package at ${SRProxy_DIR}")
@@ -98,6 +99,10 @@ else()
       add_library(SRProxy::SRProxy IMPORTED INTERFACE)
       target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
     endif()
+endif()
+
+if(GEN_SRPROXY)
+  SET(GENERATE_PROXIES TRUE)
 endif()
 
 add_subdirectory(duneanaobj)

@@ -97,8 +97,7 @@ endif()
 
 # Proxy/ and Flat/ generate their sources with gen_srproxy, so only descend into
 # them when it was found.
-SET(GENERATED_PROXIES FALSE)
-if(GEN_SRPROXY)
+if(GENERATE_PROXIES)
 
     # gen_srproxy drives castxml to parse the StandardRecord headers. castxml 0.6.x
     # (clang-based, emulating gcc) can't parse gcc-13's libstdc++/glibc as-is: it
@@ -123,7 +122,6 @@ if(GEN_SRPROXY)
 
     add_subdirectory(Proxy)
     add_subdirectory(Flat)
-    SET(GENERATED_PROXIES TRUE)
 else()
     message(WARNING "Could not find gen_srproxy; skipping the Proxy and Flat subdirectories")
 endif()
