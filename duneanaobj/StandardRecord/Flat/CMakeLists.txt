@@ -28,6 +28,7 @@ if(NOT SKIP_CET)
 else()
 
     add_library(duneanaobj_StandardRecordFlat SHARED FlatRecord.cxx)
+    set_target_properties(duneanaobj_StandardRecordFlat PROPERTIES EXPORT_NAME StandardRecordFlat)
     target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC StandardRecord)
 
     # required to find the generated header at build time
@@ -41,6 +42,7 @@ else()
     install(TARGETS duneanaobj_StandardRecordFlat
             EXPORT duneanaobjTargets
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    add_library(duneanaobj::StandardRecordFlat ALIAS duneanaobj_StandardRecordFlat)
 
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/FlatRecord.h ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
             DESTINATION include/duneanaobj/StandardRecord/Flat)
