@@ -377,7 +377,8 @@
     <version ClassVersion="10" checksum="87138233"/>
   </class>
 
-  <class name="caf::SRSANDObjID" ClassVersion="12">
+  <class name="caf::SRSANDObjID" ClassVersion="13">
+    <version ClassVersion="13" checksum="1147861703"/>
     <version ClassVersion="12" checksum="3175599067"/>
     <version ClassVersion="11" checksum="25369695"/>
     <version ClassVersion="10" checksum="3175599067"/>
