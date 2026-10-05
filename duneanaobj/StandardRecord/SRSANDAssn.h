@@ -16,7 +16,7 @@ namespace caf
   ///
   /// Lives inside the SRSANDInt::trkmatch.
   /// Its constituents may come from different subdetectors;
-  /// each one can be located using its `SRSANDObjID` in `SRSAND::grain|tracker|ecal`.
+  /// each one can be located in `SRSAND::grain|tracker|ecal` with `FindRecoObjBase(sr, constituent)`.
   class SRSANDAssn : public SRRecoObjBase
   {
     public:
@@ -29,6 +29,9 @@ namespace caf
       /// Its `start` --> the start point of the first constituent, and its `end` --> the endpoint of the last one.
       /// `len_gcm2` includes range in any dead material between them.
       /// `end` is left at its default (NaN) when the last constituent has no endpoint to derive one from, e.g. an SRECALCluster.
+      ///
+      /// `trk.part` is left at its default: the back-link to the SRRecoParticle is the association's own `part`,
+      /// since SRRecoParticle::recoobj points to the association, not to `trk` (same pattern as SRNDTrackAssn).
       SRTrack trk;
   };
 }
