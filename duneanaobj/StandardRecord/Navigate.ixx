@@ -104,4 +104,19 @@ namespace caf
     else
       throw std::domain_error("Unknown SRRecoBaseCollectionType: " + std::to_string(id.type));
   }
+
+  /// \brief Locate the SAND subdetector object named by an SRSANDObjID.
+  ///
+  /// SAND's subdetector collections are spill-level, so the overload above
+  /// ignores `ixn` for those types.  We pass a placeholder rather than giving
+  /// SRSANDObjID an `ixn` of its own, which would stop it being a stable
+  /// identity for an object shared between SRSANDInts.
+  const SRRecoObjBase *FindRecoObjBase(const StandardRecord &sr, const SRSANDObjID &id)
+  {
+    if (!id) { 
+      return nullptr;
+    }
+    
+    return FindRecoObjBase(sr, SRRecoBaseID{0, id.type, id.idx});
+  }
 }

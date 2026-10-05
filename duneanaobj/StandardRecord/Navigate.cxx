@@ -15,4 +15,6 @@ namespace caf
   const SRRecoParticle  * FindRecoParticle(const StandardRecord & sr, const SRRecoParticleID& id);
 
   const SRRecoObjBase * FindRecoObjBase(const StandardRecord & sr, const SRRecoBaseID& id);
+
+  const SRRecoObjBase *FindRecoObjBase(const StandardRecord &sr, const SRSANDObjID &id);
 }
