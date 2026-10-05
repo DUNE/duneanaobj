@@ -178,6 +178,7 @@ namespace caf
           // TMS
           kTMSTrack            = 17,
           // SAND
+          // NB: a new SAND subdetector collection must also be added to SRSANDObjID::operator bool()
           kSANDGRAINTrack      = 18,
           kSANDGRAINShower     = 19,
           kSANDTrackerTrack    = 20,
@@ -202,24 +203,17 @@ namespace caf
   class SRSANDObjID
   {
     public:
-      /// \brief Which collection within SRSAND::grain / tracker / ecal an object lives in.
-      /// Note this names a *collection*, not a subdetector:
-      /// GRAIN and the tracker each store both tracks and showers,
-      /// so the subdetector alone would not be enough to say which container `idx` indexes into.
-      enum SubcollectionType
+      SRRecoBaseID::SRRecoBaseCollectionType type = SRRecoBaseID::kUnknown; ///< SAND subdetector collection (kSANDGRAINTrack ... kSANDECalCluster)
+      int                                    idx  = -1;                     ///< Index of the object in the collection named by `type`
+
+      /// \brief Returns true if this is a valid ID: a SAND subdetector collection and a non-negative index
+      inline operator bool() const 
       {
-        kUnknown       = -1,
-        kGRAINTrack    = 1,
-        kGRAINShower   = 2,
-        kTrackerTrack  = 3,
-        kTrackerShower = 4,
-        kECALCluster   = 5,
-      };
-
-      SubcollectionType type = kUnknown;  ///< Which collection within SRSAND::grain / tracker / ecal this object lives in
-      int               idx  = -1;        ///< Index of the object in the collection named by `type`
-
-      inline operator bool() const { return !(type == kUnknown || idx < 0); }; ///< Returns true if this is a valid ID (i.e. not default/invalid values)
+        bool isSANDSubdet = type == SRRecoBaseID::kSANDGRAINTrack || type == SRRecoBaseID::kSANDGRAINShower
+                            || type == SRRecoBaseID::kSANDTrackerTrack || type == SRRecoBaseID::kSANDTrackerShower
+                            || type == SRRecoBaseID::kSANDECalCluster;
+        return isSANDSubdet && idx >= 0;
+      }
   };
 
   /// Which reconstruction toolkit was used to reconstruct this FD event?
