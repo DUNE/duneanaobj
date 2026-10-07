@@ -13,7 +13,7 @@ if(NOT SKIP_CET)
     message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordFlat
                      SOURCE       FlatRecord.cxx
-                     LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer
+                     LIBRARIES    SRProxy::SRProxy ROOT::Core ROOT::Physics ROOT::TreePlayer
                      )
 
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
@@ -24,29 +24,27 @@ if(NOT SKIP_CET)
         include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
         include_directories($ENV{ROOT_INCLUDE_PATH})
     endif()
-    install_headers(EXTRAS ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h)
+    install_headers(EXTRAS ${CMAKE_CURRENT_BINARY_DIR}/FlatRecord.h ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h)
 else()
-    # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
-    # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
-    include(GNUInstallDirs)
 
-    add_library(duneanaobj_StandardRecordFlat
-                FlatRecord.cxx)
-    target_link_libraries(duneanaobj_StandardRecordFlat ROOT::Core ROOT::Physics ROOT::TreePlayer)
-    if(SRProxy_FOUND)
+    add_library(duneanaobj_StandardRecordFlat SHARED FlatRecord.cxx)
+    set_target_properties(duneanaobj_StandardRecordFlat PROPERTIES EXPORT_NAME StandardRecordFlat)
+    target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC StandardRecord)
+
+    # required to find the generated header at build time
+    target_include_directories(duneanaobj_StandardRecordFlat PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../../..)
+    if(TARGET SRProxy::SRProxy)
         # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
         # re-finds it via find_dependency(SRProxy).
-        target_link_libraries(duneanaobj_StandardRecordFlat SRProxy::SRProxy)
+        target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC SRProxy::SRProxy)
     endif()
-    target_include_directories(duneanaobj_StandardRecordFlat INTERFACE
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-            $<INSTALL_INTERFACE:include>)
 
     install(TARGETS duneanaobj_StandardRecordFlat
             EXPORT duneanaobjTargets
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    add_library(duneanaobj::StandardRecordFlat ALIAS duneanaobj_StandardRecordFlat)
 
-    install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FlatRecord.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Flat/FwdDeclare.h
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/FlatRecord.h ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
             DESTINATION include/duneanaobj/StandardRecord/Flat)
 
 endif()
