@@ -344,9 +344,8 @@
    <version ClassVersion="10" checksum="1667029942"/>
   </class>
 
-  <class name="caf::SRSAND" ClassVersion="19">
-   <version ClassVersion="19" checksum="2081379096"/>
-   <version ClassVersion="18" checksum="2872674834"/>
+  <class name="caf::SRSAND" ClassVersion="18">
+   <version ClassVersion="18" checksum="2081379096"/>
    <version ClassVersion="17" checksum="3811644425"/>
    <version ClassVersion="16" checksum="1866131598"/>
    <version ClassVersion="15" checksum="911217381"/>
