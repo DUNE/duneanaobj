@@ -24,7 +24,7 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 # we migrate to the NEW policy
 
 project(duneanaobj VERSION 04.01.01 LANGUAGES CXX)
-set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 04.01.00)
+set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING ndlar_hits_testing)#04.01.00)
 
 string(REPLACE "." ";" VERSION_LIST ${PROJECT_VERSION})
 list(GET VERSION_LIST 0 duneanaobj_VERSION_MAJOR)
