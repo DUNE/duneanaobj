@@ -356,9 +356,8 @@
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-  <class name="caf::SRSANDInt" ClassVersion="26">
-    <version ClassVersion="26" checksum="3720771872"/>
-    <version ClassVersion="25" checksum="4079714457"/>
+  <class name="caf::SRSANDInt" ClassVersion="25">
+    <version ClassVersion="25" checksum="3720771872"/>
     <version ClassVersion="24" checksum="858502929"/>
     <version ClassVersion="23" checksum="3190481744"/>
     <version ClassVersion="22" checksum="858502929"/>
