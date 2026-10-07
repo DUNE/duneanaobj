@@ -4,7 +4,7 @@ var searchData=
   ['e_5fcalo_1',['e_calo',['../classcaf_1_1SRNeutrinoEnergyBranch.html#adb1703401c9e22a5a0a006050a978845',1,'caf::SRNeutrinoEnergyBranch']]],
   ['e_5fhad_2',['e_had',['../classcaf_1_1SRNeutrinoEnergyBranch.html#ac0537b577e7834e16c2e265ac94f391a',1,'caf::SRNeutrinoEnergyBranch']]],
   ['e_5fmethod_3',['E_method',['../classcaf_1_1SRRecoParticle.html#a535368c38d45673fd3f5c55c73c5c40d',1,'caf::SRRecoParticle']]],
-  ['ecal_4',['ecal',['../classcaf_1_1SRSANDInt.html#aa0fee09d839696ccdddb179eff3665d6',1,'caf::SRSANDInt']]],
+  ['ecal_4',['ecal',['../classcaf_1_1SRSAND.html#a06678065a0abd9682c745653007a4135',1,'caf::SRSAND']]],
   ['enabled_5',['enabled',['../classcaf_1_1SRDetectorMeta.html#a9db33b7b55700fa2337af8d6c88885b6',1,'caf::SRDetectorMeta']]],
   ['end_6',['end',['../classcaf_1_1SRRecoParticle.html#ac5f4ef9ee7e9ca5c54a9fe3a6482f690',1,'caf::SRRecoParticle::end()'],['../classcaf_1_1SRTrack.html#a865d97bf03eafead4ec5737f424901a1',1,'caf::SRTrack::end()']]],
   ['end_5fpos_7',['end_pos',['../classcaf_1_1SRTrueParticle.html#a6585a843ac25307e085c8c9c2b10567a',1,'caf::SRTrueParticle']]],

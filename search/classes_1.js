@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['id_0',['ID',['../structcaf_1_1SRSAND_1_1ID.html',1,'caf::SRSAND']]]
+  ['proxy_0',['Proxy',['../classcaf_1_1Proxy.html',1,'caf']]]
 ];

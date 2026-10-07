@@ -80,23 +80,26 @@ $(function() {
   <div class="headertitle"><div class="title">caf::SRSANDInt Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A SAND reconstructed neutrino interaction, built by matching objects across the subdetectors.  
+ <a href="classcaf_1_1SRSANDInt.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SRSAND_8h_source.html">SRSAND.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6932b05070c9d8c1497d346d8b3a743d"><td class="memItemLeft" align="right" valign="top"><a id="a6932b05070c9d8c1497d346d8b3a743d" name="a6932b05070c9d8c1497d346d8b3a743d"></a>
-<a class="el" href="classcaf_1_1SRGRAIN.html">SRGRAIN</a>&#160;</td><td class="memItemRight" valign="bottom"><b>grain</b></td></tr>
-<tr class="memdesc:a6932b05070c9d8c1497d346d8b3a743d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GRAIN reconstruction. <br /></td></tr>
-<tr class="separator:a6932b05070c9d8c1497d346d8b3a743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb51a9eaa4c18d42bd37fb6c12c337fb"><td class="memItemLeft" align="right" valign="top"><a id="aeb51a9eaa4c18d42bd37fb6c12c337fb" name="aeb51a9eaa4c18d42bd37fb6c12c337fb"></a>
-<a class="el" href="classcaf_1_1SRTracker.html">SRTracker</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tracker</b></td></tr>
-<tr class="memdesc:aeb51a9eaa4c18d42bd37fb6c12c337fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracker reconstruction. <br /></td></tr>
-<tr class="separator:aeb51a9eaa4c18d42bd37fb6c12c337fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0fee09d839696ccdddb179eff3665d6"><td class="memItemLeft" align="right" valign="top"><a id="aa0fee09d839696ccdddb179eff3665d6" name="aa0fee09d839696ccdddb179eff3665d6"></a>
-<a class="el" href="classcaf_1_1SREcal.html">SREcal</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ecal</b></td></tr>
-<tr class="memdesc:aa0fee09d839696ccdddb179eff3665d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ECAL reconstruction. <br /></td></tr>
-<tr class="separator:aa0fee09d839696ccdddb179eff3665d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52652f817b688cfc077d0b6d2961963d"><td class="memItemLeft" align="right" valign="top"><a id="a52652f817b688cfc077d0b6d2961963d" name="a52652f817b688cfc077d0b6d2961963d"></a>
+std::vector&lt; <a class="el" href="classcaf_1_1SRSANDAssn.html">SRSANDAssn</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>trkmatch</b></td></tr>
+<tr class="memdesc:a52652f817b688cfc077d0b6d2961963d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross-subdetector associations; constituents may come from different subdetectors. <br /></td></tr>
+<tr class="separator:a52652f817b688cfc077d0b6d2961963d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31ba65ef35f1db394001cde84586656"><td class="memItemLeft" align="right" valign="top"><a id="ae31ba65ef35f1db394001cde84586656" name="ae31ba65ef35f1db394001cde84586656"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ntrkmatch</b> {}</td></tr>
+<tr class="separator:ae31ba65ef35f1db394001cde84586656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A SAND reconstructed neutrino interaction, built by matching objects across the subdetectors. </p>
+<p>Index-aligned with the SAND reco interactions in the common branch, so <a class="el" href="classcaf_1_1SRRecoBaseID.html" title="Identifies a reconstructed object by the interaction it belongs to, which collection of reconstructed...">SRRecoBaseID</a>{ixn, kSANDAssn, irecoobj} resolves to <a class="el" href="classcaf_1_1SRSAND.html#a1b3dd2c4d2d9718caa339de14fd7afaf" title="SAND interactions from the cross-subdetector matching.">SRSAND::ixn</a>[ixn].trkmatch[irecoobj]. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>duneanaobj/StandardRecord/<a class="el" href="SRSAND_8h_source.html">SRSAND.h</a></li>
 </ul>
 </div><!-- contents -->

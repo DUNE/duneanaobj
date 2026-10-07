@@ -75,30 +75,43 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classcaf_1_1SRSAND-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">caf::SRSAND Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>SAND reconstruction output.  
+ <a href="classcaf_1_1SRSAND.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SRSAND_8h_source.html">SRSAND.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcaf_1_1SRSAND_1_1ID.html">ID</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for each interaction.  <a href="structcaf_1_1SRSAND_1_1ID.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a0dcb06d7edac4446717623252b0107ca"><td class="memItemLeft" align="right" valign="top"><a id="a0dcb06d7edac4446717623252b0107ca" name="a0dcb06d7edac4446717623252b0107ca"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>nixn</b> = 0</td></tr>
-<tr class="separator:a0dcb06d7edac4446717623252b0107ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319bc4992f70294d303cff406dab18a9"><td class="memItemLeft" align="right" valign="top"><a id="a319bc4992f70294d303cff406dab18a9" name="a319bc4992f70294d303cff406dab18a9"></a>
+<a class="el" href="classcaf_1_1SRGRAIN.html">SRGRAIN</a>&#160;</td><td class="memItemRight" valign="bottom"><b>grain</b></td></tr>
+<tr class="memdesc:a319bc4992f70294d303cff406dab18a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">All objects reconstructed by GRAIN in this spill. <br /></td></tr>
+<tr class="separator:a319bc4992f70294d303cff406dab18a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8861ec637076ffa1b9f3e09226d110fc"><td class="memItemLeft" align="right" valign="top"><a id="a8861ec637076ffa1b9f3e09226d110fc" name="a8861ec637076ffa1b9f3e09226d110fc"></a>
+<a class="el" href="classcaf_1_1SRTracker.html">SRTracker</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tracker</b></td></tr>
+<tr class="memdesc:a8861ec637076ffa1b9f3e09226d110fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">All objects reconstructed by the tracker in this spill. <br /></td></tr>
+<tr class="separator:a8861ec637076ffa1b9f3e09226d110fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06678065a0abd9682c745653007a4135"><td class="memItemLeft" align="right" valign="top"><a id="a06678065a0abd9682c745653007a4135" name="a06678065a0abd9682c745653007a4135"></a>
+<a class="el" href="classcaf_1_1SREcal.html">SREcal</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ecal</b></td></tr>
+<tr class="memdesc:a06678065a0abd9682c745653007a4135"><td class="mdescLeft">&#160;</td><td class="mdescRight">All clusters reconstructed by the ECAL in this spill. <br /></td></tr>
+<tr class="separator:a06678065a0abd9682c745653007a4135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3dd2c4d2d9718caa339de14fd7afaf"><td class="memItemLeft" align="right" valign="top"><a id="a1b3dd2c4d2d9718caa339de14fd7afaf" name="a1b3dd2c4d2d9718caa339de14fd7afaf"></a>
 std::vector&lt; <a class="el" href="classcaf_1_1SRSANDInt.html">SRSANDInt</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ixn</b></td></tr>
-<tr class="memdesc:a1b3dd2c4d2d9718caa339de14fd7afaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconstructed interactions. <br /></td></tr>
+<tr class="memdesc:a1b3dd2c4d2d9718caa339de14fd7afaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">SAND interactions from the cross-subdetector matching. <br /></td></tr>
 <tr class="separator:a1b3dd2c4d2d9718caa339de14fd7afaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcb06d7edac4446717623252b0107ca"><td class="memItemLeft" align="right" valign="top"><a id="a0dcb06d7edac4446717623252b0107ca" name="a0dcb06d7edac4446717623252b0107ca"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>nixn</b> {}</td></tr>
+<tr class="separator:a0dcb06d7edac4446717623252b0107ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SAND reconstruction output. </p>
+<p>GRAIN, tracker and ECAL are reconstructed independently, each into its own list of objects for the whole spill; a later matching step combines their objects into the SAND interactions in <code>ixn</code>. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>duneanaobj/StandardRecord/<a class="el" href="SRSAND_8h_source.html">SRSAND.h</a></li>
 </ul>
 </div><!-- contents -->

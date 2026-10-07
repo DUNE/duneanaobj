@@ -14,12 +14,13 @@ var searchData=
   ['kpdghadronicblob_11',['kPdgHadronicBlob',['../classcaf_1_1SRRecoParticle.html#a2576a6a1f4466ab7b3bebf0245a5c009',1,'caf::SRRecoParticle']]],
   ['kprotodune_12',['kProtoDUNE',['../namespacecaf.html#ac307c92506e04d6e6977b014081d7da6ac6db43591cf15d4bf0440d642a431682',1,'caf']]],
   ['krange_13',['kRange',['../namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13ac1448a332bbc00435b6e26cfc8d91c61',1,'caf']]],
-  ['kshower_14',['kShower',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4ae6b58c7961062d4e33200466f6fbe8fb',1,'caf']]],
-  ['ksimple_15',['kSimple',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8ad5e638fa1ff39db61729ba59350b4e74',1,'caf']]],
-  ['ktrack_16',['kTrack',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a9c06b4fa0d0c428d2ede1565d50db748',1,'caf']]],
-  ['kundeclared_17',['kUndeclared',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8ab5269d80fad2884c426bd99f89ed927b',1,'caf']]],
-  ['kuniquenotime_18',['kUniqueNoTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8a7af77a425203a66c2fa61afff37be3e4',1,'caf']]],
-  ['kuniquewithtime_19',['kUniqueWithTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8abb957aced2345e4131fdc5317268a40b',1,'caf']]],
-  ['kunknownrecoobj_20',['kUnknownRecoObj',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a0cc74bb782298e6e1c65f456040fda09',1,'caf']]],
-  ['kvisibleenergy_21',['kVisibleEnergy',['../namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13a6b8f9308b82bd66d4db4e44111f54b17',1,'caf']]]
+  ['ksandassn_14',['kSANDAssn',['../classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4eea12e248d93bd66bcb6b151c12ab33e990',1,'caf::SRRecoBaseID']]],
+  ['kshower_15',['kShower',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4ae6b58c7961062d4e33200466f6fbe8fb',1,'caf']]],
+  ['ksimple_16',['kSimple',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8ad5e638fa1ff39db61729ba59350b4e74',1,'caf']]],
+  ['ktrack_17',['kTrack',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a9c06b4fa0d0c428d2ede1565d50db748',1,'caf']]],
+  ['kundeclared_18',['kUndeclared',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8ab5269d80fad2884c426bd99f89ed927b',1,'caf']]],
+  ['kuniquenotime_19',['kUniqueNoTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8a7af77a425203a66c2fa61afff37be3e4',1,'caf']]],
+  ['kuniquewithtime_20',['kUniqueWithTime',['../namespacecaf.html#a0528aa485ab2cb7c66e466e0630f93c8abb957aced2345e4131fdc5317268a40b',1,'caf']]],
+  ['kunknownrecoobj_21',['kUnknownRecoObj',['../namespacecaf.html#a0cc1f80d5a5157ff1a6f6eb79f5580e4a0cc74bb782298e6e1c65f456040fda09',1,'caf']]],
+  ['kvisibleenergy_22',['kVisibleEnergy',['../namespacecaf.html#a746ce1a7c39f06de80ad075f62bf5c13a6b8f9308b82bd66d4db4e44111f54b17',1,'caf']]]
 ];

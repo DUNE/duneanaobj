@@ -90,40 +90,42 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a0f282745dda7882325f773c04e56d4ee"><td class="memItemLeft" align="right" valign="top"><a id="a0f282745dda7882325f773c04e56d4ee" name="a0f282745dda7882325f773c04e56d4ee"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SRRecoBaseCollectionType</b> { <br />
-&#160;&#160;<b>kUnknown</b>
-, <b>kFDHDPandoraTrack</b>
-, <b>KFDHDPandoraShower</b>
-, <b>KFDHDPandoraPFP</b>
+<tr class="memitem:a0f282745dda7882325f773c04e56d4ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4ee">SRRecoBaseCollectionType</a> { <br />
+&#160;&#160;<b>kUnknown</b> = 0
+, <b>kFDHDPandoraTrack</b> = 1
+, <b>KFDHDPandoraShower</b> = 2
+, <b>KFDHDPandoraPFP</b> = 3
 , <br />
-&#160;&#160;<b>kFDVDPandoraTrack</b>
-, <b>KFDVDPandoraShower</b>
-, <b>KFDVDPandoraPFP</b>
-, <b>kFDPDHDPandoraTrack</b>
+&#160;&#160;<b>kFDVDPandoraTrack</b> = 4
+, <b>KFDVDPandoraShower</b> = 5
+, <b>KFDVDPandoraPFP</b> = 6
+, <b>kFDPDHDPandoraTrack</b> = 7
 , <br />
-&#160;&#160;<b>KFDPDHDPandoraShower</b>
-, <b>KFDPDHDPandoraPFP</b>
-, <b>kFDPDVDPandoraTrack</b>
-, <b>KFDPDVDPandoraShower</b>
+&#160;&#160;<b>KFDPDHDPandoraShower</b> = 8
+, <b>KFDPDHDPandoraPFP</b> = 9
+, <b>kFDPDVDPandoraTrack</b> = 10
+, <b>KFDPDVDPandoraShower</b> = 11
 , <br />
-&#160;&#160;<b>KFDPDVDPandoraPFP</b>
-, <b>kNDLArDLPTrack</b>
-, <b>kNDLArDLPShower</b>
-, <b>kNDLArPandoraTrack</b>
+&#160;&#160;<b>KFDPDVDPandoraPFP</b> = 12
+, <b>kNDLArDLPTrack</b> = 13
+, <b>kNDLArDLPShower</b> = 14
+, <b>kNDLArPandoraTrack</b> = 15
 , <br />
-&#160;&#160;<b>kNDLARPandoraShower</b>
-, <b>kTMSTrack</b>
-, <b>kSANDGRAINTrack</b>
-, <b>kSANDGRAINShower</b>
+&#160;&#160;<b>kNDLARPandoraShower</b> = 16
+, <b>kTMSTrack</b> = 17
+, <b>kSANDGRAINTrack</b> = 18
+, <b>kSANDGRAINShower</b> = 19
 , <br />
-&#160;&#160;<b>kSANDTrackerTrack</b>
-, <b>kSANDTrackerShower</b>
-, <b>kSANDECalCluster</b>
-, <b>kGArTrack</b>
+&#160;&#160;<b>kSANDTrackerTrack</b> = 20
+, <b>kSANDTrackerShower</b> = 21
+, <b>kSANDECalCluster</b> = 22
+, <a class="el" href="classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4eea12e248d93bd66bcb6b151c12ab33e990">kSANDAssn</a> = 25
 , <br />
-&#160;&#160;<b>kGArEcalCluster</b>
+&#160;&#160;<b>kGArTrack</b> = 23
+, <b>kGArEcalCluster</b> = 24
 <br />
  }</td></tr>
+<tr class="memdesc:a0f282745dda7882325f773c04e56d4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which collection of low-level reco objects an object lives in. NB: these values are serialized into CAFs, so they are written out explicitly. A new entry takes the next unused number regardless of where it sits in this list: keep it in the block it belongs to, and never renumber an existing one.  <a href="classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4ee">More...</a><br /></td></tr>
 <tr class="separator:a0f282745dda7882325f773c04e56d4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -139,7 +141,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ixn</b> = -1</td></tr>
 <tr class="memdesc:aee24aea4a940ede5902380e8ce52c90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of <a class="el" href="classcaf_1_1SRInteraction.html" title="Top-level particle interaction. (Usually neutrinos, but cosmics, etc. can live here too)">SRInteraction</a> in the <a class="el" href="classcaf_1_1SRInteractionBranch.html">SRInteractionBranch</a>. <br /></td></tr>
 <tr class="separator:aee24aea4a940ede5902380e8ce52c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f2c0e67166e7715d23f1a8b715dc9da"><td class="memItemLeft" align="right" valign="top"><a id="a9f2c0e67166e7715d23f1a8b715dc9da" name="a9f2c0e67166e7715d23f1a8b715dc9da"></a>
-SRRecoBaseCollectionType&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> = SRRecoBaseCollectionType::kUnknown</td></tr>
+<a class="el" href="classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4ee">SRRecoBaseCollectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> = SRRecoBaseCollectionType::kUnknown</td></tr>
 <tr class="memdesc:a9f2c0e67166e7715d23f1a8b715dc9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which of the low-level reco objects collections this object lives in. <br /></td></tr>
 <tr class="separator:a9f2c0e67166e7715d23f1a8b715dc9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aece792edcf7cbb18714f46c0f4f9af97"><td class="memItemLeft" align="right" valign="top"><a id="aece792edcf7cbb18714f46c0f4f9af97" name="aece792edcf7cbb18714f46c0f4f9af97"></a>
@@ -149,7 +151,28 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>irecoobj</b> = -1</td>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Identifies a reconstructed object by the interaction it belongs to, which collection of reconstructed objects it belongs to, and its index within that collection. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a0f282745dda7882325f773c04e56d4ee" name="a0f282745dda7882325f773c04e56d4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f282745dda7882325f773c04e56d4ee">&#9670;&#160;</a></span>SRRecoBaseCollectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcaf_1_1SRRecoBaseID.html#a0f282745dda7882325f773c04e56d4ee">caf::SRRecoBaseID::SRRecoBaseCollectionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Which collection of low-level reco objects an object lives in. NB: these values are serialized into CAFs, so they are written out explicitly. A new entry takes the next unused number regardless of where it sits in this list: keep it in the block it belongs to, and never renumber an existing one. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0f282745dda7882325f773c04e56d4eea12e248d93bd66bcb6b151c12ab33e990" name="a0f282745dda7882325f773c04e56d4eea12e248d93bd66bcb6b151c12ab33e990"></a>kSANDAssn&#160;</td><td class="fielddoc"><p>cross-subdetector association; see <a class="el" href="classcaf_1_1SRSANDAssn.html" title="A group of SAND subdetector reco objects reconstructed to go together.">SRSANDAssn</a> </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>duneanaobj/StandardRecord/<a class="el" href="SREnums_8h_source.html">SREnums.h</a></li>
 </ul>
 </div><!-- contents -->

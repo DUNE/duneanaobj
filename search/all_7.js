@@ -12,5 +12,5 @@ var searchData=
   ['genweight_9',['genweight',['../classcaf_1_1SRTrueInteraction.html#a02a9dded30c7f215995ace9b0b17472f',1,'caf::SRTrueInteraction']]],
   ['gpspulsetimensec_10',['gpspulsetimensec',['../classcaf_1_1SRBeamBranch.html#a93cd107bb4f83e208efb3568868ede97',1,'caf::SRBeamBranch']]],
   ['gpspulsetimesec_11',['gpspulsetimesec',['../classcaf_1_1SRBeamBranch.html#a11f7b09fcaedb883a98c7b644e5ca3d9',1,'caf::SRBeamBranch']]],
-  ['grain_12',['grain',['../classcaf_1_1SRSANDInt.html#a6932b05070c9d8c1497d346d8b3a743d',1,'caf::SRSANDInt']]]
+  ['grain_12',['grain',['../classcaf_1_1SRSAND.html#a319bc4992f70294d303cff406dab18a9',1,'caf::SRSAND']]]
 ];
