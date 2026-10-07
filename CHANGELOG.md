@@ -3,6 +3,13 @@
 
 ##### current
 
+##### [v04_02_00] -- 2026-10-07
+* Create cross-subdetector reco object association for SAND [#95]
+* Store whether a given ND-LAr--TMS track association is a true match; expand reported info [#111]
+* Modernize non-CET CMake path with more targets etc. [#114]
+* Checksum updates [#113]
+* Doc update [#105]
+
 ##### [v04_01_01] -- 2026-08-26
 * Only store the git short hash when available, otherwise use a placeholder [#107]
 
