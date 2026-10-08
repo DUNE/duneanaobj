@@ -54,6 +54,13 @@ else()
       PUBLIC duneanaobj::rootlibs
     )
 
+    # attach relevant header files to target, which get installed to
+    #   include/duneanaobj/StandardRecord/ at the target install step below
+    file( GLOB headers_files *.h )
+    set_target_properties(StandardRecord
+      PROPERTIES
+        PUBLIC_HEADER "${headers_files}")
+
     target_include_directories(StandardRecord PUBLIC
       # for include "duneanaobj/" style includes at build time
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
@@ -85,7 +92,8 @@ else()
     add_library(duneanaobj::StandardRecord ALIAS StandardRecord)
     install( TARGETS StandardRecord
       EXPORT duneanaobjTargets
-      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+      PUBLIC_HEADER DESTINATION include/duneanaobj/StandardRecord)
     # rootcling emits these next to the build tree; ROOT looks for them beside
     # the installed library, so install them into the same libdir.
     install( FILES
