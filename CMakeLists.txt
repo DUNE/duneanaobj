@@ -110,13 +110,6 @@ add_subdirectory(duneanaobj)
 if (NOT SKIP_CET)
     cet_cmake_config()
 else()
-    # Setup installation. Install the headers under include/duneanaobj/StandardRecord/
-    # so the "duneanaobj/StandardRecord/..." include paths used throughout the
-    # sources resolve against the exported include/ interface. (PUBLIC_HEADER would
-    # flatten them straight into include/, which does not match those paths.)
-    file( GLOB headers_files *.h )
-    install( FILES ${headers_files} DESTINATION include/duneanaobj/StandardRecord )
-
     # Setup CMake find_package related files
     install( EXPORT duneanaobjTargets
              DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/duneanaobj"
