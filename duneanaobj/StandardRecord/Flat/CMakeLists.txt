@@ -15,7 +15,7 @@ if(NOT SKIP_CET)
                      SOURCE       FlatRecord.cxx
                      LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer
                      )
-
+    target_link_libraries(duneanaobj_StandardRecordFlat PRIVATE SRProxy::SRProxy)
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
         message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
     endif()
