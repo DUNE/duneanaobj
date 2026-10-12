@@ -16,8 +16,9 @@ if(NOT SKIP_CET)
     message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
     cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
             SOURCE       SRProxy.cxx Instantiations.cxx
-            LIBRARIES    SRProxy::SRProxy ROOT::Core ROOT::Physics ROOT::TreePlayer)
-
+            LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer)
+    target_link_libraries(duneanaobj_StandardRecordProxy PRIVATE SRProxy::SRProxy)
+    
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
         message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
     endif()
