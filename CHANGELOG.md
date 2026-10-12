@@ -3,6 +3,9 @@
 
 ##### current
 
+##### [v04_02_01] -- 2026-10-12
+* Hopefully get the CMake recipe right at last [#116]
+
 ##### [v04_02_00] -- 2026-10-07
 * Create cross-subdetector reco object association for SAND [#95]
 * Store whether a given ND-LAr--TMS track association is a true match; expand reported info [#111]
