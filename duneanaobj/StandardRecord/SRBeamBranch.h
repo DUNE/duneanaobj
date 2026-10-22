@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "duneanaobj/StandardRecord/SRBeamInstrumentation.h"
+#include "duneanaobj/StandardRecord/SRPDSPSelection.h"
 
 namespace caf
 {
@@ -79,6 +80,11 @@ namespace caf
       ///
       /// Unfilled for neutrino-beam samples; the fields above are unfilled for test beam.
       SRBeamInstrumentation inst;
+
+      /// \brief ProtoDUNE-SP pi+ absorption / charge-exchange selection (legacy and improved).
+      ///
+      /// Unfilled unless the CAFMaker runs with FillPDSPSelection.
+      SRPDSPSelectionBranch pdsp_sel;
 
   };
 }

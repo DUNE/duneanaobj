@@ -33,7 +33,8 @@
 
   <!-- - - - - - - - - - - Beam-related - - - - - - - - - - - - - -->
 
-  <class name="caf::SRBeamBranch" ClassVersion="12">
+  <class name="caf::SRBeamBranch" ClassVersion="13">
+   <version ClassVersion="13" checksum="4007660349"/>
    <version ClassVersion="12" checksum="148577967"/>
    <version ClassVersion="11" checksum="2626321545"/>
    <version ClassVersion="10" checksum="3825039376"/>
@@ -42,6 +43,21 @@
   <class name="caf::SRBeamInstrumentation" ClassVersion="11">
    <version ClassVersion="11" checksum="3558172801"/>
    <version ClassVersion="10" checksum="1579151305"/>
+  </class>
+
+  <class name="caf::SRPDSPSelectionBranch" ClassVersion="10">
+   <version ClassVersion="10" checksum="438188441"/>
+  </class>
+
+  <class name="caf::SRPDSPSelection" ClassVersion="10">
+   <version ClassVersion="10" checksum="3563661952"/>
+  </class>
+
+  <class name="caf::SRPDSPSelDaughter" ClassVersion="10">
+   <version ClassVersion="10" checksum="1586104534"/>
+  </class>
+
+  <class name="std::vector<caf::SRPDSPSelDaughter>">
   </class>
 
   <!-- - - - - - - - - - - Metadata  - - - - - - - - - - - - - - - -->
