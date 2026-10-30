@@ -32,7 +32,8 @@ else()
     target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC StandardRecord)
 
     # required to find the generated header at build time
-    target_include_directories(duneanaobj_StandardRecordFlat PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../../..)
+    target_include_directories(duneanaobj_StandardRecordFlat
+      PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../../..>)
     if(TARGET SRProxy::SRProxy)
         # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
         # re-finds it via find_dependency(SRProxy).
