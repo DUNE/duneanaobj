@@ -85,20 +85,24 @@ add_library(duneanaobj::rootlibs ALIAS duneanaobj_rootlibs)
 # SRProxy (which exports the SRProxy::SRProxy target carrying its headers), and
 # cascade back to the older $SRPROXY_INC / $SRPROXY_DIR layout otherwise.
 SET(GENERATE_PROXIES FALSE)
-find_package(SRProxy QUIET CONFIG)
-if(SRProxy_FOUND)
-    message(STATUS "Found SRProxy CMake package at ${SRProxy_DIR}")
-    # SRProxy exports its headers but not the gen_srproxy executable,
-    # so look for it under the package's install prefix (then fall back to $SRPROXY_DIR/bin).
-    get_filename_component(SRPROXY_PREFIX "${SRProxy_DIR}/../../.." ABSOLUTE)
-    find_program(GEN_SRPROXY gen_srproxy HINTS "${SRPROXY_PREFIX}/bin" $ENV{SRPROXY_DIR}/bin)
+if(TARGET SRProxy::SRProxy) # already set up in parent package
+  SET(GENERATE_PROXIES TRUE)
 else()
-    message(STATUS "SRProxy CMake package not found; using $SRPROXY_INC / $SRPROXY_DIR")
-    find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
-    if (GEN_SRPROXY)
-      add_library(SRProxy::SRProxy IMPORTED INTERFACE)
-      target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
-    endif()
+  find_package(SRProxy QUIET CONFIG)
+  if(SRProxy_FOUND)
+      message(STATUS "Found SRProxy CMake package at ${SRProxy_DIR}")
+      # SRProxy exports its headers but not the gen_srproxy executable,
+      # so look for it under the package's install prefix (then fall back to $SRPROXY_DIR/bin).
+      get_filename_component(SRPROXY_PREFIX "${SRProxy_DIR}/../../.." ABSOLUTE)
+      find_program(GEN_SRPROXY gen_srproxy HINTS "${SRPROXY_PREFIX}/bin" $ENV{SRPROXY_DIR}/bin)
+  else()
+      message(STATUS "SRProxy CMake package not found; using $SRPROXY_INC / $SRPROXY_DIR")
+      find_program(GEN_SRPROXY gen_srproxy HINTS $ENV{SRPROXY_DIR}/bin)
+      if (GEN_SRPROXY)
+        add_library(SRProxy::SRProxy IMPORTED INTERFACE)
+        target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
+      endif()
+  endif()
 endif()
 
 if(GEN_SRPROXY)
