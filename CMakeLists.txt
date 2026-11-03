@@ -87,7 +87,7 @@ add_library(duneanaobj::rootlibs ALIAS duneanaobj_rootlibs)
 SET(GENERATE_PROXIES FALSE)
 if(TARGET SRProxy::SRProxy) # already set up in parent package
   SET(GENERATE_PROXIES TRUE)
-  SET(GEN_SRPROXY $<TARGET_FILE:SRProxy::gen_srproxy>)
+  SET(GEN_SRPROXY $<TARGET_FILE:gen_srproxy>)
 else()
   find_package(SRProxy QUIET CONFIG)
   if(SRProxy_FOUND)
