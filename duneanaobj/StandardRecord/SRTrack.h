@@ -53,6 +53,7 @@ namespace caf
       float len_cm   = NaN;  ///< Track length in centimeter (actual physical distance)
 
       float E = NaN;         ///< Track energy estimate in MeV
+      double p = NaN;        ///< Starting momentum of the track estimate in MeV
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this track and true particle
