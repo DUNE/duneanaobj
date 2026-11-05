@@ -32,7 +32,7 @@ namespace caf
 
       float       score    = NaN;                     ///< PID score for this particle, if relevant
 
-      float       E        = NaN;                     ///< Reconstructed energy for this particle [GeV]
+      float       E        = NaN;                     ///< Reconstructed energy for this particle [GeV] **n.b.: total energy including mass** 
       PartEMethod E_method = PartEMethod::kUnknownMethod;   ///< Method used to determine energy for the particle
       SRVector3D  p;                                  ///< Reconstructed momentum for this particle
 

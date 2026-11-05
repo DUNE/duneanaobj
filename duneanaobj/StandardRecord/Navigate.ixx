@@ -86,20 +86,37 @@ namespace caf
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kTMSTrack)
       return &sr.nd.tms.ixn[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDGRAINTrack)
-      return &sr.nd.sand.ixn[id.ixn].grain.tracks[id.irecoobj];
+      return &sr.nd.sand.grain.tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDGRAINShower)
-      return &sr.nd.sand.ixn[id.ixn].grain.showers[id.irecoobj];
+      return &sr.nd.sand.grain.showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrackerTrack)
-      return &sr.nd.sand.ixn[id.ixn].tracker.tracks[id.irecoobj];
+      return &sr.nd.sand.tracker.tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDTrackerShower)
-      return &sr.nd.sand.ixn[id.ixn].tracker.showers[id.irecoobj];
+      return &sr.nd.sand.tracker.showers[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDECalCluster)
-      return &sr.nd.sand.ixn[id.ixn].ecal.clusters[id.irecoobj];
+      return &sr.nd.sand.ecal.clusters[id.irecoobj];
+    else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kSANDAssn)
+      return &sr.nd.sand.ixn[id.ixn].trkmatch[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArTrack)
       return &sr.nd.gar.ixn[id.ixn].tracks[id.irecoobj];
     else if (id.type == SRRecoBaseID::SRRecoBaseCollectionType::kGArEcalCluster)
       return &sr.nd.gar.ixn[id.ixn].clusters[id.irecoobj];
     else
       throw std::domain_error("Unknown SRRecoBaseCollectionType: " + std::to_string(id.type));
+  }
+
+  /// \brief Locate the SAND subdetector object named by an SRSANDObjID.
+  ///
+  /// SAND's subdetector collections are spill-level, so the overload above
+  /// ignores `ixn` for those types.  We pass a placeholder rather than giving
+  /// SRSANDObjID an `ixn` of its own, which would stop it being a stable
+  /// identity for an object shared between SRSANDInts.
+  const SRRecoObjBase *FindRecoObjBase(const StandardRecord &sr, const SRSANDObjID &id)
+  {
+    if (!id) { 
+      return nullptr;
+    }
+    
+    return FindRecoObjBase(sr, SRRecoBaseID{0, id.type, id.idx});
   }
 }

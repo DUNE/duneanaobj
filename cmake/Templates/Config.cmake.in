@@ -1,0 +1,24 @@
+
+@PACKAGE_INIT@
+
+# The exported targets carry ROOT imported targets (ROOT::Core, etc.) as
+# interface link libraries, so a consumer needs ROOT re-found here.
+include ( CMakeFindDependencyMacro )
+find_dependency ( ROOT )
+
+# When duneanaobj was built against a find_package()'able SRProxy, the exported
+# Proxy/Flat targets link SRProxy::SRProxy, so consumers need it too.
+if ( @GENERATE_PROXIES@ )
+    find_package ( SRProxy QUIET CONFIG )
+    if(NOT TARGET SRProxy::SRProxy) # have to reconstruct target containing
+                                    # include directories
+      if (DEFINED ENV{SRPROXY_INC})
+        add_library(SRProxy::SRProxy IMPORTED INTERFACE)
+        target_include_directories(SRProxy::SRProxy INTERFACE $ENV{SRPROXY_INC})
+      else()
+        message(WARNING "duneanaobj was built with srproxy and generated proxy code, but SRPROXY_INC is now not defined in the environment and so srproxy cannot be found, you might expect compile-time errors to do with missed unfindable header files")
+      endif()
+    endif()
+endif()
+
+include ( "${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake" )

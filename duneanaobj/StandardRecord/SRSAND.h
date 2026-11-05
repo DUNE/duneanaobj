@@ -1,9 +1,7 @@
-////////////////////////////////////////////////////////////////////////
-// \file    SRSAND.h
-// \brief   SAND reconstruction output 
-// \author  S. Repetto
-// \date    Feb. 2026
-////////////////////////////////////////////////////////////////////////
+/// \file    SRSAND.h
+/// \brief   SAND reconstruction output
+/// \author  S. Repetto, S. Lanzi <samuele.lanzi@cnaf.infn.it>
+/// \date    Feb. 2026
 
 #ifndef DUNEANAOBJ_SRSAND_H
 #define DUNEANAOBJ_SRSAND_H
@@ -11,90 +9,76 @@
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRECALCluster.h"
-#include "duneanaobj/StandardRecord/SREnums.h" 
+#include "duneanaobj/StandardRecord/SRSANDAssn.h"
 
 namespace caf
 {
-
-    // ==================================================
-    // GRAIN reconstruction
-    // ==================================================
-    class SRGRAIN
-    {
+  /// \brief All objects reconstructed by GRAIN in a spill
+  class SRGRAIN
+  {
     public:
-        std::vector<SRTrack> tracks;
-        std::size_t ntracks = 0;
+      std::vector<SRTrack> tracks;
+      std::size_t          ntracks{};
 
-        std::vector<SRShower> showers;
-        std::size_t nshowers = 0;
-    };
+      std::vector<SRShower> showers;
+      std::size_t           nshowers{};
+  };
 
-    // ==================================================
-    // Tracker reconstruction
-    // ==================================================
-    class SRTracker
-    {
+  /// \brief All objects reconstructed by the tracker in a spill
+  class SRTracker
+  {
     public:
-        std::vector<SRTrack> tracks;
-        std::size_t ntracks = 0;
-        std::vector<int> ncrossedstations; ///< Number of stations crossed by the track
+      std::vector<SRTrack> tracks;
+      std::size_t          ntracks{};
 
-        std::vector<SRShower> showers;
-        std::size_t nshowers = 0;
-    };
+      std::vector<SRShower> showers;
+      std::size_t           nshowers{};
+  };
 
-    // ==================================================
-    // ECAL reconstruction
-    // ==================================================
-    class SREcal
-    {
+  /// \brief All clusters reconstructed by the ECAL in a spill
+  class SREcal
+  {
     public:
-        std::vector<SRECALCluster> clusters;
-        std::size_t nclusters = 0;
-    };
+      std::vector<SRECALCluster> clusters;
+      std::size_t                nclusters{};
+  };
 
-    // ==================================================
-    // A SAND reconstructed neutrino interaction
-    // ==================================================
-    class SRSANDInt
-    {
+  /// \brief A SAND reconstructed neutrino interaction, built by matching objects across the subdetectors
+  ///
+  /// Index-aligned with the SAND reco interactions in the common branch,
+  /// so SRRecoBaseID{ixn, kSANDAssn, irecoobj} resolves to SRSAND::ixn[ixn].trkmatch[irecoobj].
+  class SRSANDInt
+  {
     public:
-    
-        enum class SRIntTarget
-        {
-            kGraphiteTarget = 0,
-            kPlasticTarget  = 1,
-            kArgon          = 2,
-            kCaloTarget     = 3,
-            kInternal       = 4, // passive material inside SAND calo
-            kExternal       = 5,
-            kOther          = 6
-        };
+      enum class SRIntTarget
+      {
+        kGraphite = 0,
+        kPlastic  = 1,
+        kArgon    = 2,
+        kCalo     = 3,
+        kOther    = 4
+      };
 
-        SRGRAIN grain;      ///< GRAIN reconstruction
-        SRTracker tracker;  ///< Tracker reconstruction
-        SREcal ecal;        ///< ECAL reconstruction
-        SRIntTarget target; ///< Target material of the interaction
-    };
+      std::vector<SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetectors
+      std::size_t             ntrkmatch{};
+      SRIntTarget             target;   ///< Target material of the interaction
+  };
 
-    // ==================================================
-    // SAND reconstruction container
-    // ==================================================
+  /// \brief SAND reconstruction output
+  ///
+  /// GRAIN, tracker and ECAL are reconstructed independently, each into its own list of objects for the whole spill;
+  /// a later matching step combines their objects into the SAND interactions in `ixn`.
     class SRSAND
     {
     public:
-        /// Unique identifier for each interaction
-        struct ID
-        {
-            int ixn = -1;  ///< interaction ID
-            int idx = -1;  ///< index in container
-        };
+      SRGRAIN   grain;   ///< All objects reconstructed by GRAIN in this spill
+      SRTracker tracker; ///< All objects reconstructed by the tracker in this spill
+      SREcal    ecal;    ///< All clusters reconstructed by the ECAL in this spill
 
-        std::size_t nixn = 0;
-        std::vector<SRSANDInt> ixn; ///< Reconstructed interactions
+      std::vector<SRSANDInt> ixn; ///< SAND interactions from the cross-subdetector matching
+      std::size_t            nixn{};
+  };
 
-    };
+}
 
-} // namespace caf
-
-#endif // DUNEANAOBJ_SRSAND_H
+#endif //DUNEANAOBJ_SRSAND_H
