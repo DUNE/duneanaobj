@@ -68,8 +68,8 @@ namespace caf
   ///
   /// GRAIN, tracker and ECAL are reconstructed independently, each into its own list of objects for the whole spill;
   /// a later matching step combines their objects into the SAND interactions in `ixn`.
-    class SRSAND
-    {
+  class SRSAND
+  {
     public:
       SRGRAIN   grain;   ///< All objects reconstructed by GRAIN in this spill
       SRTracker tracker; ///< All objects reconstructed by the tracker in this spill
