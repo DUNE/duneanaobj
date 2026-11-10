@@ -50,8 +50,18 @@ namespace caf
   class SRSANDInt
   {
     public:
+      enum class SRIntTarget
+      {
+        kGraphite = 0,
+        kPlastic  = 1,
+        kArgon    = 2,
+        kCalo     = 3,
+        kOther    = 4
+      };
+
       std::vector<SRSANDAssn> trkmatch; ///< Cross-subdetector associations; constituents may come from different subdetectors
       std::size_t             ntrkmatch{};
+      SRIntTarget             target;   ///< Target material of the interaction
   };
 
   /// \brief SAND reconstruction output
