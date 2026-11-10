@@ -24,7 +24,7 @@ namespace caf
       SRVector3D vtx;
 
       /// Reconstructed time of the interaction (if any)
-      float vtx_time = 0;
+      float time = 0;
 
       /// Hypotheses for this interaction's parent particle direction
       SRDirectionBranch dir;
