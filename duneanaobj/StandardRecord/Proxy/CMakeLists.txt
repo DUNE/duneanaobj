@@ -35,7 +35,8 @@ else()
     target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC StandardRecord)
 
     # required to find the generated header at build time
-    target_include_directories(duneanaobj_StandardRecordProxy PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../../..)
+    target_include_directories(duneanaobj_StandardRecordProxy
+      PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../../..>)
     if(TARGET SRProxy::SRProxy)
         # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
         # re-finds it via find_dependency(SRProxy).
@@ -55,5 +56,6 @@ endif()
 # If we are using the python version of SRProxy, then there are no basic
 #   types precompiled
 if(NOT TARGET SRProxy::BasicTypes)
-  target_compile_definitions(duneanaobj_StandardRecordProxy PRIVATE NO_PRECOMPILED_SRBASICTYPES)
+  target_compile_definitions(duneanaobj_StandardRecordProxy
+    PUBLIC $<BUILD_INTERFACE:NO_PRECOMPILED_SRBASICTYPES>)
 endif()
