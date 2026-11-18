@@ -3,6 +3,10 @@
 
 ##### current
 
+##### [v04_03_00] -- 2026-11-18
+* Implement missing data fields for SAND antineutrino CCQE analysis on hydrogen [#118].
+* Hot-fix update for vertex time [#120].
+
 ##### [v04_02_01] -- 2026-10-12
 * Hopefully get the CMake recipe right at last [#116]
 
