@@ -3,7 +3,7 @@
 
 ##### current
 
-##### [v04_02_02] -- 2026-11-18
+##### [v04_03_00] -- 2026-11-18
 * Implement missing data fields for SAND antineutrino CCQE analysis on hydrogen [#118].
 * Hot-fix update for vertex time [#120].
 
