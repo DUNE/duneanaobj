@@ -79,7 +79,8 @@
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="13">
+  <class name="caf::SRInteraction" ClassVersion="14">
+   <version ClassVersion="14" checksum="2947749199"/>
    <version ClassVersion="13" checksum="2923159878"/>
    <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
@@ -143,7 +144,8 @@
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
-  <class name="caf::SRTrack" ClassVersion="22">
+  <class name="caf::SRTrack" ClassVersion="23">
+   <version ClassVersion="23" checksum="398553841"/>
    <version ClassVersion="22" checksum="3226080584"/>
    <version ClassVersion="21" checksum="3631361424"/>
    <version ClassVersion="20" checksum="2342285040"/>
@@ -309,7 +311,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="18">
+    <class name="caf::SRGArTrack" ClassVersion="19">
+     <version ClassVersion="19" checksum="900712617"/>
      <version ClassVersion="18" checksum="2068237894"/>
      <version ClassVersion="17" checksum="3841055326"/>
      <version ClassVersion="16" checksum="1020294526"/>
@@ -356,7 +359,8 @@
    <version ClassVersion="10" checksum="1443507594"/>
   </class>
 
-  <class name="caf::SRSANDInt" ClassVersion="25">
+  <class name="caf::SRSANDInt" ClassVersion="26">
+   <version ClassVersion="26" checksum="3363244955"/>
     <version ClassVersion="25" checksum="3720771872"/>
     <version ClassVersion="24" checksum="858502929"/>
     <version ClassVersion="23" checksum="3190481744"/>
