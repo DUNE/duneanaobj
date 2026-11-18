@@ -50,7 +50,7 @@ namespace caf
   class SRSANDInt
   {
     public:
-      enum class SRIntTarget
+      enum SRIntTarget
       {
         kGraphite = 0,
         kPlastic  = 1,
