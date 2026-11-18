@@ -4,7 +4,6 @@
 ##### current
 
 ##### [v04_02_02] -- 2026-11-18
-* Bump root to v6_30_06 and e28 compiler.
 * Implement missing data fields for SAND antineutrino CCQE analysis on hydrogen [#118].
 * Hot-fix update for vertex time [#120].
 
