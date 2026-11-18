@@ -26,6 +26,7 @@ namespace caf
 
   template class Proxy<TrueParticleID::PartType>;
   template class Proxy<RecoObjType>;
+  template class Proxy<SRSANDInt::SRIntTarget>;
   template class Proxy<SRRecoParticleID::SRRecoParticleCollectionType>;
   template class Proxy<SRRecoBaseID::SRRecoBaseCollectionType>;
 
